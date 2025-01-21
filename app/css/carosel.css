@@ -1,0 +1,236 @@
+/* Splošni slogi za vse elemente */
+:after,
+:before,
+* {
+  box-sizing: border-box;
+}
+
+/* Kontejner za vsebino */
+.container {
+  width: 1200px;
+  margin: 0 auto;
+  position: relative;
+}
+
+/* Hero slider slogi */
+.parallax-slider {
+  width: 100%;
+  height: 80vh;
+  position: relative;
+  overflow: hidden;
+}
+
+/* Swiper kontejner */
+.swiper-container {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  left: 0;
+  top: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Swiper slide slogi */
+.swiper-slide {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+  position: relative;
+  opacity: 0.5;
+  transition: opacity 1.2s ease-in-out;
+}
+
+/* Aktivni slide */
+.swiper-slide-active {
+  opacity: 1;
+}
+
+/* Vsebina znotraj slide */
+.slide-inner {
+  width: 100%;
+  height: 100%;
+  background-size: cover;
+  background-position: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: left;
+  position: relative;
+  overflow: hidden;
+}
+
+/* Prehodi za naslov, besedilo in gumbe */
+.slide-text,
+.slide-title,
+.slide-btns {
+  opacity: 0;
+  transform: translateY(40px);
+  transition: opacity 1s ease-out, transform 0.6s ease-out;
+}
+
+.swiper-slide-active .slide-text,
+.swiper-slide-active .slide-title,
+.swiper-slide-active .slide-btns {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Prehod za neaktivne slide elemente */
+.swiper-slide:not(.swiper-slide-active) .slide-title,
+.swiper-slide:not(.swiper-slide-active) .slide-text,
+.swiper-slide:not(.swiper-slide-active) .slide-btns {
+  opacity: 0;
+  transform: translateY(40px);
+  transition: opacity 0.6s ease-in, transform 0.6s ease-in;
+}
+
+/* Slogi za navigacijske gumbe */
+.swiper-button-prev,
+.swiper-button-next {
+  background: transparent;
+  width: 55px;
+  height: 55px;
+  line-height: 53px;
+  margin-top: -30px;
+  text-align: center;
+  border: 2px solid #d4d3d3;
+  border-radius: 4px;
+  opacity: 0;
+  visibility: hidden;
+  transition: all 0.3s ease;
+}
+
+.parallax-slider:hover .swiper-button-prev,
+.parallax-slider:hover .swiper-button-next {
+  transform: translateX(0);
+  opacity: 1;
+  visibility: visible;
+}
+
+@media (max-width: 767px) {
+  .swiper-button-prev,
+  .swiper-button-next {
+    display: none;
+  }
+}
+
+/* Pozicioniranje gumba prev */
+.swiper-button-prev {
+  left: 25px;
+  transform: translateX(50px);
+}
+
+/* Pozicioniranje gumba next */
+.swiper-button-next {
+  right: 25px;
+  transform: translateX(-50px);
+}
+
+/* Slogi za puščice - pred gumbom prev in next */
+.swiper-button-prev:before,
+.swiper-button-next:before {
+  font-family: "Font Awesome 5 Free";
+  font-size: 15px;
+  color: #d4d3d3;
+  font-weight: 900;
+  transition: color 0.3s ease;
+}
+
+/* Nastavitve specifičnih ikon */
+.swiper-button-prev:before {
+  content: "\f060"; /* Leva puščica */
+}
+
+.swiper-button-next:before {
+  content: "\f061"; /* Desna puščica */
+}
+
+/* Spreminjanje barve puščice ob hoveru nad gumbom */
+.swiper-button-prev:hover:before,
+.swiper-button-next:hover:before {
+  color: #D3C996; /* Sprememba barve puščice v črno */
+}
+
+/* Spreminjanje ozadja gumba ob hoveru */
+.swiper-button-prev:hover,
+.swiper-button-next:hover {
+  background-color: black;
+  border: 2px solid #D3C996;
+}
+
+/* Paginacija slog */
+.swiper-pagination-bullet {
+  width: 12px !important;
+  height: 12px !important;
+  background: #fff !important;
+  opacity: 0.3;
+  transition: all 0.2s ease;
+}
+
+.swiper-pagination-bullet-active {
+  opacity: 1 !important;
+}
+
+.swiper-pagination {
+  text-align: center;
+}
+
+@media (max-width: 767px) {
+  .slide-text p {
+    font-size: 16px;
+  }
+}
+
+/* Slogi za gumbe */
+.theme-btn,
+.theme-btn-s2 {
+  background-color: #000000;
+  font-size: 20px;
+  font-weight: 500;
+  color: #2b3b95;
+  padding: 9px 32px;
+  text-transform: uppercase;
+  display: inline-block;
+  transition: all 0.4s ease;
+}
+
+.theme-btn:hover,
+.theme-btn-s2:hover {
+  background-color: #2b3b95;
+  color: #fff;
+}
+
+i.fa-chevron-circle-right {
+  height: 22px;
+  width: 22px;
+}
+
+a:hover {
+  text-decoration: none;
+}
+
+@media (max-width: 991px) {
+  .theme-btn,
+  .theme-btn-s2 {
+    font-size: 13px;
+    padding: 15px 25px;
+  }
+}
+
+.swiper-button-next::after,
+.swiper-button-prev::after {
+  content: "" !important;
+}
+
+.banner-bg {
+  background-image: url('../../public/img/hero-carosel/banner_1.png');
+}
+
+@media only screen and (max-width: 768px) {
+  .banner-bg {
+    background-image: url('../../public/img/hero-carosel/banner_1.png');
+  }
+}
