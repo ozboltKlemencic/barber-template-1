@@ -63,7 +63,7 @@ export default function Navbar() {
       >
         <div className="container mx-auto px-4 flex w-full max-w-7xl">
           <nav className="flex items-center justify-between w-full h-16">
-          <Link href={ROUTES.DOMOV} className="flex items-center gap-2 ">
+          <Link href={ROUTES.DOMOV} className="flex items-center justify-center gap-2 ">
             <Image
               src="/img/logo/logo.jpeg"
               alt="Blackout Logo"
@@ -71,7 +71,7 @@ export default function Navbar() {
               height={20}
               className="object-cover"
             />
-            <span className="text-2xl font-bold text-white">BLACKOUT</span>
+            <span className="text-2xl font-semibold mt-1 text-white font-teko">BLACKOUT</span>
           </Link>
 
             <div className="hidden md:flex items-center space-x-8">
@@ -80,7 +80,7 @@ export default function Navbar() {
                   key={item.href}
                   href={item.href}
                   className={cn(
-                    "transition-colors flex items-center justify-center",
+                    "transition-colors flex text-sm font-montserrat items-center justify-center",
                     pathname === item.href
                       ? "text-neutral-50"
                       : "text-neutral-400 hover:text-white"
