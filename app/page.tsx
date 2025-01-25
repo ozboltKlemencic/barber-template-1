@@ -7,7 +7,7 @@ import { useEffect } from "react";
 import Lenis from 'lenis';
 import Navbar from "@/components/navigation/navbar";
 
-import Section from "@/components/section";
+import Contact from "@/components/section";
 import CaroselContainer from "@/components/CaroselContainer";
 import { ThreeDCardDemo } from "@/components/cards/card";
 import SecondaryBtn from "@/components/buttons/Secondary";
@@ -17,6 +17,7 @@ import ReviewSection from "@/components/review";
 import { MaskAnimation } from "@/components/text/MaskAnimation";
 import AnimateInViewWrapper from "@/components/animation/fade";
 import TeamCard from "@/components/cards/teamCard";
+import HorizontalScrollCarousel from "@/components/horizontalScroll";
 
 const haircutData = [
   {
@@ -149,14 +150,11 @@ export default function Home() {
         </div>
       </div>
 
+      <Contact/>
 
-      <Section/>
+      <HorizontalScrollCarousel/>
       
-      <div className="h-screen"></div>
-      <div>
-        <Intro />
-        <Footer />
-      </div>
+      <Footer />
     </>
   );
 }

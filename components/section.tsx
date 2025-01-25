@@ -9,7 +9,7 @@ import AnimateInViewWrapper from "@/components/animation/fade";
 import Primary from './buttons/Primary';
 import BgFrombottomToTop from './text/bgFrombottomToTop';
 
-export default function Section() {
+export default function Contact() {
     const container = useRef();
     const { scrollYProgress } = useScroll({
         target: container,
@@ -59,7 +59,7 @@ export default function Section() {
             <div className='fixed top-[-10vh] left-0 h-[120vh] w-full'>
                 <motion.div style={{y}} className='relative w-full h-full'>
                     <Image src={Background} fill alt="image" style={{objectFit: "cover"}}/>
-                    <div className='absolute inset-0 bg-black/[0.4] backdrop-blur-sm'></div>
+                    <div className='absolute inset-0 bg-black/[0.5] backdrop-blur-sm'></div>
                 </motion.div>
             </div>
         </div>
