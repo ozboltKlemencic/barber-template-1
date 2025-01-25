@@ -8,6 +8,12 @@ body {
 }
 
 
+*{
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
 
 .nav-shadov{
   -webkit-box-shadow: 0px 2px 2px 0px rgba(255,239,176,0.81);

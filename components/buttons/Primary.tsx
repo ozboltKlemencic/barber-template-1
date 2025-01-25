@@ -12,7 +12,7 @@ const Primary: React.FC<Props> = ({ text,link }) => {
   return (
     <Link href={link}>
     <button
-      className="relative inline-flex h-[8vh] max-h-16 min-h-14 w-[300px] mobile:w-full tablet:w-[180px] active:scale-95 transition-all overflow-hidden p-[1px] focus:outline-none"
+      className=" relative inline-flex h-[8vh] max-h-16 min-h-14 w-[300px] mobile:w-full tablet:w-[180px] active:scale-95 transition-all overflow-hidden p-[1px] focus:outline-none"
       aria-label={text} 
     >
      

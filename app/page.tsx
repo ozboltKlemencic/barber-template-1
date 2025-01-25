@@ -1,4 +1,5 @@
 'use client'
+
 import Footer from "@/components/navigation/footer";
 // import Footer from "@/components/Footer2";
 import Intro from "@/components/Intro";
@@ -6,13 +7,46 @@ import { useEffect } from "react";
 import Lenis from 'lenis';
 import Navbar from "@/components/navigation/navbar";
 
-
-
 import Section from "@/components/section";
 import CaroselContainer from "@/components/CaroselContainer";
 import { ThreeDCardDemo } from "@/components/cards/card";
 import SecondaryBtn from "@/components/buttons/Secondary";
-import ShinyText from "@/components/ui/ShinyText";
+import ShinyText from "@/components/text/ShinyText";
+import BgFrombottomToTop from "@/components/text/bgFrombottomToTop";
+import ReviewSection from "@/components/review";
+import { MaskAnimation } from "@/components/text/MaskAnimation";
+import AnimateInViewWrapper from "@/components/animation/fade";
+import TeamCard from "@/components/cards/teamCard";
+
+const haircutData = [
+  {
+    id: 1,
+    url: "/img/haircuts/mid-fade/mid_fade_1.png",
+    title: "Mid fade",
+    link: "#",
+    delay: 0
+  },
+  {
+    id: 2,
+    url: "/img/haircuts/mid-fade/mid_fade_2.png", 
+    title: "Mid fade",
+    link: "#",
+    delay: 0.2
+  },
+  {
+    id: 3,
+    url: "/img/haircuts/burst-fade/burst_fade_1.png",
+    title: "Burst fade", 
+    link: "#",
+    delay: 0.4
+  }
+];
+
+const employees = [
+  { name: "Luka Novak", postion: "Brivec", imgUrl: "/img/employees/employee_1.png" ,cta:"Naroči se pri Luku.",link:"" },
+  { name: "Ana Kovač", postion: "Frizerka", imgUrl: "/img/employees/employee_2.png",cta:"Naroči se pri Luku." ,link:""},
+  { name: "Marko Horvat", postion: "Brivec", imgUrl: "/img/employees/employee_3.png",cta:"Naroči se pri Luku." ,link:""},
+]
 
 export default function Home() {
 
@@ -34,20 +68,90 @@ export default function Home() {
       {/* STORITVE */}
       <div className="w-screen bg-black h-auto  ">
         <div className="h-auto flex flex-col mx-auto max-w-7xl px-4 py-32  gap-y-1">
-          <div className="pb-10 ">
-            <ShinyText text="Storitve" speed={3}/>
+          <div>
+            <AnimateInViewWrapper  className="w-fit">
+              <div className="mb-6 w-fit">
+                  <ShinyText text="Storitve" speed={3}/>
+              </div>
+            </AnimateInViewWrapper>
           </div>
-          <h2 className="text-neutral-50 font-teko font-semibold -mb-16 text-5xl">Poglejte naše frizerske storitve</h2>
+          <div className="-mb-16">
+            <MaskAnimation>
+              <h2 className="text-neutral-50 font-teko font-semibold  text-5xl">
+                Poglejte naše frizerske&nbsp;<BgFrombottomToTop text="storitve"/>
+              </h2>
+            </MaskAnimation>
+          </div>
           <div className="w-full h-auto flex items-center justify-start gap-x-4 ">
-            <ThreeDCardDemo url="/img/haircuts/mid-fade/mid_fade_1.png" title="Mid fade" link="#"/>
-            <ThreeDCardDemo url="/img/haircuts/mid-fade/mid_fade_2.png" title="Mid fade" link="#"/>
-            <ThreeDCardDemo url="/img/haircuts/burst-fade/burst_fade_1.png" title="Burst fade" link="#"/>
+          {haircutData.map((haircut) => (
+              <AnimateInViewWrapper 
+                key={haircut.id} 
+                delay={haircut.delay}
+              >
+                <ThreeDCardDemo 
+                  url={haircut.url} 
+                  title={haircut.title} 
+                  link={haircut.link}
+                />
+              </AnimateInViewWrapper>
+            ))}
           </div>
-          <SecondaryBtn text="Vse storitve" className="-mt-8"/>
+          <AnimateInViewWrapper  className="w-fit">
+            <SecondaryBtn text="Vse storitve" className="-mt-8"/>
+          </AnimateInViewWrapper>
+        </div>
+      </div>
+      
+      {/* REVIEW */}
+      <ReviewSection/>
+
+      {/* TEAM */}
+      <div className="w-screen bg-black h-auto  ">
+        <div className="h-auto flex flex-col mx-auto max-w-7xl px-4 py-32  gap-y-2">
+          
+          <AnimateInViewWrapper  className="w-fit">
+            <div className="mb-6 w-fit">
+                <ShinyText text="Ekipa" speed={3}/>
+            </div>
+          </AnimateInViewWrapper>
+          
+          <div className="mb-8">
+            <MaskAnimation>
+              <h2 className="text-neutral-50 font-teko font-semibold  text-5xl mb-2">
+                Kdo te&nbsp;<BgFrombottomToTop text="striže?"/>
+              </h2>
+            </MaskAnimation>
+            <AnimateInViewWrapper scaleFrom={1} delay={0.2}>
+                <p className='font-montserrat text-md text-neutral-200 max-w-6xl  mobile:w-full'>
+                    Preberite mnenja naših strank. Naše stranke so bistvo vsega, kar počnemo.
+                    Njihovo zadovoljstvo je naš največji uspeh in motivacija za nenehno izboljševanje
+                    naših storitev. Prepričajte se sami, zakaj nam zaupajo številni zadovoljni uporabniki.
+                </p>
+            </AnimateInViewWrapper> 
+          </div>
+
+          <div className="w-full h-auto flex items-start justify-start gap-x-6  min-h-[470px]">
+          {employees.map((employee,index) => (
+              <AnimateInViewWrapper 
+                key={employee.name} 
+                delay={index/10}
+              >
+                <TeamCard 
+                  key={employee.name}
+                  name={employee.name}
+                  postion={employee.postion}
+                  cta={employee.cta}
+                  imgUrl={employee.imgUrl}
+                  link={employee.link}/>
+              </AnimateInViewWrapper>
+            ))}
+          </div>
         </div>
       </div>
 
+
       <Section/>
+      
       <div className="h-screen"></div>
       <div>
         <Intro />

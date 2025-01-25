@@ -2,7 +2,7 @@
 
 import Image from "next/image";
 import React from "react";
-import { CardBody, CardContainer, CardItem } from "../ui/3d-card";
+import { CardBody, CardContainer, CardItem } from "./3d-card";
 import Link from "next/link";
 
 interface Props {
@@ -16,7 +16,7 @@ export function ThreeDCardDemo({link,title,url}:Props) {
     <Link href={link}>
       <CardContainer className="inter-var">
         <CardBody className=" relative group/card  hover:shadow-2xl hover:shadow-yellow-200/[0.1] bg-black border-yellow-200/[0.2]  w-auto sm:w-[25rem]  h-auto p-1 border  ">
-          <CardItem translateZ="10" className="w-full opacity-80 hover:opacity-100">
+          <CardItem translateZ="20" className="w-full opacity-80 hover:opacity-100">
             <Image
               src={url}
               height="1000"
@@ -25,7 +25,7 @@ export function ThreeDCardDemo({link,title,url}:Props) {
               alt="thumbnail"
             />
           </CardItem>
-          <div className="absolute bottom-2 left-2 right-2 flex justify-between items-center">
+          <div className="absolute bottom-2 left-2 right-2 flex justify-between items-center pointer-events-none">
             <CardItem
               translateZ={20}
               as="button"

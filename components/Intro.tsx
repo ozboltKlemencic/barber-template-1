@@ -1,5 +1,5 @@
 import React from 'react'
-import Content from './navigation/content';
+import Content from './content';
 
 export default function Footer() {
   return (

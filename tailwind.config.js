@@ -20,6 +20,11 @@ module.exports = {
         montserrat: ["var(--font-montserrat)", "sans-serif"],
         teko: ["var(--font-teko)", "sans-serif"],
 		},
+    backgroundImage: {
+       
+        'yellow-circle':'radial-gradient(circle at 0% 50%, rgba(156, 129, 65, 0.5) 0%, rgba(0, 0, 0, 0.7) 50%, #000000 55%)',
+        'mob-yellow-circle':'radial-gradient(circle at 32% 42%, rgba(156, 129, 65, 0.5) 0%, rgba(0, 0, 0, 0.7) 50%, #000000 85%)'
+      },
     },
   },
   plugins: [],

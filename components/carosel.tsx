@@ -105,16 +105,22 @@ const Carousel: React.FC = () => {
               />
               <div className="absolute inset-0  flex items-center  justify-center">
                 <div className="text-center text-white max-w-7xl w-[1200px] flex flex-col justify-start items-start gap-y-6">
-                    <p className="text-xl font-montserrat -translate-y-8 opacity-0 -mb-2 transition-all duration-700 delay-100 [.swiper-slide-active_&]:translate-y-0 [.swiper-slide-active_&]:opacity-100">
-                      {slide.description}
-                    </p>
-                    <h2 className="text-5xl  font-semibold font-teko  -translate-y-8 opacity-0 transition-all duration-700 delay-200 [.swiper-slide-active_&]:translate-y-0 [.swiper-slide-active_&]:opacity-100">
-                        {slide.title}
-                    </h2>
-                    <div
-                      className=" -translate-y-8 opacity-0 transition-all duration-700 delay-300 [.swiper-slide-active_&]:translate-y-0 [.swiper-slide-active_&]:opacity-100"
-                    >
-                      <Primary text="Naroči se" link="#" />
+                    <div className="overflow-hidden">
+                      <p className="text-xl font-montserrat translate-y-8 opacity-0  transition-all duration-700 delay-100 [.swiper-slide-active_&]:translate-y-0 [.swiper-slide-active_&]:opacity-100">
+                        {slide.description}
+                      </p>
+                    </div>
+                    <div className="overflow-hidden">
+                      <h2 className="text-5xl  font-semibold font-teko  translate-y-8 opacity-0 transition-all duration-700 delay-200 [.swiper-slide-active_&]:translate-y-0 [.swiper-slide-active_&]:opacity-100">
+                          {slide.title}
+                      </h2>
+                    </div>
+                    <div className="overflow-hidden">
+                      <div
+                        className=" translate-y-8 opacity-0 transition-all duration-700 delay-300 [.swiper-slide-active_&]:translate-y-0 [.swiper-slide-active_&]:opacity-100"
+                      >
+                        <Primary text="Naroči se" link="#" />
+                      </div>
                     </div>
                 </div>
               </div>
