@@ -75,14 +75,14 @@ export default function Home() {
               </div>
             </AnimateInViewWrapper>
           </div>
-          <div className="-mb-16">
+          <div className="mb-4">
             <MaskAnimation>
               <h2 className="text-neutral-50 font-teko font-semibold  text-5xl">
                 Poglejte naše frizerske&nbsp;<BgFrombottomToTop text="storitve"/>
               </h2>
             </MaskAnimation>
           </div>
-          <div className="w-full h-auto flex flex-col md:flex-row items-center  justify-start gap-x-4 ">
+          <div className="w-full h-auto flex flex-col md:flex-row items-center  justify-start gap-x-6 gap-y-6 ">
           {haircutData.map((haircut) => (
               <AnimateInViewWrapper 
                 key={haircut.id} 
@@ -97,7 +97,7 @@ export default function Home() {
             ))}
           </div>
           <AnimateInViewWrapper  className="w-fit">
-            <SecondaryBtn text="Vse storitve" className="-mt-8"/>
+            <SecondaryBtn text="Vse storitve" className="mt-6"/>
           </AnimateInViewWrapper>
         </div>
       </div>
@@ -130,7 +130,7 @@ export default function Home() {
             </AnimateInViewWrapper> 
           </div>
 
-          <div className="w-full h-auto flex flex-col md:flex-row items-start justify-start gap-x-6  min-h-[470px]">
+          <div className="w-full h-auto flex flex-col md:flex-row items-start justify-start gap-x-6 gap-y-6 min-h-[470px]">
           {employees.map((employee,index) => (
               <AnimateInViewWrapper 
                 key={employee.name} 

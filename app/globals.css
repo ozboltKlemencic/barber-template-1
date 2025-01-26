@@ -13,6 +13,8 @@ body {
   -webkit-background-clip: text;
   -webkit-text-stroke: 8px transparent;
 }
+
+
 *{
   box-sizing: border-box;
   padding: 0;

@@ -98,12 +98,12 @@ const ReviewSection = ({
 
 }) => {
   return ( 
-    <div className="relative w-full flex flex-col md:flex-row"> 
-        <div className="w-full flex flex-col md:flex-row">
+    <div className="relative w-screen flex flex-col md:flex-row"> 
+        <div className="w-creen flex flex-col md:flex-row ">
             {/* Text Container */}
             
             <div className="w-full md:w-1/2 md:h-screen px-4 md:px-16 py-12 md:sticky md:top-0 flex items-center justify-center bg-yellow-circle mobile:bg-mob-yellow-circle">
-                <div className="w-full max-w-xl flex flex-col gap-y-4 text-center md:text-left">
+                <div className="w-full max-w-xl flex flex-col gap-y-4  text-center md:text-left">
                     <MaskAnimation>
                         <h3 className="font-montserrat text-md text-neutral-200">Mnenja strank</h3>
                     </MaskAnimation>
@@ -124,14 +124,14 @@ const ReviewSection = ({
                             naših storitev. Prepričajte se sami, zakaj nam zaupajo številni zadovoljni uporabniki.
                         </p>
                     </AnimateInViewWrapper> 
-                    <div className='absolute top-0 right-[-100%] mobile:hidden  w-full h-1/4 z-50 bg-gradient-to-b from-black to-transparent'></div>
-                    <div className='absolute bottom-0 right-[-100%] mobile:hidden  w-full h-1/4 z-50 bg-gradient-to-t from-black to-transparent'></div>
+                    <div className='absolute  top-0 right-0 md:right-[-100%] mobile:hidden  w-full h-32 md:h-1/3 z-50 bg-gradient-to-b from-black to-transparent'></div>
+                    <div className='absolute bottom-0 right-0 md:right-[-100%] mobile:hidden  w-full h-32 md:h-1/3 z-50 bg-gradient-to-t from-black to-transparent'></div>
                 </div>
             </div>
 
             {/* Reviews Container */}
-            <div className="w-full  md:w-1/2 px-4 md:px-16 py-8 flex flex-col md:flex-row gap-4">
-                <div className="w-full md:w-1/2 flex flex-col gap-4 md:mt-20">
+            <div className="w-full  md:w-1/2   md:px-16 py-8 flex  items-center justify-center flex-col md:flex-row gap-4">
+                <div className="w-full md:w-1/2 flex flex-col items-center justify-center gap-4 md:mt-20">
                     {REVIEWS.filter((review) => Number(review.id) <= 5).map((review) => (
                         <AnimateInViewWrapper key={review.id} scaleFrom={1}>
                             <ReviewCard profilImgUrl={review.profileImageUrl} {...review} />
@@ -146,8 +146,6 @@ const ReviewSection = ({
                         </AnimateInViewWrapper>
                     ))}
                 </div>
-
-                
             </div>
             
         </div>

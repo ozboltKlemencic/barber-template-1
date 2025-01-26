@@ -119,7 +119,7 @@ const Carousel: React.FC = () => {
                       <div
                         className=" translate-y-8 w-full opacity-0 transition-all duration-700 delay-300 [.swiper-slide-active_&]:translate-y-0 [.swiper-slide-active_&]:opacity-100"
                       >
-                        <Primary text="Naroči se" link="#" w="300px" />
+                        <Primary text="Naroči se" link="#" w="300px" h="60px"/>
                       </div>
                     </div>
                 </div>

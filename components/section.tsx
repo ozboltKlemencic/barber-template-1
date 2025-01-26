@@ -20,14 +20,14 @@ export default function Contact() {
     return (
         <div
             ref={container} 
-            className='relative flex items-center justify-center h-[70vh] overflow-hidden'
+            className='relative flex items-center justify-center  h-[1100px] md:h-[70vh] overflow-hidden'
             style={{clipPath: "polygon(0% 0, 100% 0%, 100% 100%, 0 100%)"}}
         >   
             <div className='absolute top-0 left-0 right-0 z-50  h-full flex justify-center items-center py-20'>
-                <div className='max-w-7xl flex justify-center items-start gap-x-6'>
+                <div className='max-w-7xl flex justify-center flex-col md:flex-row items-start gap-x-6 gap-y-16'>
 
                     
-                    <div className=' w-auto max-w-[50%] h-auto flex items-start justify-center flex-col gap-y-2 '>
+                    <div className=' w-auto max-w-full md:max-w-[50%] h-auto mx-4 flex items-center  md:items-start justify-center flex-col gap-y-2 '>
                         <MaskAnimation>
                             <h3 className='font-montserrat text-md text-neutral-200'>Mnenja strank</h3>
                         </MaskAnimation>
@@ -38,7 +38,7 @@ export default function Contact() {
                             </h2>
                         </MaskAnimation>
                         <AnimateInViewWrapper scaleFrom={1} delay={0.2}>
-                            <p className='font-montserrat text-md text-neutral-200 w-4/5 mobile:w-full mb-4'>
+                            <p className='font-montserrat text-md text-neutral-200 text-center md:text-left w-full mb-4'>
                                 Preberite mnenja naših strank. Naše stranke so bistvo vsega, kar počnemo.
                                 Njihovo zadovoljstvo je naš največji uspeh in motivacija za nenehno izboljševanje
                                 naših storitev. Prepričajte se sami, zakaj nam zaupajo številni zadovoljni uporabniki.
@@ -49,7 +49,7 @@ export default function Contact() {
                         </MaskAnimation>
                     </div>
                   
-                    <div className='w-auto h-auto '>
+                    <div className='w-auto h-auto mx-4'>
                         <AnimateInViewWrapper >
                             <ContactInfo/>
                         </AnimateInViewWrapper>

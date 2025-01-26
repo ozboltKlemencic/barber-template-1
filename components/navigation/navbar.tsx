@@ -107,7 +107,8 @@ export default function Navbar() {
           </nav>
         </div>
       </header>
-      <div className={`${isMobileMenuOpen ? " -translate-x-0": "translate-x-full "} z-30 fixed px-4 pb-8 top-0 flex flex-col justify-between  h-[100dvh] pt-24 bg-black duration-300 transition-all  w-screen translate-x-full`} >
+
+      <div className={`${isMobileMenuOpen ? "translate-x-0": "translate-x-full "}  fixed px-4 pb-8 top-0 flex flex-col justify-between  h-[100dvh] pt-24 bg-black duration-300 transition-all  w-screen translate-x-full z-[100]`} >
         <div>
           {navItems.map((item) => (
             <Link
@@ -124,8 +125,8 @@ export default function Navbar() {
             </Link>
           ))}
         </div>
-        <div className="flex flex-col gap-y-2">
-          <Primary text="Naroči se" link=""/>
+        <div className="flex flex-col gap-y-2 ">
+          <Primary text="Naroči se" link="" w="100%"/>
           <div className="flex justify-center items-center gap-x-1">
                   <SocialBtn Icon={IoLogoTiktok} link=""/>
                   <SocialBtn Icon={CgInstagram} link=""/>
