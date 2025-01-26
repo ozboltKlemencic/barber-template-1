@@ -95,9 +95,16 @@ interface Review {
   
 
 const ReviewSection = ({
+  
 
 }) => {
+  const [showAll, setShowAll] = React.useState(false);
+
+  const toggleHeight = () => {
+    setShowAll(!showAll);
+  };
   return ( 
+    <>
     <div className="relative w-screen flex flex-col md:flex-row"> 
         <div className="w-creen flex flex-col md:flex-row ">
             {/* Text Container */}
@@ -130,7 +137,7 @@ const ReviewSection = ({
             </div>
 
             {/* Reviews Container */}
-            <div className="w-full  md:w-1/2   md:px-16 py-8 flex  items-center justify-center flex-col md:flex-row gap-4">
+            <div className={`w-full  md:w-1/2 md:h-auto ${showAll ? 'h-auto' : 'h-[93vh]'}   overflow-hidden  md:px-16 py-8 flex  items-center md:justify-center justify-start flex-col md:flex-row gap-4`}>
                 <div className="w-full md:w-1/2 flex flex-col items-center justify-center gap-4 md:mt-20">
                     {REVIEWS.filter((review) => Number(review.id) <= 5).map((review) => (
                         <AnimateInViewWrapper key={review.id} scaleFrom={1}>
@@ -146,10 +153,23 @@ const ReviewSection = ({
                         </AnimateInViewWrapper>
                     ))}
                 </div>
+                
             </div>
             
         </div>
+        
     </div>
+    <div className='md:hidden  w-full flex justify-center items-center mt-12 '>
+      <AnimateInViewWrapper>
+      <button 
+          onClick={toggleHeight} 
+          className={`text-neutral-400 px-4 bg-gradient from-neutral-800 to-neutral-950 border border-yellow-200/[0.2] py-2 ${showAll ? "hidden" : "block"}`}
+      >
+        Poglej več
+      </button>
+      </AnimateInViewWrapper>
+    </div>
+    </>
 );
 };
 

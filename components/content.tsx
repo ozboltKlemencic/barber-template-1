@@ -9,7 +9,7 @@ export default function Content() {
   return (
     <footer className="bg-black flex items-center justify-center h-full w-full text-white py-12 px-4">
       <div className="container mx-auto max-w-5xl">
-        <div className="grid grid-cols-2 md:grid-cols-4 gap-8 text-sm sm:text-base">
+        <div className="grid grid-cols-2 md:grid-cols-4 gap-[35px] gap-y-24 text-sm sm:text-base">
           {/* Logo and Social Section */}
           <div className="flex  flex-col items-start gap-6">
             <Image

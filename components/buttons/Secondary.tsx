@@ -20,7 +20,7 @@ const SecondaryBtn: React.FC<ShadowBtnProps> = ({ className = '', text }) => {
         className="relative flex items-center justify-center w-full h-full bg-black text-white font-bold border border-[#c8b47c] rounded-sm cursor-pointer overflow-hidden transition-all duration-300 ease-linear group hover:translate-x-[-4px] hover:translate-y-[-4px] active:translate-x-[2px] active:translate-y-[2px] z-10"
       >
         {/* Button text */}
-        <span className="z-10 text-lg mobile:text-xl font-montserrat font-normal tracking-wider font-montserrat">
+        <span className="z-10 text-lg mobile:text-xl font-montserrat font-normal tracking-wider ">
           {text}
         </span>
 

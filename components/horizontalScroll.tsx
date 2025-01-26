@@ -1,6 +1,8 @@
 import { motion, useTransform, useScroll } from "framer-motion";
 import { useRef } from "react";
 import AnimateInViewWrapper from "@/components/animation/fade";
+import CtaIcon from "./CtaIcon";
+import SecondaryBtn from "./buttons/Secondary";
 
 const Example = () => {
   return (
@@ -29,19 +31,23 @@ const HorizontalScrollCarousel = () => {
         </div>
 
         <motion.div style={{ x }} className="flex gap-4">
-          {cards.map((card) => {
-            return <AnimateInViewWrapper scaleFrom={1} key={card.id}>
+          {cards.map((card,index) => {
+            return <AnimateInViewWrapper scaleFrom={1} delay={index/10} key={card.id}>
               <Card card={card}  /></AnimateInViewWrapper> ;
           })}
           <AnimateInViewWrapper>
-            <div className="relative h-[450px] w-[450px] bg-neutral-900">
-            <h6 className="text-emerald-50">Najdete nas na </h6>
+            <div className="relative h-[450px] w-[450px] items-center justify-center flex ">
+              <div className="flex items-center justify-center flex-col gap-y-3">
+                <h6 className="text-emerald-50 text-4xl font-teko">Najdete nas na </h6>
+                <CtaIcon/>
+              </div>
             </div>
           </AnimateInViewWrapper>
-     
         </motion.div>
-
-      </div>
+        <div className="absolute bottom-12 left-0 w-screen flex items-center justify-center gradient-text-stroke font-teko text-[22vw] md:text-[300px] text-black -tracking-tighter  md:font-semibold font-normal my-4" >
+          <SecondaryBtn text="Sledi nam"/>
+        </div>
+        </div>
     </section>
   );
 };
@@ -60,10 +66,12 @@ const Card = ({ card }: { card: CardType }) => {
         }}
         className="absolute inset-0 z-0 transition-transform duration-300 group-hover:scale-110"
       ></div>
-      <div className="absolute inset-0 z-10 grid place-content-center">
-        <p className="bg-gradient-to-br from-white/20 to-white/0 p-8 text-6xl font-black uppercase text-white backdrop-blur-lg">
-          {card.title}
-        </p>
+      <div className="absolute inset-0 z-10  flex items-center justify-center">
+        <div className="bg-gradient-to-br from-black/[0.2] to-black/[0.05] flex items-center justify-center w-full h-full translate-y-full duration-300 transition-all group-hover:translate-y-0  backdrop-blur-lg">
+          <p className=" p-8 text-6xl font-black uppercase text-white ">
+            {card.title}
+          </p>
+        </div>
       </div>
     </div>
   );
