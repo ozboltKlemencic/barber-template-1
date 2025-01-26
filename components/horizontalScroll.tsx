@@ -1,15 +1,12 @@
 import { motion, useTransform, useScroll } from "framer-motion";
 import { useRef } from "react";
+import AnimateInViewWrapper from "@/components/animation/fade";
 
 const Example = () => {
   return (
-    <div className="bg-neutral-800">
-      <div className="flex  items-center justify-center">
-        
-      </div>
-      <HorizontalScrollCarousel />
-      <div className="flex  items-center justify-center">
-        
+    <div className="h-fit ">
+      <div className="z-20">
+        <HorizontalScrollCarousel />
       </div>
     </div>
   );
@@ -24,13 +21,26 @@ const HorizontalScrollCarousel = () => {
   const x = useTransform(scrollYProgress, [0, 1], ["1%", "-95%"]);
 
   return (
-    <section ref={targetRef} className="relative h-[300vh] bg-neutral-900">
+    <section ref={targetRef} className="relative h-[300vh] z-[10] bg-neutral-950">
       <div className="sticky top-0 flex h-screen items-center overflow-hidden">
+        
+        <div className="absolute top-0 left-0 w-screen flex items-center justify-center gradient-text-stroke font-teko mobile:text-[22vw] text-[300px] text-black -tracking-tighter  font-semibold mobile:font-normal " >
+          Instagram
+        </div>
+
         <motion.div style={{ x }} className="flex gap-4">
           {cards.map((card) => {
-            return <Card card={card} key={card.id} />;
+            return <AnimateInViewWrapper scaleFrom={1} key={card.id}>
+              <Card card={card}  /></AnimateInViewWrapper> ;
           })}
+          <AnimateInViewWrapper>
+            <div className="relative h-[450px] w-[450px] bg-neutral-900">
+            <h6 className="text-emerald-50">Najdete nas na </h6>
+            </div>
+          </AnimateInViewWrapper>
+     
         </motion.div>
+
       </div>
     </section>
   );
@@ -40,7 +50,7 @@ const Card = ({ card }: { card: CardType }) => {
   return (
     <div
       key={card.id}
-      className="group relative h-[450px] w-[450px] overflow-hidden bg-neutral-200"
+      className="group relative h-[450px] w-[450px] overflow-hidden "
     >
       <div
         style={{
@@ -69,37 +79,37 @@ type CardType = {
 
 const cards: CardType[] = [
   {
-    url: "/imgs/abstract/1.jpg",
+    url: "/img/hero-carosel/banner_1.png",
     title: "Title 1",
     id: 1,
   },
   {
-    url: "/imgs/abstract/2.jpg",
+    url: "/img/hero-carosel/banner_1.png",
     title: "Title 2",
     id: 2,
   },
   {
-    url: "/imgs/abstract/3.jpg",
+    url: "/img/hero-carosel/banner_1.png",
     title: "Title 3",
     id: 3,
   },
   {
-    url: "/imgs/abstract/4.jpg",
+    url: "/img/hero-carosel/banner_1.png",
     title: "Title 4",
     id: 4,
   },
   {
-    url: "/imgs/abstract/5.jpg",
+    url: "/img/hero-carosel/banner_1.png",
     title: "Title 5",
     id: 5,
   },
   {
-    url: "/imgs/abstract/6.jpg",
+    url: "/img/hero-carosel/banner_1.png",
     title: "Title 6",
     id: 6,
   },
   {
-    url: "/imgs/abstract/7.jpg",
+    url: "/img/hero-carosel/banner_1.png",
     title: "Title 7",
     id: 7,
   },

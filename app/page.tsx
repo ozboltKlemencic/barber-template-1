@@ -2,7 +2,6 @@
 
 import Footer from "@/components/navigation/footer";
 // import Footer from "@/components/Footer2";
-import Intro from "@/components/Intro";
 import { useEffect } from "react";
 import Lenis from 'lenis';
 import Navbar from "@/components/navigation/navbar";
@@ -83,7 +82,7 @@ export default function Home() {
               </h2>
             </MaskAnimation>
           </div>
-          <div className="w-full h-auto flex items-center justify-start gap-x-4 ">
+          <div className="w-full h-auto flex flex-col md:flex-row items-center  justify-start gap-x-4 ">
           {haircutData.map((haircut) => (
               <AnimateInViewWrapper 
                 key={haircut.id} 
@@ -131,7 +130,7 @@ export default function Home() {
             </AnimateInViewWrapper> 
           </div>
 
-          <div className="w-full h-auto flex items-start justify-start gap-x-6  min-h-[470px]">
+          <div className="w-full h-auto flex flex-col md:flex-row items-start justify-start gap-x-6  min-h-[470px]">
           {employees.map((employee,index) => (
               <AnimateInViewWrapper 
                 key={employee.name} 

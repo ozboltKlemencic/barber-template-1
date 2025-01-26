@@ -21,7 +21,7 @@ module.exports = {
         teko: ["var(--font-teko)", "sans-serif"],
 		},
     backgroundImage: {
-       
+        'gradient-text': 'linear-gradient(-45deg, #833AB4, #FD1D1D, #F56040)',
         'yellow-circle':'radial-gradient(circle at 0% 50%, rgba(156, 129, 65, 0.5) 0%, rgba(0, 0, 0, 0.7) 50%, #000000 55%)',
         'mob-yellow-circle':'radial-gradient(circle at 32% 42%, rgba(156, 129, 65, 0.5) 0%, rgba(0, 0, 0, 0.7) 50%, #000000 85%)'
       },

@@ -7,7 +7,12 @@ body {
   background-color: black;
 }
 
-
+.gradient-text-stroke {
+  text-transform: capitalize;
+  background: linear-gradient(to right, #833ab4, #fd1d1d, #fcb045);
+  -webkit-background-clip: text;
+  -webkit-text-stroke: 8px transparent;
+}
 *{
   box-sizing: border-box;
   padding: 0;

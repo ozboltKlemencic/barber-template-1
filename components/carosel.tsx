@@ -104,22 +104,22 @@ const Carousel: React.FC = () => {
                 className="transition-transform duration-[1500] ease-out transform "
               />
               <div className="absolute inset-0  flex items-center  justify-center">
-                <div className="text-center text-white max-w-7xl w-[1200px] flex flex-col justify-start items-start gap-y-6">
+                <div className="text-center text-white max-w-7xl w-[92vw] md:w-[1200px] bg-black/[0.4] md:bg-transparent md:backdrop-blur-none backdrop-blur-md px-4 py-4 flex flex-col md:justify-start justify-center md:items-start items-center gap-y-3 md:gap-y-6">
                     <div className="overflow-hidden">
-                      <p className="text-xl font-montserrat translate-y-8 opacity-0  transition-all duration-700 delay-100 [.swiper-slide-active_&]:translate-y-0 [.swiper-slide-active_&]:opacity-100">
+                      <p className="text-sm md:text-xl font-montserrat translate-y-8 opacity-0  transition-all duration-700 delay-100 [.swiper-slide-active_&]:translate-y-0 [.swiper-slide-active_&]:opacity-100">
                         {slide.description}
                       </p>
                     </div>
                     <div className="overflow-hidden">
-                      <h2 className="text-5xl  font-semibold font-teko  translate-y-8 opacity-0 transition-all duration-700 delay-200 [.swiper-slide-active_&]:translate-y-0 [.swiper-slide-active_&]:opacity-100">
+                      <h2 className="text-4xl md:text-5xl  font-semibold font-teko  translate-y-8 opacity-0 transition-all duration-700 delay-200 [.swiper-slide-active_&]:translate-y-0 [.swiper-slide-active_&]:opacity-100">
                           {slide.title}
                       </h2>
                     </div>
-                    <div className="overflow-hidden">
+                    <div className="overflow-hidden w-full md:w-fit">
                       <div
-                        className=" translate-y-8 opacity-0 transition-all duration-700 delay-300 [.swiper-slide-active_&]:translate-y-0 [.swiper-slide-active_&]:opacity-100"
+                        className=" translate-y-8 w-full opacity-0 transition-all duration-700 delay-300 [.swiper-slide-active_&]:translate-y-0 [.swiper-slide-active_&]:opacity-100"
                       >
-                        <Primary text="Naroči se" link="#" />
+                        <Primary text="Naroči se" link="#" w="300px" />
                       </div>
                     </div>
                 </div>
