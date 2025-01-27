@@ -24,21 +24,21 @@ const haircutData = [
     id: 1,
     url: "/img/haircuts/mid-fade/mid_fade_1.png",
     title: "Mid fade",
-    link: "#",
+    link: ROUTES.STORITVE,
     delay: 0
   },
   {
     id: 2,
     url: "/img/haircuts/mid-fade/mid_fade_2.png", 
     title: "Mid fade",
-    link: "#",
+    link: ROUTES.STORITVE,
     delay: 0.2
   },
   {
     id: 3,
     url: "/img/haircuts/burst-fade/burst_fade_1.png",
     title: "Burst fade", 
-    link: "#",
+    link: ROUTES.STORITVE,
     delay: 0.4
   }
 ];
