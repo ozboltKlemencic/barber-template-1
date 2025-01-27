@@ -28,13 +28,13 @@ export default function ContactInfo() {
           <Clock className="w-6 h-6 text-yellow-300 flex-shrink-0 mt-1  transition-transform duration-300" />
           <div className="text-white">
             <div className="text-lg font-light">Pon - pet</div>
-            <div className="text-[#FFD700]/70 mt-1 text-lg font-light">9:00 - 20:00</div>
+            <div className="text-yellow-300/70 mt-1 text-lg font-light">9:00 - 20:00</div>
           </div>
         </div>
       </div>
 
       {/* Subtle gradient overlay */}
-      <div className="absolute inset-0 bg-gradient-to-br from-[#FFD700]/5 to-transparent pointer-events-none" />
+      <div className="absolute inset-0 bg-gradient-to-br from-yellow-300/5 to-transparent pointer-events-none" />
     </div>
   )
 }
