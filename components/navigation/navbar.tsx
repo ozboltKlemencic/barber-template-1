@@ -167,7 +167,7 @@ export default function Navbar() {
                 href={item.href}
                 target={item.href === ROUTES.NAROCANJE ? "_blank" : undefined}
                 className={cn(
-                  "block text-xl font-montserrat py-2",
+                  "block text-xl font-semibold font-montserrat py-1",
                   pathname === item.href
                     ? "text-neutral-50"
                     : "text-neutral-50 hover:text-white"
