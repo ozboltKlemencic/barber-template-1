@@ -3,6 +3,9 @@ import { useRef } from "react";
 import AnimateInViewWrapper from "@/components/animation/fade";
 import CtaIcon from "./CtaIcon";
 import SecondaryBtn from "./buttons/Secondary";
+import { CgInstagram } from "react-icons/cg";
+import Link from "next/link";
+import { info } from "@/constants/info";
 
 const Example = () => {
   return (
@@ -45,7 +48,7 @@ const HorizontalScrollCarousel = () => {
           </AnimateInViewWrapper>
         </motion.div>
         <div className="absolute bottom-12 left-0 w-screen flex items-center justify-center gradient-text-stroke font-teko text-[22vw] md:text-[300px] text-black -tracking-tighter  md:font-semibold font-normal my-4" >
-          <SecondaryBtn text="Sledi nam"/>
+          <SecondaryBtn text="Sledi nam" link={info.instagramLink}/>
         </div>
         </div>
     </section>
@@ -54,7 +57,8 @@ const HorizontalScrollCarousel = () => {
 
 const Card = ({ card }: { card: CardType }) => {
   return (
-    <div
+    <Link href={card.link} target="_blank">
+    `<div
       key={card.id}
       className="group relative h-[450px] w-[450px] overflow-hidden "
     >
@@ -68,12 +72,14 @@ const Card = ({ card }: { card: CardType }) => {
       ></div>
       <div className="absolute inset-0 z-10  flex items-center justify-center">
         <div className="bg-gradient-to-br from-black/[0.2] to-black/[0.05] flex items-center justify-center w-full h-full translate-y-full duration-300 transition-all group-hover:translate-y-0  backdrop-blur-lg">
-          <p className=" p-8 text-6xl font-black uppercase text-white ">
+          <span className=" p-8 text-xl gap-x-2 font-semibold uppercase text-white flex items-center justify-center">
+            <CgInstagram/>
             {card.title}
-          </p>
+          </span>
         </div>
       </div>
-    </div>
+    </div>`
+    </Link>
   );
 };
 
@@ -83,42 +89,50 @@ type CardType = {
   url: string;
   title: string;
   id: number;
+  link:string;
 };
 
 const cards: CardType[] = [
   {
     url: "/img/hero-carosel/banner_1.png",
-    title: "Title 1",
+    title: info.instagramLabel,
     id: 1,
+    link: info.instagramLink,
   },
   {
     url: "/img/hero-carosel/banner_1.png",
-    title: "Title 2",
+    title: info.instagramLabel,
     id: 2,
+    link: info.instagramLink,
   },
   {
     url: "/img/hero-carosel/banner_1.png",
-    title: "Title 3",
+    title: info.instagramLabel,
     id: 3,
+    link: info.instagramLink,
   },
   {
     url: "/img/hero-carosel/banner_1.png",
-    title: "Title 4",
+    title: info.instagramLabel,
     id: 4,
+    link: info.instagramLink,
   },
   {
     url: "/img/hero-carosel/banner_1.png",
-    title: "Title 5",
+    title: info.instagramLabel,
     id: 5,
+    link: info.instagramLink,
   },
   {
     url: "/img/hero-carosel/banner_1.png",
-    title: "Title 6",
+    title: info.instagramLabel,
     id: 6,
+    link: info.instagramLink,
   },
   {
     url: "/img/hero-carosel/banner_1.png",
-    title: "Title 7",
+    title: info.instagramLabel,
     id: 7,
+    link: info.instagramLink,
   },
 ];

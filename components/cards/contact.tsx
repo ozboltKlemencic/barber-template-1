@@ -1,4 +1,6 @@
+import { info } from "@/constants/info"
 import { MapPin, Phone, Clock } from "lucide-react"
+import Link from "next/link"
 
 export default function ContactInfo() {
   return (
@@ -12,15 +14,15 @@ export default function ContactInfo() {
       <h2 className="text-4xl font-teko text-white mb-10 tracking-wide">Kontakt</h2>
 
       <div className="space-y-8">
-        <div className="flex items-start gap-5 group">
+        <Link href={info.lokacijaLink} className="flex items-start gap-5 group">
           <MapPin className="w-6 h-6 text-[#FFD700] flex-shrink-0 mt-1 group-hover:scale-110 transition-transform duration-300" />
           <span className="text-white text-lg font-light">Cesta talcev 3b, 4220 Škofja Loka</span>
-        </div>
+        </Link>
 
-        <div className="flex items-center gap-5 group">
+        <Link href={info.telefonLink} className="flex items-center gap-5 group">
           <Phone className="w-6 h-6 text-[#FFD700] group-hover:scale-110 transition-transform duration-300" />
           <span className="text-white text-lg font-light">041 590 192</span>
-        </div>
+        </Link>
 
         <div className="flex items-start gap-5 group">
           <Clock className="w-6 h-6 text-[#FFD700] flex-shrink-0 mt-1 group-hover:scale-110 transition-transform duration-300" />

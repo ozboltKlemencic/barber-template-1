@@ -1,9 +1,9 @@
 const ROUTES = {
     DOMOV: "/",
     GALERIJA: "/galerija",
-    KONTAKT: "/kontakr",
+    KONTAKT: "/kontakt",
     STORITVE: "/storitve",
-    NAROCANJE: "/naročanje",
+    NAROCANJE: "https://blackout-barber.si/brivnica-blackout",
     EKIPA:"/ekipa"
   };
   

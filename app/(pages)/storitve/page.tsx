@@ -1,12 +1,14 @@
 'use client'
 
+import Navbar from "@/components/navigation/navbar"
+
 
 
 export default function Home() {
  
   return(
-    <div className="bg-black">
-      
+    <div>
+      <Navbar/>
     </div>
   )
 }

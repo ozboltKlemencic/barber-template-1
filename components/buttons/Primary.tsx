@@ -2,15 +2,17 @@ import Link from 'next/link';
 import React from 'react';
 
 
+
 interface Props {
   text: string;
   link:string;
   h?:string;
   w?:string;
+  Icon?: React.ReactNode,
 }
 
 
-const Primary: React.FC<Props> = ({ text,link,w="300px",h="64px" }) => {
+const Primary: React.FC<Props> = ({ text,link,w="300px",h="64px",Icon }) => {
   return (
     <Link href={link}>
       <button
@@ -22,8 +24,11 @@ const Primary: React.FC<Props> = ({ text,link,w="300px",h="64px" }) => {
         <span className="absolute inset-[-1000%] animate-[spin_3s_linear_infinite] bg-[conic-gradient(from_90deg_at_50%_50%,#ffec8a_0%,#ffd500_50%,#968738_100%)]"></span>
         
         
-        <span className="inline-flex relative h-full w-full text-xl tablet:text-base font-medium text-white md:text-lg cursor-pointer items-center justify-center bg-neutral-950 z-10 transition-all duration-[600ms] hover:bg-black group/gumb backdrop-blur-3xl gap-2 font-montserrat">
+        <span className="inline-flex relative h-full w-full text-xl tablet:text-base font-medium text-white  cursor-pointer items-center justify-center bg-neutral-950 z-10 transition-all duration-[600ms] hover:bg-black group/gumb backdrop-blur-3xl gap-2 font-montserrat gap-x-3">
           {text}
+          <span className={`${Icon ? "size-4" :"size-0"}flex items-center justify-center text-white font-light]`} >
+            {Icon}
+          </span>
           <div className="absolute inset-0 w-[50%] h-full bg-gradient-to-r from-transparent via-white/20 to-transparent translate-x-[-200%] transition-all duration-[500ms] ease-linear z-0 group-hover/gumb:translate-x-[200%]"></div>
         </span>
       </button>

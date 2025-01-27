@@ -4,7 +4,7 @@ import { useRef } from 'react';
 import Carousel from './carosel';
 
 export default function CaroselContainer() {
-    const container = useRef();
+    const container = useRef<HTMLDivElement>(null);
     const { scrollYProgress } = useScroll({
       target: container,
       offset: ['start start', 'end start']

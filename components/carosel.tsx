@@ -7,15 +7,21 @@ import type { Swiper as SwiperType } from "swiper"
 import Image from "next/image"
 import "swiper/css"
 import "swiper/css/effect-creative"
+import { RxScissors } from "react-icons/rx";
+import { LuMapPin } from "react-icons/lu";
 
 import { IoIosArrowBack, IoIosArrowForward } from "react-icons/io"
 import Primary from "@/components/buttons/Primary"
+import ROUTES from "@/constants/routes"
+import { info } from "@/constants/info"
 
 interface Slide {
   id: number
   title: string
   description: string
   image: string
+  Icon: React.ReactNode
+  link:string
 }
 
 const slides: Slide[] = [
@@ -24,18 +30,24 @@ const slides: Slide[] = [
     title: "Hude frizure vsak dan",
     description: "Rezervirajte svoj termin",
     image: "/img/hero-carosel/banner_1.png",
+    Icon: <RxScissors/>,
+    link: ROUTES.NAROCANJE,
   },
   {
     id: 2,
     title: "Kako priti do nas?",
-    description: "Cesta talcev 3C, 4220 Škofja Loka",
+    description: info.lokacija,
     image: "/img/hero-carosel/banner_2.png",
+    Icon: <LuMapPin/>,
+    link: info.lokacijaLink,
   },
   {
     id: 3,
     title: "Vrhunski brivski mojstri za vas",
     description: "Preobrazbe, striženje, britje, nega.",
     image: "/img/hero-carosel/banner_1.png",
+    Icon: <RxScissors/>,
+    link: ROUTES.NAROCANJE,
   },
 ]
 
@@ -90,7 +102,7 @@ const Carousel: React.FC = () => {
         onSwiper={(swiper) => {
           swiperRef.current = swiper
         }}
-        className="h-[90vh] mt-12"
+        className="h-[calc(100dvh_-48px)] md:h-[90vh] mt-12"
       >
         {slides.map((slide) => (
           <SwiperSlide key={slide.id}>
@@ -119,7 +131,7 @@ const Carousel: React.FC = () => {
                       <div
                         className=" translate-y-8 w-full opacity-0 transition-all duration-700 delay-300 [.swiper-slide-active_&]:translate-y-0 [.swiper-slide-active_&]:opacity-100"
                       >
-                        <Primary text="Naroči se" link="#" w="300px" h="60px"/>
+                        <Primary text={slide.id === 2 ? "Zemljevid":"Naroči se"} link={slide.link} w="300px" h="60px" Icon={slide.Icon}/>
                       </div>
                     </div>
                 </div>

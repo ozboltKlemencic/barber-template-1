@@ -10,7 +10,7 @@ import Primary from './buttons/Primary';
 import BgFrombottomToTop from './text/bgFrombottomToTop';
 
 export default function Contact() {
-    const container = useRef();
+    const container = useRef<HTMLDivElement>(null);;
     const { scrollYProgress } = useScroll({
         target: container,
         offset: ["start end", 'end start']
@@ -24,28 +24,26 @@ export default function Contact() {
             style={{clipPath: "polygon(0% 0, 100% 0%, 100% 100%, 0 100%)"}}
         >   
             <div className='absolute top-0 left-0 right-0 z-50  h-full flex justify-center items-center py-20'>
-                <div className='max-w-7xl flex justify-center flex-col md:flex-row items-start gap-x-6 gap-y-16'>
+                <div className='max-w-7xl flex justify-center flex-col md:flex-row items-start gap-x-12 gap-y-16'>
 
                     
-                    <div className=' w-auto max-w-full md:max-w-[50%] h-auto mx-4 flex items-center  md:items-start justify-center flex-col gap-y-2 '>
+                    <div className=' w-auto max-w-full md:max-w-[50%] h-auto mx-4 flex items-center  md:items-start justify-center flex-col gap-y-2 gap-x-2 '>
                         <MaskAnimation>
-                            <h3 className='font-montserrat text-md text-neutral-200'>Mnenja strank</h3>
+                            <h3 className='font-montserrat text-md text-neutral-200'>Kontakt</h3>
                         </MaskAnimation>
                         <MaskAnimation>
                             <h2 className='font-teko text-3xl font-bold text-neutral-50'>
-                                Vaš Stil, Naša&nbsp; 
-                                <BgFrombottomToTop text="Strast"/>
+                                Stopite v Stik z&nbsp; 
+                                <BgFrombottomToTop text="nami"/>
                             </h2>
                         </MaskAnimation>
                         <AnimateInViewWrapper scaleFrom={1} delay={0.2}>
                             <p className='font-montserrat text-md text-neutral-200 text-center md:text-left w-full mb-4'>
-                                Preberite mnenja naših strank. Naše stranke so bistvo vsega, kar počnemo.
-                                Njihovo zadovoljstvo je naš največji uspeh in motivacija za nenehno izboljševanje
-                                naših storitev. Prepričajte se sami, zakaj nam zaupajo številni zadovoljni uporabniki.
+                            Imate vprašanje, želite več informacij ali se želite dogovoriti za termin? Z veseljem vam bomo pomagali! Naša ekipa je tukaj, da vam ponudi podporo in odgovore na vsa vaša vprašanja. Pišite nam, pokličite nas ali nas obiščite osebno.
                             </p>
                         </AnimateInViewWrapper> 
                         <MaskAnimation >
-                            <Primary text='Pošlji sporočilo' link=''/>
+                            <Primary text='Pošlji sporočilo' link='' w='200px' h='60px'/>
                         </MaskAnimation>
                     </div>
                   

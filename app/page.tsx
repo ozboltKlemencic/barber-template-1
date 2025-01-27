@@ -17,6 +17,7 @@ import { MaskAnimation } from "@/components/text/MaskAnimation";
 import AnimateInViewWrapper from "@/components/animation/fade";
 import TeamCard from "@/components/cards/teamCard";
 import HorizontalScrollCarousel from "@/components/horizontalScroll";
+import ROUTES from "@/constants/routes";
 
 const haircutData = [
   {
@@ -43,9 +44,9 @@ const haircutData = [
 ];
 
 const employees = [
-  { name: "Luka Novak", postion: "Brivec", imgUrl: "/img/employees/employee_1.png" ,cta:"Naroči se pri Luku.",link:"" },
-  { name: "Ana Kovač", postion: "Frizerka", imgUrl: "/img/employees/employee_2.png",cta:"Naroči se pri Luku." ,link:""},
-  { name: "Marko Horvat", postion: "Brivec", imgUrl: "/img/employees/employee_3.png",cta:"Naroči se pri Luku." ,link:""},
+  { name: "Domen", postion: "Brivec", imgUrl: "/img/employees/employee_3.png" ,cta:"Naroči se pri Luku.",link:ROUTES.NAROCANJE },
+  { name: "Matic", postion: "Brivec", imgUrl: "/img/employees/employee_1.png",cta:"Naroči se pri Luku." ,link:ROUTES.NAROCANJE},
+  { name: "Luka", postion: "Brivec", imgUrl: "/img/employees/employee_2.png",cta:"Naroči se pri Luku." ,link:ROUTES.NAROCANJE},
 ]
 
 export default function Home() {
@@ -71,7 +72,7 @@ export default function Home() {
           <div>
             <AnimateInViewWrapper  className="w-fit">
               <div className="mb-6 w-fit">
-                  <ShinyText text="Storitve" speed={3}/>
+                  <ShinyText link={ROUTES.STORITVE} text="Storitve"  speed={3}/>
               </div>
             </AnimateInViewWrapper>
           </div>
@@ -97,7 +98,7 @@ export default function Home() {
             ))}
           </div>
           <AnimateInViewWrapper  className="w-fit">
-            <SecondaryBtn text="Vse storitve" className="mt-6"/>
+            <SecondaryBtn text="Vse storitve" link={ROUTES.STORITVE}  className="mt-6"/>
           </AnimateInViewWrapper>
         </div>
       </div>
@@ -111,7 +112,7 @@ export default function Home() {
           
           <AnimateInViewWrapper  className="w-fit">
             <div className="mb-6 w-fit">
-                <ShinyText text="Ekipa" speed={3}/>
+                <ShinyText text="Ekipa" link={ROUTES.EKIPA} speed={3}/>
             </div>
           </AnimateInViewWrapper>
           
@@ -130,7 +131,7 @@ export default function Home() {
             </AnimateInViewWrapper> 
           </div>
 
-          <div className="w-full h-auto flex flex-col md:flex-row items-start justify-start gap-x-6 gap-y-6 min-h-[470px]">
+          <div className="w-full h-auto flex flex-col md:flex-row items-center md:items-start justify-start gap-x-6 gap-y-6 min-h-[470px]">
           {employees.map((employee,index) => (
               <AnimateInViewWrapper 
                 key={employee.name} 

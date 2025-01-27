@@ -4,6 +4,7 @@ import React from 'react'
 import SocialBtn from './buttons/socialBtn'
 import { CgInstagram } from "react-icons/cg";
 import { IoLogoTiktok } from "react-icons/io5";
+import { info } from '@/constants/info';
 
 export default function Content() {
   return (
@@ -13,15 +14,15 @@ export default function Content() {
           {/* Logo and Social Section */}
           <div className="flex  flex-col items-start gap-6">
             <Image
-              src="/img/logo/big-logo.jpeg"
+              src="/img/logo/big-logo.png"
               alt="Blackout Barbershop"
               width={120}
               height={120}
               className="mb-4 w-24 md:w-32"
             />
             <div className="flex h-full justify-center items-center gap-x-1">
-                <SocialBtn Icon={IoLogoTiktok} link=""/>
-                <SocialBtn Icon={CgInstagram} link=""/>
+                <SocialBtn Icon={IoLogoTiktok} link={info.tiktokLink}/>
+                <SocialBtn Icon={CgInstagram} link={info.instagramLink}/>
             </div>
           </div>
 

@@ -1,7 +1,9 @@
 "use client";
 import React from "react";
-import { MessageCircle, Phone, Mail } from "lucide-react";
+import { Phone  } from "lucide-react";
 import Link from "next/link";
+import { IoLogoTiktok } from "react-icons/io5";
+import { CgInstagram } from "react-icons/cg";
 
 import { info } from "@/constants/info";
 
@@ -10,18 +12,18 @@ const CtaIcon = () => {
     <div className="flex justify-center group">
       {[
         {
-          Icon: MessageCircle,
-          link: info.sporociloLink,
+          Icon: Phone,
+          link: info.telefonLink,
           className: "-translate-x-2 ",
         },
         {
-          Icon: Phone,
-          link: info.telefonLink,
+          Icon: IoLogoTiktok,
+          link: info.tiktokLink,
           className: "",
         },
         {
-          Icon: Mail,
-          link: info.epostaLink,
+          Icon: CgInstagram,
+          link: info.instagramLink,
           className: "translate-x-2",
         },
       ].map(({ Icon, link, className }, index) => (
@@ -30,13 +32,13 @@ const CtaIcon = () => {
           className={`relative `}
           style={{ zIndex: index + 10 }}
         >
-          <div
-            className={`relative  cursor-pointer group/${index} overflow-hidden hover:-translate-y-2 transition-all duration-300 r backdrop-blur-md border-white/[0.2] border ${className}`}
+          <div 
+            className={`relative  cursor-pointer group/${index} overflow-hidden hover:-translate-y-2 transition-all duration-300 r backdrop-blur-md border-yellow-200/[0.5] border ${className}`}
           >
-            <Link href={link}>
+            <Link href={link} target="_blank">
               <div className="absolute inset-0  bg-yellow-200/20 blur-xl" />
               <div className="relative bg-black p-4 ">
-                <Icon className="w-6 h-6 text-yellow-400/[0.8]" />
+                <Icon className="w-6 h-6 text-white" />
               </div>
             </Link>
             {/* Hover effect */}
