@@ -112,11 +112,11 @@ const ReviewSection = ({
             <div className="w-full md:w-1/2 md:h-screen px-4 md:px-16 py-12 md:sticky md:top-0 flex items-center justify-center bg-yellow-circle mobile:bg-mob-yellow-circle">
                 <div className="w-full max-w-xl flex flex-col gap-y-4  text-center md:text-left">
                     <MaskAnimation>
-                        <h3 className="font-montserrat text-md text-neutral-200">Mnenja strank</h3>
+                        <h3 className="font-montserrat text-md text-neutral-200 ">Mnenja strank</h3>
                     </MaskAnimation>
                     
                     <MaskAnimation>
-                        <h2 className="font-teko text-2xl md:text-3xl font-bold text-neutral-50">
+                        <h2 className="font-teko text-2xl md:text-3xl  font-bold text-neutral-50">
                             Več kot 50+ oseb nam&nbsp; 
                             <span className="bg-gradient-to-r from-[#FFD700] to-[#daa52077] bg-clip-text text-transparent">
                                 zaupa
@@ -125,7 +125,7 @@ const ReviewSection = ({
                     </MaskAnimation>
                     
                     <AnimateInViewWrapper scaleFrom={1} delay={0.2}>
-                        <p className="font-montserrat text-md text-neutral-200">
+                        <p className="font-montserrat text-base text-neutral-200">
                             Preberite mnenja naših strank. Naše stranke so bistvo vsega, kar počnemo.
                             Njihovo zadovoljstvo je naš največji uspeh in motivacija za nenehno izboljševanje
                             naših storitev. Prepričajte se sami, zakaj nam zaupajo številni zadovoljni uporabniki.
@@ -137,8 +137,8 @@ const ReviewSection = ({
             </div>
 
             {/* Reviews Container */}
-            <div className={`w-full  md:w-1/2 md:h-auto ${showAll ? 'h-auto' : 'h-[93vh]'}   overflow-hidden  md:px-16 py-8 flex  items-center md:justify-center justify-start flex-col md:flex-row gap-4`}>
-                <div className="w-full md:w-1/2 flex flex-col items-center justify-center gap-4 md:mt-20">
+            <div className={`w-full  md:w-1/2 md:h-auto ${showAll ? 'h-auto' : 'h-[93vh]'}   overflow-hidden  md:px-16 py-8 flex  items-center md:justify-center justify-start flex-col xl:flex-row gap-4`}>
+                <div className="w-full xl:w-1/2 flex flex-col items-center justify-center gap-4 md:mt-20">
                     {REVIEWS.filter((review) => Number(review.id) <= 5).map((review) => (
                         <AnimateInViewWrapper key={review.id} scaleFrom={1}>
                             <ReviewCard profilImgUrl={review.profileImageUrl} {...review} />
@@ -146,7 +146,7 @@ const ReviewSection = ({
                     ))}
                 </div>
 
-                <div className="w-full md:w-1/2 flex flex-col gap-4">
+                <div className="w-full xl:w-1/2 flex flex-col gap-4">
                     {REVIEWS.filter((review) => Number(review.id) > 5).map((review) => (
                         <AnimateInViewWrapper key={review.id} scaleFrom={1}>
                             <ReviewCard profilImgUrl={review.profileImageUrl} {...review} />

@@ -33,14 +33,21 @@ export default function Navbar() {
     document.body.style.removeProperty('overflow');
   }, [pathname]);
 
-  // Debounced scroll handler for better performance
+  // Modified scroll handler to ensure navbar is visible at top
   const handleScroll = useCallback(() => {
     const currentScrollY = window.scrollY;
     
     if (Math.abs(currentScrollY - lastScrollY) < 10) return;
     
     setIsScrolled(currentScrollY > 50);
-    setIsVisible(currentScrollY <= lastScrollY);
+    
+    // Always show navbar if we're at the very top
+    if (currentScrollY <= 0) {
+      setIsVisible(true);
+    } else {
+      setIsVisible(currentScrollY <= lastScrollY);
+    }
+    
     setLastScrollY(currentScrollY);
   }, [lastScrollY]);
 
@@ -95,10 +102,10 @@ export default function Navbar() {
         className={cn(
           "fixed top-0 left-0 bg-black w-screen right-0 z-[999] transition-transform duration-300 ease-in-out nav-shadow border-b border-yellow-200",
           isScrolled ? "bg-black/95 backdrop-blur-sm" : "bg-black",
-          isVisible ? "translate-y-0" : "-translate-y-full"
+          isVisible || lastScrollY <= 0 ? "translate-y-0" : "-translate-y-full"
         )}
       >
-        <div className="relative container mx-auto px-4 flex w-full max-w-7xl">
+        <div className="relative container mx-auto px-6 flex w-full max-w-7xl">
           <nav className="flex items-center justify-between w-full h-16">
             <Link href={ROUTES.DOMOV} className="flex items-center justify-center gap-2">
               <Image

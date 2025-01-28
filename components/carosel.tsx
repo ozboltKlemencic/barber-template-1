@@ -102,7 +102,7 @@ const Carousel: React.FC = () => {
         onSwiper={(swiper) => {
           swiperRef.current = swiper
         }}
-        className="h-[calc(100dvh_-48px)] md:h-[90vh] mt-12"
+        className="h-[calc(100dvh_-48px)] md:h-[calc(100vh_-48px)] mt-12 min-h-[600px] md:max-h-[1100px]"
       >
         {slides.map((slide) => (
           <SwiperSlide key={slide.id}>
@@ -116,14 +116,14 @@ const Carousel: React.FC = () => {
                 className="transition-transform duration-[1500] ease-out transform "
               />
               <div className="absolute inset-0  flex items-center  justify-center">
-                <div className="text-center text-white max-w-7xl w-[92vw] md:w-[1200px] bg-black/[0.4] md:bg-transparent md:backdrop-blur-none backdrop-blur-md px-4 py-4 flex flex-col md:justify-start justify-center md:items-start items-center gap-y-3 md:gap-y-6">
+                <div className="text-center text-white  max-w-7xl w-[92vw] md:w-[1200px] bg-black/[0.4] md:bg-transparent md:backdrop-blur-none backdrop-blur-md md:px-20 lg:px-6 px-4  py-4 flex flex-col md:justify-start justify-center md:items-start items-center gap-y-3 md:gap-y-4 lg:gap-y-6">
                     <div className="overflow-hidden">
-                      <p className="text-sm md:text-xl font-montserrat translate-y-8 opacity-0  transition-all duration-700 delay-100 [.swiper-slide-active_&]:translate-y-0 [.swiper-slide-active_&]:opacity-100">
+                      <p className="text-sm md:text-base lg:text-xl font-montserrat translate-y-8 opacity-0  transition-all duration-700 delay-100 [.swiper-slide-active_&]:translate-y-0 [.swiper-slide-active_&]:opacity-100">
                         {slide.description}
                       </p>
                     </div>
                     <div className="overflow-hidden">
-                      <h2 className="text-4xl md:text-5xl  font-semibold font-teko  translate-y-8 opacity-0 transition-all duration-700 delay-200 [.swiper-slide-active_&]:translate-y-0 [.swiper-slide-active_&]:opacity-100">
+                      <h2 className="text-3xl md:text-4xl lg:text-5xl  font-semibold font-teko  translate-y-8 opacity-0 transition-all duration-700 delay-200 [.swiper-slide-active_&]:translate-y-0 [.swiper-slide-active_&]:opacity-100">
                           {slide.title}
                       </h2>
                     </div>

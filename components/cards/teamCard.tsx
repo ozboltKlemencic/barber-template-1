@@ -25,8 +25,8 @@ export default function TeamCard({imgUrl,name ,cta,postion,link}:Props) {
           <p className="text-neutral-300 font-montserrat">{postion}</p>
         </div>
       </div>
-      <div className="w-full max-h-36 md:max-h-0 px-2 overflow-hidden transition-all duration-300 ease-in-out group-hover:max-h-36 pt-4">
-        <div className="transition-all w-full flex items-start justify-end flex-col gap-y-1 duration-300 ease-in-out transform opacity-100 md:opacity-0 group-hover:opacity-100 py-3">
+      <div className="w-full max-h-36 lg:max-h-0 px-2 overflow-hidden transition-all duration-300 ease-in-out group-hover:max-h-36 pt-4">
+        <div className="transition-all w-full flex items-start justify-end flex-col gap-y-1 duration-300 ease-in-out transform opacity-100 lg:opacity-0 group-hover:opacity-100 py-3">
           <p className="text-neutral-100 font-montserrat">{cta}</p>
           <div className="w-full bg-red-50">
             <Primary text="Naroči se" link={link} w="100%" h="52px"/>

@@ -8,7 +8,7 @@ import { info } from '@/constants/info';
 
 export default function Content() {
   return (
-    <footer className="bg-black flex items-center justify-center h-full w-full text-white py-12 px-4">
+    <footer className="bg-black flex items-center justify-center h-full w-full text-white py-12 px-6">
       <div className="container mx-auto max-w-5xl">
         <div className="grid grid-cols-2 md:grid-cols-4 gap-[35px] gap-y-24 text-sm sm:text-base">
           {/* Logo and Social Section */}
@@ -20,7 +20,7 @@ export default function Content() {
               height={120}
               className="mb-4 w-24 md:w-32"
             />
-            <div className="flex h-full justify-center items-center gap-x-1">
+            <div className="flex h-full justify-center items-center gap-x-1 px-6">
                 <SocialBtn Icon={IoLogoTiktok} link={info.tiktokLink}/>
                 <SocialBtn Icon={CgInstagram} link={info.instagramLink}/>
             </div>

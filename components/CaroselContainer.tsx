@@ -13,8 +13,8 @@ export default function CaroselContainer() {
     const y = useTransform(scrollYProgress, [0, 1], ["0vh", "150vh"])
   
     return (
-      <div className='h-screen overflow-hidden'>
-        <motion.div style={{y}} className='relative h-full'>
+      <div className='h-auto overflow-hidden'>
+        <motion.div style={{y}} className='relative h-[calc(100dvh_-48px)] md:h-[calc(100vh_-48px)] mt-12 min-h-[850px]'>
           <Carousel/>
         </motion.div>
       </div>
