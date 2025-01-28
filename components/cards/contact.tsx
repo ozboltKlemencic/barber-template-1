@@ -13,22 +13,22 @@ export default function ContactInfo() {
 
       <h2 className="text-4xl font-teko text-white mb-10 tracking-wide">Kontakt</h2>
 
-      <div className="space-y-8">
+      <div className="space-y-8 font-montserrat">
         <Link href={info.lokacijaLink} className="flex items-start gap-5 group">
-          <MapPin className="w-6 h-6 text-yellow-300 flex-shrink-0 mt-1  transition-transform duration-300" />
-          <span className="text-white text-lg font-light">Cesta talcev 3b, 4220 Škofja Loka</span>
+          <MapPin className="size-5 lg:size-6 text-yellow-300 flex-shrink-0 mt-1  transition-transform duration-300" />
+          <span className="text-white text-base lg:text-lg font-light">Cesta talcev 3b, 4220 Škofja Loka</span>
         </Link>
 
         <Link href={info.telefonLink} className="flex items-center gap-5 group">
-          <Phone className="w-6 h-6 text-yellow-300  transition-transform duration-300" />
-          <span className="text-white text-lg font-light">041 590 192</span>
+          <Phone className="size-5 lg:size-6 text-yellow-300  transition-transform duration-300" />
+          <span className="text-white text-base lg:text-lg font-light">041 590 192</span>
         </Link>
 
         <div className="flex items-start gap-5 group">
-          <Clock className="w-6 h-6 text-yellow-300 flex-shrink-0 mt-1  transition-transform duration-300" />
+          <Clock className="size-5 lg:size-6 text-yellow-300 flex-shrink-0 mt-1  transition-transform duration-300" />
           <div className="text-white">
-            <div className="text-lg font-light">Pon - pet</div>
-            <div className="text-yellow-300/70 mt-1 text-lg font-light">9:00 - 20:00</div>
+            <div className="text-base lg:text-lg font-light">Pon - pet</div>
+            <div className="text-yellow-300/70 mt-1 text-base lg:text-lg font-light">9:00 - 20:00</div>
           </div>
         </div>
       </div>

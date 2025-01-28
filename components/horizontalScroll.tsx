@@ -27,7 +27,7 @@ const HorizontalScrollCarousel = () => {
 
   return (
     <section ref={targetRef} className="relative h-[300vh] z-[10] bg-neutral-950">
-      <div className="sticky top-0 flex h-screen sm:min-h-[800px] items-center overflow-hidden">
+      <div className="sticky top-0 flex h-screen sm:min-h-[800px]  items-center overflow-hidden">
         
         <div className="absolute top-0 left-0 w-screen flex items-center justify-center gradient-text-stroke font-teko text-[22vw] md:text-[100px] lg:text-[200px] xl:text-[300px] text-black -tracking-tighter  md:font-semibold font-normal " >
           Instagram
