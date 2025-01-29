@@ -1,6 +1,10 @@
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import Image from "next/image";
 import AnimateInViewWrapper from "@/components/animation/fade";
+import { LuClock4 } from "react-icons/lu";
+import Select from "./Select";
+import Primary from "./buttons/Primary";
+import ROUTES from "@/constants/routes";
 
 export const servicesData = {
     tabs: [
@@ -15,7 +19,9 @@ export const servicesData = {
           url: "/img/haircuts/burst-fade/burst_fade_1.png",
           name: "Buzz Cut Style",
           alt: "Different variations of Buzz Cut hairstyle"
-        })
+        }),
+        time:"15",
+        price:"20€"
       },
       {
         id: "tab-2",
@@ -28,7 +34,10 @@ export const servicesData = {
           url: "/img/haircuts/burst-fade/burst_fade_1.png",
           name: "Mid Fade Style",
           alt: "Different variations of Mid Fade haircut"
-        })
+        }),
+        time:"15",
+        price:"20€"
+        
       },
       {
         id: "tab-3",
@@ -41,7 +50,9 @@ export const servicesData = {
           url: "/img/haircuts/burst-fade/burst_fade_1.png",
           name: "Skin Fade Style",
           alt: "Different variations of Skin Fade haircut"
-        })
+        }),
+        time:"15",
+        price:"20€"
       },
       {
         id: "tab-4",
@@ -54,7 +65,9 @@ export const servicesData = {
           url: "/img/haircuts/burst-fade/burst_fade_1.png",
           name: "Pompadour Style",
           alt: "Different variations of Pompadour hairstyle"
-        })
+        }),
+        time:"15",
+        price:"20€"
       },
       {
         id: "tab-5",
@@ -67,7 +80,9 @@ export const servicesData = {
           url: "/img/haircuts/burst-fade/burst_fade_1.png",
           name: "Taper Fade Style",
           alt: "Different variations of Taper Fade haircut"
-        })
+        }),
+        time:"15",
+        price:"20€"
       },
       {
         id: "tab-6",
@@ -80,7 +95,9 @@ export const servicesData = {
           url: "/img/haircuts/burst-fade/burst_fade_1.png",
           name: "Undercut Style",
           alt: "Different variations of Undercut hairstyle"
-        })
+        }),
+        time:"15",
+        price:"20€"
       },
       {
         id: "tab-7",
@@ -93,7 +110,9 @@ export const servicesData = {
           url: "/img/haircuts/burst-fade/burst_fade_1.png",
           name: "Crew Cut Style",
           alt: "Different variations of Crew Cut hairstyle"
-        })
+        }),
+        time:"15",
+        price:"20€"
       },
       {
         id: "tab-8",
@@ -106,48 +125,65 @@ export const servicesData = {
           url: "/img/haircuts/burst-fade/burst_fade_1.png",
           name: "Buzz Cut Style",
           alt: "Different variations of Buzz Cut hairstyle"
-        })
+        }),
+        time:"15",
+        price:"20€"
       }
     ]
   };
   
+  const selectOptions = servicesData.tabs.map(tab => (
+    tab.label
+  ));
 
 export default function TabService() {
   return (
-    <Tabs defaultValue={servicesData.tabs[0].id} className="[&_*]:!bg-transparent w-full flex justify-center gap-x-12">
+    <Tabs defaultValue={servicesData.tabs[0].id} className=" w-full flex flex-col md:flex-row justify-center gap-x-12">
       
-        <div className="">
-          <TabsList className="h-auto w-[150px]  flex flex-col  gap-2 items-start justify-start bg-transparent  p-0">
+        <div className="[&_*]:!bg-transparent mb:mb-0 mb-8" >
+          <TabsList className="h-auto w-full md:w-[150px]  flex flex-col  gap-2 items-start justify-start bg-transparent  p-0">
             {servicesData.tabs.map((tab,index) => (
                 <AnimateInViewWrapper className="w-full" scaleFrom={1} distance={0} delay={index/10} key={tab.id}>
                     <TabsTrigger
                         
                         value={tab.id}
-                        className="relative w-full bg-neutral-950 overflow-hidden rounded-none border border-white/[0.5] py-3 px-4 after:pointer-events-none after:absolute after:inset-x-0 after:bottom-0  after:h-0.5 data-[state=active]:bg-black data-[state=active]:shadow-slate-200 data-[state=active]:after:bg-yellow-200 hover:bg-neutral-900 transition-colors"
+                        className="relative w-full hidden md:block bg-neutral-950 overflow-hidden rounded-none border border-white/[0.5] py-3 px-4 after:pointer-events-none after:absolute after:inset-x-0 after:bottom-0  after:h-0.5 data-[state=active]:bg-black data-[state=active]:shadow-slate-200 data-[state=active]:after:bg-yellow-200 hover:bg-neutral-900 transition-colors"
                     >
                         {tab.label}
                     </TabsTrigger>
                 </AnimateInViewWrapper>
             ))}
+
+            <Select options={selectOptions}/>
           </TabsList>
         </div>
       
     <div className="w-auto">
       {servicesData.tabs.map((tab) => (
-        <TabsContent key={tab.id} value={tab.id} className="bg-transparent w-full bg-red-50">
+        <TabsContent key={tab.id} value={tab.id} className="w-full ">
           <div className="flex flex-row w-full flex-wrap gap-6 -mt-2 items-start justify-start md:justify-start">
            
-              <AnimateInViewWrapper scaleFrom={1}  delay={0}  >
+              <AnimateInViewWrapper scaleFrom={1} distance={0}  delay={0.1}  >
                 <div 
                   className="relative w-full flex flex-col justify-start items-start max-w-[800px]" 
                 >
-                    <h1 className="text-neutral-100">{tab.title}</h1>
-                    <p className="text-neutral-50">{tab.description}</p>
+                    <h1 className="text-neutral-50 font-teko text-4xl font-normal">{tab.title}</h1>
+                    <p className="text-neutral-200 font-montserrat text-base mb-4">{tab.description}</p>
                     <ul className='list-square-yellow text-neutral-100 pl-4 mb-8'>
                     {tab.listItems.map((listItems, index) => (
                         <li className='pl-2 font-montserrat' key={index}>{listItems}</li> 
                     ))}
                     </ul>
+                    <h6 className="font-montserrat text-normal text-neutral-50 mt-8 pb-1 border-b shadow-zinc-300 border-yellow-200 w-full">Cenik</h6>
+                    <div className="w-full text-sm py-2 px-1 bg-neutral-700/[0.5] flex flex-row items-center justify-center mt-2">
+                      <span className="flex items-start w-1/3 flex-row justify-start"><p className="font-montserrat text-neutral-200 flex items-start justify-start  flex-row">{tab.title}</p></span>
+                      <span className="flex items-center w-1/3 flex-row justify-start gap-x-2"><LuClock4 className="text-neutral-200"/><p className="font-montserrat text-neutral-200 flex items-start justify-start flex-row">{tab.time}</p></span>
+                      <span className="flex items-start w-1/3 flex-row justify-start"><p className="font-montserrat text-neutral-200 flex items-start justify-start  flex-row">{tab.price}</p></span>
+                    </div>
+                    <div className="flex flex-col mt-16 gap-y-2">
+                      <span className="font-montserrat text-neutral-200 text-sm">Pohiti in si rezerviraj termin</span>
+                      <Primary text="Naroči se" link={ROUTES.NAROCANJE}/>
+                    </div>
                 </div>
               </AnimateInViewWrapper>
          
@@ -156,14 +192,14 @@ export default function TabService() {
       ))}
       </div>
 
-      <div className=" w-[250px]">
+      <div className=" md:w-[250px]">
       {servicesData.tabs.map((tab) => (
-        <TabsContent key={tab.id} value={tab.id} className="bg-transparent w-full bg-red-50">
-          <div className="flex flex-row w-full flex-wrap gap-6 -mt-2 items-center justify-center md:justify-start">
+        <TabsContent key={tab.id} value={tab.id} className="bg-transparent w-full ">
+          <div className="flex flex-row w-full flex-wrap gap-6 mt-8 items-center justify-center md:justify-start">
             {tab.images.map((image, index) => (
-              <AnimateInViewWrapper scaleFrom={1}  delay={index/10}  key={index}>
+              <AnimateInViewWrapper scaleFrom={1} distance={10}  delay={index/10}  key={index}>
                 <div 
-                  className="relative w-full h-[20rem] sm:h-[220px] aspect-square overflow-hidden flex items-center justify-start" 
+                  className="relative w-full  sm:h-[260px] sm:w-[250px] aspect-square overflow-hidden flex items-center justify-center" 
                 >
                   <Image
                         src={image.url}
