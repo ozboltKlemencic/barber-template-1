@@ -104,12 +104,12 @@ export default function GalleryTabs() {
     <Tabs defaultValue={galleryData.tabs[0].id} className="[&_*]:!bg-transparent w-full">
       <AnimateInViewWrapper scaleFrom={1} distance={0} delay={0.4}>
         <div className="overflow-x-auto md:overflow-visible  w-full mb-7 ">
-          <TabsList className="h-auto min-w-max md:min-w-0  flex md:flex-wrap  gap-2 items-start justify-start bg-transparent mb-1 p-0">
+          <TabsList className="h-auto min-w-max md:min-w-0  flex md:flex-wrap  gap-2 items-start justify-start bg-transparent  p-0">
             {galleryData.tabs.map((tab) => (
               <TabsTrigger
                 key={tab.id}
                 value={tab.id}
-                className="relative w-fit  bg-neutral-950 overflow-hidden rounded-none border border-white/[0.5] py-2 px-4 after:pointer-events-none after:absolute after:inset-x-0 after:bottom-0 after:h-0.5 data-[state=active]:bg-black data-[state=active]:shadow-slate-200 data-[state=active]:after:bg-yellow-200 hover:bg-neutral-900 transition-colors"
+                className="relative w-fit  bg-neutral-950 overflow-hidden rounded-none border border-white/[0.5] py-2 px-4 after:pointer-events-none after:absolute after:inset-x-0 after:bottom-0  after:h-0.5 data-[state=active]:bg-black data-[state=active]:shadow-slate-200 data-[state=active]:after:bg-yellow-200 hover:bg-neutral-900 transition-colors"
               >
                 {tab.label}
               </TabsTrigger>

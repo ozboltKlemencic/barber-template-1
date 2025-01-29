@@ -21,6 +21,15 @@ body {
   margin: 0;
 }
 
+.list-square-yellow {
+  list-style-type: none;
+}
+.list-square-yellow li::marker {
+  content: "■";
+  color: #D3C996;
+  font-size: 0.8em;
+}
+
 
 .nav-shadov{
   -webkit-box-shadow: 0px 2px 2px 0px rgba(255,239,176,0.81);
