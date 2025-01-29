@@ -14,7 +14,7 @@ export default function CaroselContainer() {
   
     return (
       <div className='h-auto overflow-hidden'>
-        <motion.div style={{y}} className='relative h-[calc(100dvh_-48px)] md:h-[calc(100vh_-48px)] mt-12 min-h-[850px]'>
+        <motion.div style={{y}} className='relative h-[calc(100dvh_-48px)] md:h-[calc(100vh_-48px)] mt-12 min-h-[600px] md:max-h-[1100px]'>
           <Carousel/>
         </motion.div>
       </div>

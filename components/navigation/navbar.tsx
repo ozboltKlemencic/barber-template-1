@@ -100,7 +100,7 @@ export default function Navbar() {
     <>
       <header
         className={cn(
-          "fixed top-0 left-0 bg-black w-screen right-0 z-[999] transition-transform duration-300 ease-in-out nav-shadow border-b border-yellow-200",
+          "fixed top-0 left-0 bg-black w-screen right-0 z-[999] transition-transform duration-300 ease-in-out nav-shadow border-b nav-shadov border-yellow-200 ",
           isScrolled ? "bg-black/95 backdrop-blur-sm" : "bg-black",
           isVisible || lastScrollY <= 0 ? "translate-y-0" : "-translate-y-full"
         )}
