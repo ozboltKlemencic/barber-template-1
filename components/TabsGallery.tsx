@@ -338,7 +338,7 @@ export default function GalleryTabs() {
             {tab.images.map((image, index) => (
               <AnimateInViewWrapper scaleFrom={1}  delay={index/10}  key={index}>
                 <div 
-                  className="relative group w-full h-[20rem] sm:h-[260px] sm:w-[250px] overflow-hidden flex items-center justify-center" 
+                  className="relative group w-full h-[90vw] aspect-square sm:h-[260px] sm:w-[250px] overflow-hidden flex items-center justify-center" 
                 >
                   <Image
                     src={image.url}
