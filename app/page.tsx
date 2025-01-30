@@ -22,21 +22,21 @@ import ROUTES from "@/constants/routes";
 const haircutData = [
   {
     id: 1,
-    url: "/img/haircuts/mid-fade/mid_fade_1.png",
+    url: "/img/haircuts/mid-fade/mid-fade-1.jpg",
     title: "Mid fade",
     link: ROUTES.STORITVE,
     delay: 0
   },
   {
     id: 2,
-    url: "/img/haircuts/mid-fade/mid_fade_2.png", 
+    url: "/img/haircuts/mid-fade/mid-fade-2.jpg", 
     title: "Mid fade",
     link: ROUTES.STORITVE,
     delay: 0.2
   },
   {
     id: 3,
-    url: "/img/haircuts/burst-fade/burst_fade_1.png",
+    url: "/img/haircuts/burst-fade/burst-fade-1.jpg",
     title: "Burst fade", 
     link: ROUTES.STORITVE,
     delay: 0.4

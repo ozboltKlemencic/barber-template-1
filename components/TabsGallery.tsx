@@ -1,110 +1,324 @@
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import Image from "next/image";
 import AnimateInViewWrapper from "@/components/animation/fade";
+import ImageFrame from "./animation/ImageFrame";
 
 export const galleryData = {
   tabs: [
     {
       id: "tab-1",
       label: "Buzz Cut",
-      images: Array(8).fill({
-        url: "/img/haircuts/burst-fade/burst_fade_1.png",
-        name: "Buzz Cut Style",
-        alt: "Different variations of Buzz Cut hairstyle"
-      })
+      images: [
+        {
+          url: "/img/haircuts/burst-fade/burst-fade-2.jpg",
+          name: "Mid Fade Style",
+          alt: "Different variations of Mid Fade haircut"
+        },
+        {
+          url: "/img/haircuts/mid-fade/mid-fade-2.jpg",
+          name: "Mid Fade Style",
+          alt: "Different variations of Mid Fade haircut"
+        },
+        {
+          url: "/img/haircuts/mid-fade/mid-fade-3.jpg",
+          name: "Mid Fade Style",
+          alt: "Different variations of Mid Fade haircut"
+        },
+        {
+          url: "/img/haircuts/burst-fade/burst-fade-3.jpg",
+          name: "Mid Fade Style",
+          alt: "Different variations of Mid Fade haircut"
+        }
+      ],
     },
     {
       id: "tab-2",
       label: "Mid Fade",
-      images: Array(8).fill({
-        url: "/img/haircuts/burst-fade/burst_fade_1.png",
-        name: "Mid Fade Style",
-        alt: "Different variations of Mid Fade haircut"
-      })
+      images: [
+        {
+          url: "/img/haircuts/mid-fade/mid-fade-2.jpg",
+          name: "Mid Fade Style",
+          alt: "Different variations of Mid Fade haircut"
+        },
+        {
+          url: "/img/haircuts/mid-fade/mid-fade-1.jpg",
+          name: "Mid Fade Style",
+          alt: "Different variations of Mid Fade haircut"
+        },
+        {
+          url: "/img/haircuts/mid-fade/mid-fade-3.jpg",
+          name: "Mid Fade Style",
+          alt: "Different variations of Mid Fade haircut"
+        },
+        {
+          url: "/img/haircuts/burst-fade/burst-fade-3.jpg",
+          name: "Mid Fade Style",
+          alt: "Different variations of Mid Fade haircut"
+        }
+      ],
     },
     {
       id: "tab-3",
       label: "Skin Fade",
-      images: Array(8).fill({
-        url: "/img/haircuts/burst-fade/burst_fade_1.png",
-        name: "Skin Fade Style",
-        alt: "Different variations of Skin Fade haircut"
-      })
+      images: [
+        {
+          url: "/img/haircuts/mid-fade/mid-fade-1.jpg",
+          name: "Mid Fade Style",
+          alt: "Different variations of Mid Fade haircut"
+        },
+        {
+          url: "/img/haircuts/mid-fade/mid-fade-2.jpg",
+          name: "Mid Fade Style",
+          alt: "Different variations of Mid Fade haircut"
+        },
+        {
+          url: "/img/haircuts/burst-fade/burst-fade-3.jpg",
+          name: "Mid Fade Style",
+          alt: "Different variations of Mid Fade haircut"
+        }
+      ],
     },
     {
       id: "tab-4",
       label: "Pompadour",
-      images: Array(8).fill({
-        url: "/img/haircuts/burst-fade/burst_fade_1.png",
-        name: "Pompadour Style",
-        alt: "Different variations of Pompadour hairstyle"
-      })
+      images: [
+        {
+          url: "/img/haircuts/mid-fade/mid-fade-1.jpg",
+          name: "Mid Fade Style",
+          alt: "Different variations of Mid Fade haircut"
+        },
+        {
+          url: "/img/haircuts/mid-fade/mid-fade-2.jpg",
+          name: "Mid Fade Style",
+          alt: "Different variations of Mid Fade haircut"
+        },
+        {
+          url: "/img/haircuts/buzz-cut/buzz-cut-3.jpg",
+          name: "Mid Fade Style",
+          alt: "Different variations of Mid Fade haircut"
+        },
+        {
+          url: "/img/haircuts/burst-fade/burst-fade-3.jpg",
+          name: "Mid Fade Style",
+          alt: "Different variations of Mid Fade haircut"
+        }
+      ],
     },
     {
       id: "tab-5",
       label: "Taper Fade",
-      images: Array(8).fill({
-        url: "/img/haircuts/burst-fade/burst_fade_1.png",
-        name: "Taper Fade Style",
-        alt: "Different variations of Taper Fade haircut"
-      })
+      images: [
+        {
+          url: "/img/haircuts/mid-fade/mid-fade-1.jpg",
+          name: "Mid Fade Style",
+          alt: "Different variations of Mid Fade haircut"
+        },
+        {
+          url: "/img/haircuts/mid-fade/mid-fade-2.jpg",
+          name: "Mid Fade Style",
+          alt: "Different variations of Mid Fade haircut"
+        },
+
+        {
+          url: "/img/haircuts/mid-fade/mid-fade-3.jpg",
+          name: "Mid Fade Style",
+          alt: "Different variations of Mid Fade haircut"
+        },
+        {
+          url: "/img/haircuts/burst-fade/burst-fade-3.jpg",
+          name: "Mid Fade Style",
+          alt: "Different variations of Mid Fade haircut"
+        },
+        {
+          url: "/img/haircuts/burst-fade/burst-fade-2.jpg",
+          name: "Mid Fade Style",
+          alt: "Different variations of Mid Fade haircut"
+        },
+        {
+          url: "/img/haircuts/burst-fade/burst-fade-1.jpg",
+          name: "Mid Fade Style",
+          alt: "Different variations of Mid Fade haircut"
+        }
+      ],
     },
     {
       id: "tab-6",
       label: "Undercut",
-      images: Array(8).fill({
-        url: "/img/haircuts/burst-fade/burst_fade_1.png",
-        name: "Undercut Style",
-        alt: "Different variations of Undercut hairstyle"
-      })
+      images: [
+        {
+          url: "/img/haircuts/mid-fade/mid-fade-1.jpg",
+          name: "Mid Fade Style",
+          alt: "Different variations of Mid Fade haircut"
+        },
+        {
+          url: "/img/haircuts/mid-fade/mid-fade-2.jpg",
+          name: "Mid Fade Style",
+          alt: "Different variations of Mid Fade haircut"
+        },
+
+        {
+          url: "/img/haircuts/mid-fade/mid-fade-3.jpg",
+          name: "Mid Fade Style",
+          alt: "Different variations of Mid Fade haircut"
+        },
+        {
+          url: "/img/haircuts/burst-fade/burst-fade-3.jpg",
+          name: "Mid Fade Style",
+          alt: "Different variations of Mid Fade haircut"
+        },
+        {
+          url: "/img/haircuts/burst-fade/burst-fade-2.jpg",
+          name: "Mid Fade Style",
+          alt: "Different variations of Mid Fade haircut"
+        },
+        {
+          url: "/img/haircuts/burst-fade/burst-fade-1.jpg",
+          name: "Mid Fade Style",
+          alt: "Different variations of Mid Fade haircut"
+        },
+        {
+          url: "/img/haircuts/burst-fade/burst-fade-3.jpg",
+          name: "Mid Fade Style",
+          alt: "Different variations of Mid Fade haircut"
+        },
+        {
+          url: "/img/haircuts/burst-fade/burst-fade-2.jpg",
+          name: "Mid Fade Style",
+          alt: "Different variations of Mid Fade haircut"
+        },
+        {
+          url: "/img/haircuts/burst-fade/burst-fade-1.jpg",
+          name: "Mid Fade Style",
+          alt: "Different variations of Mid Fade haircut"
+        }
+      ],
     },
     {
       id: "tab-7",
       label: "Crew Cut",
-      images: Array(8).fill({
-        url: "/img/haircuts/burst-fade/burst_fade_1.png",
-        name: "Crew Cut Style",
-        alt: "Different variations of Crew Cut hairstyle"
-      })
+      images: [
+        {
+          url: "/img/haircuts/buzz-cut/buzz-cut-1.jpg",
+          name: "Mid Fade Style",
+          alt: "Different variations of Mid Fade haircut"
+        },
+        {
+          url: "/img/haircuts/buzz-cut/buzz-cut-2.jpg",
+          name: "Mid Fade Style",
+          alt: "Different variations of Mid Fade haircut"
+        },
+
+        {
+          url: "/img/haircuts/mid-fade/mid-fade-3.jpg",
+          name: "Mid Fade Style",
+          alt: "Different variations of Mid Fade haircut"
+        },
+        {
+          url: "/img/haircuts/burst-fade/burst-fade-3.jpg",
+          name: "Mid Fade Style",
+          alt: "Different variations of Mid Fade haircut"
+        },
+        {
+          url: "/img/haircuts/burst-fade/burst-fade-2.jpg",
+          name: "Mid Fade Style",
+          alt: "Different variations of Mid Fade haircut"
+        },
+        {
+          url: "/img/haircuts/burst-fade/burst-fade-1.jpg",
+          name: "Mid Fade Style",
+          alt: "Different variations of Mid Fade haircut"
+        },
+        {
+          url: "/img/haircuts/burst-fade/burst-fade-3.jpg",
+          name: "Mid Fade Style",
+          alt: "Different variations of Mid Fade haircut"
+        },
+        {
+          url: "/img/haircuts/burst-fade/burst-fade-2.jpg",
+          name: "Mid Fade Style",
+          alt: "Different variations of Mid Fade haircut"
+        },
+        {
+          url: "/img/haircuts/burst-fade/burst-fade-1.jpg",
+          name: "Mid Fade Style",
+          alt: "Different variations of Mid Fade haircut"
+        }
+      ],
     },
     {
       id: "tab-8",
       label: "Buzz Cuft",
-      images: Array(8).fill({
-        url: "/img/haircuts/burst-fade/burst_fade_1.png",
-        name: "Buzz Cut Style",
-        alt: "Different variations of Buzz Cut hairstyle"
-      })
+      images: [
+        {
+          url: "/img/haircuts/buzz-cut/buzz-cut-1.jpg",
+          name: "Mid Fade Style",
+          alt: "Different variations of Mid Fade haircut"
+        },
+        {
+          url: "/img/haircuts/buzz-cut/buzz-cut-3.jpg",
+          name: "Mid Fade Style",
+          alt: "Different variations of Mid Fade haircut"
+        },
+        {
+          url: "/img/haircuts/buzz-cut/buzz-cut-2.jpg",
+          name: "Mid Fade Style",
+          alt: "Different variations of Mid Fade haircut"
+        },
+      ],
     },
     {
       id: "tab-9",
       label: "Mid Ffade",
-      images: Array(8).fill({
-        url: "/img/haircuts/burst-fade/burst_fade_1.png",
-        name: "Mid Fade Style",
-        alt: "Different variations of Mid Fade haircut"
-      })
+      images: [
+        {
+          url: "/img/haircuts/mid-fade/mid-fade-3.jpg",
+          name: "Mid Fade Style",
+          alt: "Different variations of Mid Fade haircut"
+        },
+        {
+          url: "/img/haircuts/mid-fade/mid-fade-2.jpg",
+          name: "Mid Fade Style",
+          alt: "Different variations of Mid Fade haircut"
+        },
+        {
+          url: "/img/haircuts/mid-fade/mid-fade-2.jpg",
+          name: "Mid Fade Style",
+          alt: "Different variations of Mid Fade haircut"
+        },
+        
+      ],
     },
     {
       id: "tab-10",
       label: "Skin Fafde",
-      images: Array(8).fill({
-        url: "/img/haircuts/burst-fade/burst_fade_1.png",
-        name: "Skin Fade Style",
-        alt: "Different variations of Skin Fade haircut"
-      })
+      images: [
+        {
+          url: "/img/haircuts/mid-fade/mid-fade-3.jpg",
+          name: "Mid Fade Style",
+          alt: "Different variations of Mid Fade haircut"
+        },
+        {
+          url: "/img/haircuts/mid-fade/mid-fade-2.jpg",
+          name: "Mid Fade Style",
+          alt: "Different variations of Mid Fade haircut"
+        },
+        {
+          url: "/img/haircuts/burst-fade/burst-fade-3.jpg",
+          name: "Mid Fade Style",
+          alt: "Different variations of Mid Fade haircut"
+        },
+        
+      ],
     },
-    
-    
   ]
 };
 
 export default function GalleryTabs() {
   return (
-    <Tabs defaultValue={galleryData.tabs[0].id} className="[&_*]:!bg-transparent w-full">
+    <Tabs defaultValue={galleryData.tabs[0].id} className="">
       <AnimateInViewWrapper scaleFrom={1} distance={0} delay={0.4}>
-        <div className="overflow-x-auto md:overflow-visible  w-full mb-7 ">
-          <TabsList className="h-auto min-w-max md:min-w-0  flex md:flex-wrap  gap-2 items-start justify-start bg-transparent  p-0">
+        <div className="overflow-x-auto md:overflow-visible  w-full mb-7 [&_*]:!bg-transparent">
+          <TabsList className="h-auto min-w-max md:min-w-0   w-full flex md:flex-wrap  gap-2 items-start justify-start bg-transparent  p-0">
             {galleryData.tabs.map((tab) => (
               <TabsTrigger
                 key={tab.id}
@@ -119,12 +333,12 @@ export default function GalleryTabs() {
       </AnimateInViewWrapper>
     
       {galleryData.tabs.map((tab) => (
-        <TabsContent key={tab.id} value={tab.id} className="bg-transparent w-full bg-red-50">
+        <TabsContent key={tab.id} value={tab.id} className="bg-transparent w-full">
           <div className="flex flex-row w-full flex-wrap gap-6 items-center justify-center md:justify-start">
             {tab.images.map((image, index) => (
               <AnimateInViewWrapper scaleFrom={1}  delay={index/10}  key={index}>
                 <div 
-                  className="relative w-full h-[20rem] sm:h-[260px] sm:w-[250px] overflow-hidden flex items-center justify-center" 
+                  className="relative group w-full h-[20rem] sm:h-[260px] sm:w-[250px] overflow-hidden flex items-center justify-center" 
                 >
                   <Image
                     src={image.url}
@@ -133,6 +347,7 @@ export default function GalleryTabs() {
                     className="w-full object-cover"
                     alt={image.alt}
                   />
+                  <ImageFrame/>
                 </div>
               </AnimateInViewWrapper>
             ))}

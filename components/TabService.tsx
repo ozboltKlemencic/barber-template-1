@@ -7,6 +7,7 @@ import Primary from "./buttons/Primary";
 import ROUTES from "@/constants/routes";
 import { useState } from "react";
 import { ChangeEvent } from "react";
+import ImageFrame from "./animation/ImageFrame";
 
 
 export const servicesData = {
@@ -18,11 +19,23 @@ export const servicesData = {
         description:
           "Buzz cut je ena izmed najbolj klasičnih in preprostih moških frizur, ki nikoli ne gre iz mode. Ta stil vključuje enakomerno striženje las po celotni glavi na zelo kratko dolžino z električnim strižnikom. Buzz cut je idealna izbira za tiste, ki iščejo nizko vzdrževalno frizuro, ki je enostavna za urejanje in primerna za vsako priložnost.",
         listItems: ["Induction cut", "Burr cut", "Butch cut", "Crew cut"],
-        images: Array(3).fill({
-          url: "/img/haircuts/burst-fade/burst_fade_1.png",
-          name: "Buzz Cut Style",
-          alt: "Different variations of Buzz Cut hairstyle"
-        }),
+        images: [
+          {
+            url: "/img/haircuts/mid-fade/mid-fade-1.jpg",
+            name: "Mid Fade Style",
+            alt: "Different variations of Mid Fade haircut"
+          },
+          {
+            url: "/img/haircuts/mid-fade/mid-fade-2.jpg",
+            name: "Mid Fade Style",
+            alt: "Different variations of Mid Fade haircut"
+          },
+          {
+            url: "/img/haircuts/mid-fade/mid-fade-3.jpg",
+            name: "Mid Fade Style",
+            alt: "Different variations of Mid Fade haircut"
+          }
+        ],
         time:"15",
         price:"20€"
       },
@@ -33,11 +46,23 @@ export const servicesData = {
         description:
           "Mid fade je sodoben in eleganten stil striženja, pri katerem se lasje na straneh postopoma krajšajo od sredine glave navzdol, dokler ne preidejo v čisto britje ali zelo kratke lase. Ta prehod ustvarja čist in oster videz, ki je priljubljen pri moških vseh starosti.",
         listItems: ["Klasičen Mid Fade", "Moderen Mid Fade", "Teksturiran Mid Fade", "Mid Fade z oblikovanjem"],
-        images: Array(3).fill({
-          url: "/img/haircuts/burst-fade/burst_fade_1.png",
-          name: "Mid Fade Style",
-          alt: "Different variations of Mid Fade haircut"
-        }),
+        images: [
+          {
+            url: "/img/haircuts/burst-fade/burst-fade-1.jpg",
+            name: "Mid Fade Style",
+            alt: "Different variations of Mid Fade haircut"
+          },
+          {
+            url: "/img/haircuts/mid-fade/mid-fade-3.jpg",
+            name: "Mid Fade Style",
+            alt: "Different variations of Mid Fade haircut"
+          },
+          {
+            url: "/img/haircuts/mid-fade/mid-fade-2.jpg",
+            name: "Mid Fade Style",
+            alt: "Different variations of Mid Fade haircut"
+          },
+        ],
         time:"15",
         price:"20€"
         
@@ -49,11 +74,23 @@ export const servicesData = {
         description:
           "Skin fade je priljubljena moška frizura, pri kateri se dolžina las postopoma zmanjšuje, dokler ne izgine v kožo. Ta stil omogoča čist in sodoben videz, ki se lepo ujema z različnimi zgornjimi dolžinami las.",
         listItems: ["Low Skin Fade", "High Skin Fade", "Drop Skin Fade", "Bald Fade"],
-        images: Array(3).fill({
-          url: "/img/haircuts/burst-fade/burst_fade_1.png",
-          name: "Skin Fade Style",
-          alt: "Different variations of Skin Fade haircut"
-        }),
+        images: [
+          {
+            url: "/img/haircuts/buzz-cut/buzz-cut-1.jpg",
+            name: "Mid Fade Style",
+            alt: "Different variations of Mid Fade haircut"
+          },
+          {
+            url: "/img/haircuts/burst-fade/burst-fade-1.jpg",
+            name: "Mid Fade Style",
+            alt: "Different variations of Mid Fade haircut"
+          },
+          {
+            url: "/img/haircuts/buzz-cut/buzz-cut-2.jpg",
+            name: "Mid Fade Style",
+            alt: "Different variations of Mid Fade haircut"
+          },
+        ],
         time:"15",
         price:"20€"
       },
@@ -64,11 +101,23 @@ export const servicesData = {
         description:
           "Pompadour je klasičen stil, pri katerem so lasje na vrhu dolgi in počesani nazaj, medtem ko so stranice krajše. Ta frizura daje moškemu prefinjen, a hkrati drzen videz.",
         listItems: ["Klasičen Pompadour", "Sodobni Pompadour", "Pompadour s fade", "Teksturiran Pompadour"],
-        images: Array(3).fill({
-          url: "/img/haircuts/burst-fade/burst_fade_1.png",
-          name: "Pompadour Style",
-          alt: "Different variations of Pompadour hairstyle"
-        }),
+        images: [
+          {
+            url: "/img/haircuts/buzz-cut/buzz-cut-1.jpg",
+            name: "Mid Fade Style",
+            alt: "Different variations of Mid Fade haircut"
+          },
+          {
+            url: "/img/haircuts/burst-fade/burst-fade-2.jpg",
+            name: "Mid Fade Style",
+            alt: "Different variations of Mid Fade haircut"
+          },
+          {
+            url: "/img/haircuts/buzz-cut/buzz-cut-1.jpg",
+            name: "Mid Fade Style",
+            alt: "Different variations of Mid Fade haircut"
+          },
+        ],
         time:"15",
         price:"20€"
       },
@@ -79,11 +128,23 @@ export const servicesData = {
         description:
           "Taper fade je vsestranska frizura, kjer lasje postopoma zbledijo proti vratu in ušesom. Ta stil je eleganten in enostaven za vzdrževanje.",
         listItems: ["Low Taper Fade", "High Taper Fade", "Skin Taper Fade", "Classic Taper"],
-        images: Array(3).fill({
-          url: "/img/haircuts/burst-fade/burst_fade_1.png",
-          name: "Taper Fade Style",
-          alt: "Different variations of Taper Fade haircut"
-        }),
+        images: [
+          {
+            url: "/img/haircuts/burst-fade/burst-fade-3.jpg",
+            name: "Mid Fade Style",
+            alt: "Different variations of Mid Fade haircut"
+          },
+          {
+            url: "/img/haircuts/burst-fade/burst-fade-1.jpg",
+            name: "Mid Fade Style",
+            alt: "Different variations of Mid Fade haircut"
+          },
+          {
+            url: "/img/haircuts/buzz-cut/buzz-cut-2.jpg",
+            name: "Mid Fade Style",
+            alt: "Different variations of Mid Fade haircut"
+          },
+        ],
         time:"15",
         price:"20€"
       },
@@ -94,11 +155,23 @@ export const servicesData = {
         description:
           "Undercut je frizura, pri kateri so stranice zelo kratke ali obrite, zgornji del las pa ostane dolg. Ta frizura daje kontrasten in izrazit videz.",
         listItems: ["Klasičen Undercut", "Undercut s fade", "Teksturiran Undercut", "Slick Back Undercut"],
-        images: Array(3).fill({
-          url: "/img/haircuts/burst-fade/burst_fade_1.png",
-          name: "Undercut Style",
-          alt: "Different variations of Undercut hairstyle"
-        }),
+        images: [
+          {
+            url: "/img/haircuts/burst-fade/burst-fade-2.jpg",
+            name: "Mid Fade Style",
+            alt: "Different variations of Mid Fade haircut"
+          },
+          {
+            url: "/img/haircuts/burst-fade/burst-fade-3.jpg",
+            name: "Mid Fade Style",
+            alt: "Different variations of Mid Fade haircut"
+          },
+          {
+            url: "/img/haircuts/buzz-cut/buzz-cut-3.jpg",
+            name: "Mid Fade Style",
+            alt: "Different variations of Mid Fade haircut"
+          },
+        ],
         time:"15",
         price:"20€"
       },
@@ -109,11 +182,23 @@ export const servicesData = {
         description:
           "Crew cut je kratka in praktična frizura, pri kateri so lasje na vrhu nekoliko daljši kot na straneh. Idealna je za moške, ki želijo športen in čist videz.",
         listItems: ["Klasičen Crew Cut", "Ivy League Crew Cut", "Textured Crew Cut", "Fade Crew Cut"],
-        images: Array(3).fill({
-          url: "/img/haircuts/burst-fade/burst_fade_1.png",
-          name: "Crew Cut Style",
-          alt: "Different variations of Crew Cut hairstyle"
-        }),
+        images: [
+          {
+            url: "/img/haircuts/burst-fade/burst-fade-2.jpg",
+            name: "Mid Fade Style",
+            alt: "Different variations of Mid Fade haircut"
+          },
+          {
+            url: "/img/haircuts/buzz-cut/buzz-cut-1.jpg",
+            name: "Mid Fade Style",
+            alt: "Different variations of Mid Fade haircut"
+          },
+          {
+            url: "/img/haircuts/buzz-cut/buzz-cut-2.jpg",
+            name: "Mid Fade Style",
+            alt: "Different variations of Mid Fade haircut"
+          },
+        ],
         time:"15",
         price:"20€"
       },
@@ -124,11 +209,23 @@ export const servicesData = {
         description:
           "Buzz cut je preprosta, a brezčasna moška frizura, ki zahteva minimalno vzdrževanje. Idealen je za tiste, ki iščejo praktično in elegantno rešitev.",
         listItems: ["Induction cut", "Burr cut", "Butch cut", "Crew cut"],
-        images: Array(3).fill({
-          url: "/img/haircuts/burst-fade/burst_fade_1.png",
-          name: "Buzz Cut Style",
-          alt: "Different variations of Buzz Cut hairstyle"
-        }),
+        images: [
+          {
+            url: "/img/haircuts/mid-fade/mid-fade-3.jpg",
+            name: "Mid Fade Style",
+            alt: "Different variations of Mid Fade haircut"
+          },
+          {
+            url: "/img/haircuts/buzz-cut/buzz-cut-2.jpg",
+            name: "Mid Fade Style",
+            alt: "Different variations of Mid Fade haircut"
+          },
+          {
+            url: "/img/haircuts/buzz-cut/buzz-cut-3.jpg",
+            name: "Mid Fade Style",
+            alt: "Different variations of Mid Fade haircut"
+          },
+        ],
         time:"15",
         price:"20€"
       }
@@ -225,7 +322,7 @@ export default function TabService() {
             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-1 gap-6">
               {tab.images.map((image, index) => (
                 <AnimateInViewWrapper scaleFrom={1} distance={10} delay={index/10} key={index}>
-                  <div className="relative aspect-square overflow-hidden flex items-center justify-center">
+                  <div className="relative group aspect-square overflow-hidden flex items-center justify-center">
                     <Image
                       src={image.url}
                       height={600}
@@ -233,6 +330,7 @@ export default function TabService() {
                       className="w-full object-cover"
                       alt={image.alt}
                     />
+                    <ImageFrame/>
                   </div>
                 </AnimateInViewWrapper>
               ))}
