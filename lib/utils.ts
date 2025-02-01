@@ -30,7 +30,7 @@ export const loadGoogleMapsScript = (): Promise<void> => {
   loadingPromise = new Promise((resolve, reject) => {
     const apiKey = process.env.NEXT_PUBLIC_GOOGLE_MAPS_API_KEY;
     if (!apiKey) {
-      reject(new Error('VITE_GOOGLE_MAPS_API_KEY is not defined'));
+      reject(new Error('NEXT_PUBLIC_GOOGLE_MAPS_API_KEY is not defined'));
       return;
     }
 
