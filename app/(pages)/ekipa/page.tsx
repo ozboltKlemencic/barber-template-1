@@ -8,8 +8,9 @@ import ShinyText from '@/components/text/ShinyText'
 import ROUTES from '@/constants/routes'
 import AnimateInViewWrapper from "@/components/animation/fade";
 import React from 'react'
-import { employees } from '@/app/page'
+
 import TeamCard from '@/components/cards/teamCard'
+import { employees } from '@/constants/data'
 
 const page = () => {
   return (
