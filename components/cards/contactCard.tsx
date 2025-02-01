@@ -1,6 +1,6 @@
 import { info } from "@/constants/info"
-import ROUTES from "@/constants/routes"
-import { MapPin, Phone, Clock } from "lucide-react"
+
+import { Phone } from "lucide-react"
 import Link from "next/link"
 
 export default function ContactCard() {
