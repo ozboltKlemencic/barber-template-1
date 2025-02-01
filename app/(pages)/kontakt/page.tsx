@@ -1,5 +1,6 @@
 "use client"
 
+import GoogleMap from '@/components/GoogleMap';
 import Image from 'next/image';
 import Background from '@/public/img/hero-carosel/banner_2.png';
 import { useEffect } from "react";
@@ -17,6 +18,8 @@ import Footer from '@/components/navigation/footer';
 import ShinyText from '@/components/text/ShinyText';
 import ROUTES from '@/constants/routes';
 import ContactCard from '@/components/cards/contactCard';
+import ContactMainForm from '@/components/forms/ContactMainForm';
+import CtaIcon from '@/components/CtaIcon';
 
 export default function ContactPage() {
   useEffect( () => {
@@ -72,7 +75,7 @@ export default function ContactPage() {
                 <div className='h-1/6 w-full absolute top-0 left-0 bg-gradient-to-b from-black to-transparent'></div>
                 <div className='h-1/6 w-full absolute bottom-0 left-0 bg-gradient-to-t from-black to-transparent'></div>
 
-                <div className='max-w-screen-xl flex-wrap flex justify-center flex-col md:flex-row items-center gap-x-8 px-4 md:px-16 gap-y-16'>
+                <div className='max-w-screen-xl flex-wrap flex justify-center flex-col md:flex-row items-center gap-x-10 px-4 md:px-6 gap-y-16'>
                     <div className=' w-auto max-w-full md:max-w-[45%] h-auto mx-4 flex items-center  md:items-start justify-center flex-col gap-y-2 gap-x-2 '>
                         <AnimateInViewWrapper >
                             <ContactCard/>
@@ -98,6 +101,41 @@ export default function ContactPage() {
                     <div className='absolute inset-0 bg-black/[0.5] backdrop-blur-sm'></div>
                 </motion.div>
             </div>
+        </div>
+
+        <div className="grid lg:grid-cols-2 min-h-screen">
+          {/* Form Section */}
+          <div className="flex items-center flex-col justify-center bg-black p-6 lg:p-12">
+            <div>
+              <h2 className='text-neutral-100 font-teko text-3xl mb-6'>Pošljite sporočilo </h2>
+              <ContactMainForm/>
+            </div>
+          </div>
+
+          {/* Map Section */}
+          <div className="h-[400px] lg:h-auto">
+            <GoogleMap 
+              center={{ lat: 46.170399, lng: 14.303600 }}
+              zoom={12}
+              markers={[
+                {
+                  position: { lat: 46.170399, lng: 14.303600 },
+                  title: "Lokacija"
+                }
+              ]}
+            />
+          </div>
+        </div>
+
+        <div className='w-screen h-auto flex items-center justify-center px-8'>
+          <AnimateInViewWrapper>
+            <div className="relative h-[450px] w-[450px] items-center justify-center flex ">
+              <div className="flex items-center justify-center flex-col gap-y-3">
+                <h6 className="text-emerald-50 text-4xl font-teko">Najdete nas na </h6>
+                <CtaIcon/>
+              </div>
+            </div>
+          </AnimateInViewWrapper>
         </div>
         <Footer/>
         </>
