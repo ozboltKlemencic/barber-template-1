@@ -66,6 +66,7 @@ export default function ContactPage() {
           </div>
         </div>
         </div>
+        
         <div
             ref={container} 
             className='relative flex items-center justify-center  h-[1100px] md:h-[50vh] md:min-h-[700px] overflow-hidden '
@@ -129,7 +130,7 @@ export default function ContactPage() {
 
         <div className='w-screen h-auto flex items-center justify-center px-8'>
           <AnimateInViewWrapper>
-            <div className="relative h-[450px] w-[450px] items-center justify-center flex ">
+            <div className="relative h-[450px]  w-full items-center justify-center flex ">
               <div className="flex items-center justify-center flex-col gap-y-3">
                 <h6 className="text-emerald-50 text-4xl font-teko">Najdete nas na </h6>
                 <CtaIcon/>
