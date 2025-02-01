@@ -109,7 +109,7 @@ export default function Navbar() {
           <nav className="flex items-center justify-between w-full h-16">
             <Link href={ROUTES.DOMOV} className="flex items-center justify-center gap-2">
               <Image
-                src="/img/logo/logo.jpeg"
+                src="/img/logo/logo.png"
                 alt="Blackout Logo"
                 width={20}
                 height={20}
