@@ -1,6 +1,6 @@
 export const info = {
-  eposta: "info@obsites.si",
-  epostaLink: "mailto:info@obsites.si",
+  eposta: "info@blackout.si",
+  epostaLink: "mailto:info@blackout.si",
   lokacija: "Cesta talcev 3c, 4220 Škofja Loka",
   lokacijaLink: "https://maps.app.goo.gl/FbkG6rMmrSDBxRXf7",
   sporocilo: "",

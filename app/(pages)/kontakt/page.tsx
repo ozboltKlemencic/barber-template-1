@@ -20,7 +20,10 @@ import ROUTES from '@/constants/routes';
 import ContactCard from '@/components/cards/contactCard';
 import ContactMainForm from '@/components/forms/ContactMainForm';
 import CtaIcon from '@/components/CtaIcon';
-
+import { info } from '@/constants/info';
+import { RxScissors } from "react-icons/rx";
+import { LuMapPin } from "react-icons/lu";
+import { FaPhoneFlip } from "react-icons/fa6";
 export default function ContactPage() {
   useEffect( () => {
     const lenis = new Lenis()
@@ -79,19 +82,19 @@ export default function ContactPage() {
                 <div className='max-w-screen-xl flex-wrap flex justify-center flex-col md:flex-row items-center gap-x-10 px-4 md:px-6 gap-y-16'>
                     <div className=' w-auto max-w-full md:max-w-[45%] h-auto mx-4 flex items-center  md:items-start justify-center flex-col gap-y-2 gap-x-2 '>
                         <AnimateInViewWrapper >
-                            <ContactCard/>
+                        <ContactCard title='Lokacija' link={info.lokacijaLink} paragraphs={[`${info.lokacija}`]} cta='Navodila za pot' icon={<LuMapPin className='size-5 lg:size-6 group-hover:rotate-12 trnsition-all text-yellow-300/[0.7] pb-1 transition-transform duration-300'/>}/>
                         </AnimateInViewWrapper>
                     </div>
 
                     <div className=' w-auto max-w-full md:max-w-[45%] h-auto mx-4 flex items-center  md:items-start justify-center flex-col gap-y-2 gap-x-2 '>
                         <AnimateInViewWrapper >
-                            <ContactCard/>
+                          <ContactCard title='Kontaktirajte nas' link={ROUTES.NAROCANJE} paragraphs={[`Tel. št.:${info.telefon}`,`E-pošta:${info.eposta}`]} cta='Naroči se' icon={<RxScissors className='size-5 lg:size-6 group-hover:rotate-12 trnsition-all text-yellow-300/[0.7] pb-1 transition-transform duration-300'/>}/>
                         </AnimateInViewWrapper>
                     </div>
                   
                     <div className='w-auto h-auto mx-4'>
                         <AnimateInViewWrapper >
-                            <ContactCard/>
+                        <ContactCard title='Delovne ure' link={info.telefonLink} paragraphs={["Pon. - Pet.: 8:00 - 17:00","Vikend: zaprto"]} cta='Pokliči' icon={<FaPhoneFlip className='size-5 lg:size-6 group-hover:rotate-12 trnsition-all text-yellow-300/[0.7] pb-1 transition-transform duration-300'/>}/>
                         </AnimateInViewWrapper>
                     </div>
                 </div>
