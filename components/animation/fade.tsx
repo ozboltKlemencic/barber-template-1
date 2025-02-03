@@ -53,7 +53,7 @@ const AnimateInViewWrapper: React.FC<AnimatedWrapperProps> = ({
       whileInView="visible"
       variants={variants}
       viewport={{ once: true, amount: 0.2 }}
-      className={className}
+      className={className }
     >
       {children}
     </motion.div>

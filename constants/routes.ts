@@ -3,7 +3,7 @@ const ROUTES = {
     GALERIJA: "/galerija",
     KONTAKT: "/kontakt",
     STORITVE: "/storitve",
-    NAROCANJE: "https://form.lime-booking.com/sl/blackout-barbershop/service",
+    NAROCANJE: "https://blackout-barber.si/brivnica-blackout",
     EKIPA:"/ekipa"
   };
   

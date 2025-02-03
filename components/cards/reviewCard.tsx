@@ -12,7 +12,7 @@ const ReviewCard = ({
    
 
     return ( 
-        <div className={`w-full  h-auto p-8 mobile:p-5 rounded-[2px] bg-black border border-yellow-200/[0.8] flex justify-start flex-col gap-y-4  z-0 ${className}`}>
+        <div className={`w-full  h-auto p-8 mobile:p-5 rounded-[2px] bg-black border border-yellow-200/[0.8] flex justify-start flex-col gap-y-4  z-[-1] ${className}`}>
             <div className='flex items-center gap-x-4'>
                 <Image src={`${profilImgUrl}`} width={32} height={32} alt="" className='w-14 h-14 object-cover rounded-[50%]' />
                 <h6 className='font-teko text-neutral-50 text-xl font-medium'>{name}</h6>

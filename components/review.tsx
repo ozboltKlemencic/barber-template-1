@@ -131,13 +131,15 @@ const ReviewSection = ({
                             naših storitev. Prepričajte se sami, zakaj nam zaupajo številni zadovoljni uporabniki.
                         </p>
                     </AnimateInViewWrapper> 
-                    <div className='absolute  top-0 right-0 md:right-[-100%] mobile:hidden  w-full h-32 md:h-1/3 z-50 bg-gradient-to-b from-black to-transparent'></div>
-                    <div className='absolute bottom-0 right-0 md:right-[-100%] mobile:hidden  w-full h-32 md:h-1/3 z-50 bg-gradient-to-t from-black to-transparent'></div>
+                    
+                    <div className='absolute  top-0 right-0 md:right-[-100%] mobile:hidden mix-blend-overlay w-full h-32 md:h-1/3 z-[100] bg-gradient-to-b from-black to-transparent'></div>
+                    <div className='absolute bottom-0 right-0 md:right-[-100%] mobile:hidden mix-blend-overlay w-full h-32 md:h-1/3 z-[100] bg-gradient-to-t from-black to-transparent'></div>
+                    
                 </div>
             </div>
 
             {/* Reviews Container */}
-            <div className={`w-full  md:w-1/2 md:h-auto ${showAll ? 'h-auto' : 'h-[93vh]'}   overflow-hidden  md:px-16 py-8 flex  items-center md:justify-center justify-start flex-col xl:flex-row gap-4`}>
+            <div className={`w-full   md:w-1/2 md:h-auto ${showAll ? 'h-auto' : 'h-[93vh]'}   overflow-hidden  md:px-16 py-8 flex  items-center md:justify-center justify-start flex-col xl:flex-row gap-4`}>
                 <div className="w-full xl:w-1/2 flex flex-col items-center justify-center gap-4 md:mt-20">
                     {REVIEWS.filter((review) => Number(review.id) <= 5).map((review) => (
                         <AnimateInViewWrapper key={review.id} scaleFrom={1}>

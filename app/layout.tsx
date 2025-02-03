@@ -29,7 +29,7 @@ export default function RootLayout({
   return (
     <html lang="sl">
       <body
-        className={`${teko.variable} ${montserrat.variable} antialiased`}
+        className={`${teko.variable} ${montserrat.variable} antialiased overflow-x-hidden`}
       >
         {children}
       </body>

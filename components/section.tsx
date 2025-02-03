@@ -6,8 +6,9 @@ import { useRef } from 'react';
 import ContactInfo from './cards/contact';
 import { MaskAnimation } from './text/MaskAnimation';
 import AnimateInViewWrapper from "@/components/animation/fade";
-import Primary from './buttons/Primary';
+
 import BgFrombottomToTop from './text/bgFrombottomToTop';
+import Component from './forms/PopUpForm';
 
 export default function Contact() {
     const container = useRef<HTMLDivElement>(null);;
@@ -43,7 +44,7 @@ export default function Contact() {
                             </p>
                         </AnimateInViewWrapper> 
                         <MaskAnimation >
-                            <Primary text='Pošlji sporočilo' link='' w='200px' h='60px'/>
+                            <Component/>
                         </MaskAnimation>
                     </div>
                   
