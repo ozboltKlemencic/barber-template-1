@@ -92,7 +92,7 @@ export default function ContactPage() {
                         </AnimateInViewWrapper>
                     </div>
                   
-                    <div className='w-auto h-auto mx-4'>
+                    <div className='w-auto h-auto mx-4 '>
                         <AnimateInViewWrapper >
                         <ContactCard title='Delovne ure' link={info.telefonLink} paragraphs={["Pon. - Pet.: 8:00 - 17:00","Vikend: zaprto"]} cta='Pokliči' icon={<FaPhoneFlip className='size-5 lg:size-6 group-hover:rotate-12 trnsition-all text-yellow-300/[0.7] pb-1 transition-transform duration-300'/>}/>
                         </AnimateInViewWrapper>

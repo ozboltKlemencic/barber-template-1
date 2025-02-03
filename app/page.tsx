@@ -19,7 +19,7 @@ import TeamCard from "@/components/cards/teamCard";
 import HorizontalScrollCarousel from "@/components/horizontalScroll";
 import ROUTES from "@/constants/routes";
 import { employees } from "@/constants/data";
-
+import { Toaster } from "@/components/ui/toaster"
 const haircutData = [
   {
     id: 1,
@@ -149,7 +149,7 @@ export default function Home() {
       <Contact/>
 
       <HorizontalScrollCarousel/>
-      
+      <Toaster />
       <Footer />
     </>
   );
