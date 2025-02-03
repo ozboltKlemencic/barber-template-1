@@ -132,8 +132,8 @@ const ReviewSection = ({
                         </p>
                     </AnimateInViewWrapper> 
                     
-                    <div className='absolute  top-0 right-0 md:right-[-100%] mobile:hidden mix-blend-overlay w-full h-32 md:h-1/3 z-[100] bg-gradient-to-b from-black to-transparent'></div>
-                    <div className='absolute bottom-0 right-0 md:right-[-100%] mobile:hidden mix-blend-overlay w-full h-32 md:h-1/3 z-[100] bg-gradient-to-t from-black to-transparent'></div>
+                    <div className='absolute  top-0 right-0 md:right-[-100%] mobile:hidden  w-full h-32 md:h-1/3 z-50 bg-gradient-to-b from-black to-transparent'></div>
+                    <div className='absolute bottom-0 right-0 md:right-[-100%] mobile:hidden  w-full h-32 md:h-1/3 z-50 bg-gradient-to-t from-black to-transparent'></div>
                     
                 </div>
             </div>
