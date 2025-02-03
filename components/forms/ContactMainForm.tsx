@@ -48,7 +48,7 @@ const [agreed, setAgreed] = useState(false)
             className="w-full bg-white text-black hover:bg-white/90 rounded-none border-2 border-white"
             disabled={!agreed}
           >
-            Send
+            Pošlji
           </Button>
         </form>
   )
