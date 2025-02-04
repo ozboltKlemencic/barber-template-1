@@ -20,6 +20,8 @@ import HorizontalScrollCarousel from "@/components/horizontalScroll";
 import ROUTES from "@/constants/routes";
 import { employees } from "@/constants/data";
 import { Toaster } from "@/components/ui/toaster"
+import { useNavStore } from '@/store/navStore'
+
 const haircutData = [
   {
     id: 1,
@@ -57,10 +59,10 @@ export default function Home() {
 
     requestAnimationFrame(raf)
   }, [])
-
+  const { isNavbarVisible } = useNavStore()
   return (
     <>
-      <Navbar/>
+      {isNavbarVisible && <Navbar />}
       <CaroselContainer />
       {/* STORITVE */}
       <div className="w-screen bg-black h-auto  ">

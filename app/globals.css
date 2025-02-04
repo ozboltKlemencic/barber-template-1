@@ -7,6 +7,12 @@ body {
   background-color: black;
 }
 
+.prevent-scroll {
+  overflow: hidden;
+  position: fixed;
+  width: 100%;
+}
+
 .gradient-text-stroke {
   text-transform: capitalize;
   background: linear-gradient(to right, #833ab4, #fd1d1d, #fcb045);

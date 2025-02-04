@@ -21,11 +21,11 @@ export const metadata: Metadata = {
   description: "Brivnica Blackout",
 };
 
-export default function RootLayout({
-  children,
-}: Readonly<{
-  children: React.ReactNode;
-}>) {
+
+
+export default function RootLayout({children,}: Readonly<{children: React.ReactNode;}>)
+ {
+ 
   return (
     <html lang="sl">
       <head>
@@ -34,6 +34,7 @@ export default function RootLayout({
       <body
         className={`${teko.variable} ${montserrat.variable} antialiased overflow-x-hidden`}
       >
+    
         {children}
       </body>
     </html>

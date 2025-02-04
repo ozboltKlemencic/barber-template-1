@@ -17,7 +17,7 @@ export default function ServicePage() {
       
       <div className="w-screen h-auto  ">
           <div className="h-auto flex flex-col mx-auto w-[92vw] md:w-full max-w-7xl px-2 md:px-16 py-32 gap-y-1">
-          <div className="mb-0 md:mb-4">
+          <div className="mb-4 md:mb-20">
               <MaskAnimation>
                 <h2 className="text-neutral-50 font-teko font-semibold text-4xl  md:text-5xl mb-2">
                 Kjer natančnost sreča&nbsp;<BgFrombottomToTop text="eleganco"/>

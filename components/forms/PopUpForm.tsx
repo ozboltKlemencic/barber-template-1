@@ -16,6 +16,8 @@ import { toast } from "@/hooks/use-toast"
 import { z } from "zod"
 import Image from "next/image"
 
+import { useNavStore } from '@/store/navStore'
+import { useEffect } from "react";
 // Zod validation schema
 const messageSchema = z.object({
   name: z.string()
@@ -41,6 +43,7 @@ export default function ContactForm() {
     message: ""
   })
   const [errors, setErrors] = useState<FormErrors>({})
+  const { setNavbarVisibility } = useNavStore()
   const [isOpen, setIsOpen] = useState(false)
 
   const handleInputChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
@@ -50,6 +53,7 @@ export default function ContactForm() {
       [name]: value
     }))
   }
+
 
   const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault()
@@ -99,9 +103,21 @@ export default function ContactForm() {
     }
   }
 
+  useEffect(() => {
+    if (isOpen) {
+      document.body.style.overflow = 'hidden';
+      console.log(document.body.style.overflow)
+    } else {
+      document.body.style.overflow = 'auto';
+    }
+  }, [isOpen])
+
   return (
     <>
-      <Dialog open={isOpen} onOpenChange={setIsOpen}>
+      <Dialog open={isOpen} onOpenChange={(open) => {
+        setIsOpen(open)
+        setNavbarVisibility(!open)
+      }}>
         <DialogTrigger asChild>
           <button className="rounded-none active:scale-95 transition-all duration-75 hover:bg-neutral-900 border-yellow-300 border bg-black px-4 py-2">
             Pošlji sporočilo
