@@ -187,7 +187,7 @@ export default function ContactForm() {
             </div>
             <Button
               type="submit"
-              className="w-full rounded-none !bg-black text-white hover:from-yellow-500 hover:to-gray-900 transition-all duration-300"
+              className="w-full rounded-none !bg-gradient-to-br !from-yellow-200/[0.5] !to-yellow-400/[0.5] hover:!from-yellow-200/[0.3] hover:!to-yellow-400/[0.3] text-white transition-all duration-300"
             >
               Pošlji
             </Button>
