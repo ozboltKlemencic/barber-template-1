@@ -62,3 +62,4 @@ export const loadGoogleMapsScript = (): Promise<void> => {
 
   return loadingPromise;
 };
+

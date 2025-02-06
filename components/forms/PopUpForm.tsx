@@ -1,4 +1,5 @@
 import React, { useState } from "react"
+import { ReloadIcon } from "@radix-ui/react-icons";
 import { Button } from "@/components/ui/button"
 import {
   Dialog,
@@ -18,6 +19,7 @@ import Image from "next/image"
 
 import { useNavStore } from '@/store/navStore'
 import { useEffect } from "react";
+
 // Zod validation schema
 const messageSchema = z.object({
   name: z.string()
@@ -30,11 +32,14 @@ const messageSchema = z.object({
     .max(500, { message: "Sporočilo ne sme presegati 500 znakov" })
 })
 
+
 // Type for form data based on Zod schema
 type FormData = z.infer<typeof messageSchema>;
 
 // Type for form errors
 type FormErrors = Partial<Record<keyof FormData, string>>;
+
+
 
 export default function ContactForm() {
   const [formData, setFormData] = useState<FormData>({
@@ -45,8 +50,9 @@ export default function ContactForm() {
   const [errors, setErrors] = useState<FormErrors>({})
   const { setNavbarVisibility } = useNavStore()
   const [isOpen, setIsOpen] = useState(false)
+   const [isLoading, setIsLoading] = useState(false)
 
-  const handleInputChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
+   const handleInputChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
     const { name, value } = e.target
     setFormData(prev => ({
       ...prev,
@@ -55,34 +61,58 @@ export default function ContactForm() {
   }
 
 
-  const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
+  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault()
     
     try {
       // Validate form data
       messageSchema.parse(formData)
       
-      // If validation passes
-      setErrors({})
+      // Set loading state
+      setIsLoading(true)
       
-      // Show success toast with submitted details
-      toast({
-        title: "Sporočilo je bilo uspešno poslano",
-        
-        className: "toaster"
-      });
+      // Prepare email data
+      const emailData = {
+        email: formData.email,
+        name: formData.name,
+        message: formData.message
+      }
       
-      // Reset form
-      setFormData({
-        name: "",
-        email: "",
-        message: ""
+      // Send email
+      const response = await fetch('/api/sendEmail', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(emailData)
       })
       
-      // Close dialog
-      setNavbarVisibility(true)
-      setIsOpen(false)
-
+      const result = await response.json()
+      
+      // If email sent successfully
+      if (response.ok) {
+        // Show success toast
+        toast({
+          title: "Sporočilo je bilo uspešno poslano",
+          className: "toaster"
+        });
+        
+        // Reset form
+        setFormData({
+          name: "",
+          email: "",
+          message: ""
+        })
+        
+        // Close dialog and show navbar
+        setNavbarVisibility(true)
+        setIsOpen(false)
+      } else {
+        // Handle server-side errors
+        toast({
+          title: "Napaka pri pošiljanju sporočila",
+          description: result.message || "Prosimo, poskusite znova.",
+          variant: "destructive"
+        });
+      }
     } catch (error) {
       if (error instanceof z.ZodError) {
         // Handle validation errors
@@ -94,15 +124,27 @@ export default function ContactForm() {
         
         setErrors(newErrors)
 
-        // Optionally show a validation error toast
+        // Show validation error toast
         toast({
           title: "Napaka pri pošiljanju sporočila",
           description: "Prosimo, popravite označena polja.",
           variant: "destructive"
         });
+      } else {
+        // Handle network or unexpected errors
+        toast({
+          title: "Napaka pri pošiljanju sporočila",
+          description: "Prišlo je do nepričakovane napake.",
+          variant: "destructive"
+        });
       }
+    } finally {
+      // Always reset loading state
+      setIsLoading(false)
     }
   }
+
+  
 
   useEffect(() => {
     if (isOpen) {
@@ -124,7 +166,11 @@ export default function ContactForm() {
             Pošlji sporočilo
           </button>
         </DialogTrigger>
-        <DialogContent className="rounded-none">
+        <DialogContent 
+          className="rounded-none" 
+          onPointerDownOutside={(e) => isLoading && e.preventDefault()}
+          onEscapeKeyDown={(e) => isLoading && e.preventDefault()}
+        >
           <div className="flex items-center gap-2">
             <div className="flex size-11 shrink-0 items-start justify-start" aria-hidden="true">
               <Image src="/img/favicon.svg" alt="logo" width={40} height={40}/>
@@ -151,6 +197,7 @@ export default function ContactForm() {
                   name="name"
                   value={formData.name}
                   onChange={handleInputChange}
+                  disabled={isLoading}
                   placeholder="Janez Novak" 
                   type="text" 
                   required 
@@ -169,6 +216,7 @@ export default function ContactForm() {
                 </Label>
                 <Input
                   id="email"
+                  disabled={isLoading}
                   name="email"
                   value={formData.email}
                   onChange={handleInputChange}
@@ -191,6 +239,7 @@ export default function ContactForm() {
                 <Textarea
                   id="message"
                   name="message"
+                  disabled={isLoading}
                   value={formData.message}
                   onChange={handleInputChange}
                   placeholder="Vnesite vaše sporočilo"
@@ -206,7 +255,14 @@ export default function ContactForm() {
               type="submit"
               className="w-full rounded-none !bg-gradient-to-br !from-yellow-200/[0.5] !to-yellow-400/[0.5] hover:!from-yellow-200/[0.3] hover:!to-yellow-400/[0.3] text-white transition-all duration-300"
             >
-              Pošlji
+               {isLoading ? (
+                <>
+                  <span>Pošiljanje</span>
+                  <ReloadIcon className="mr-2 size-4 animate-spin" />
+                </>
+                ) : (
+                  <p>Pošlji</p>
+                )}
             </Button>
           </form>
 
