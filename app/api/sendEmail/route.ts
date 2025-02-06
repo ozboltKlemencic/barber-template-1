@@ -17,7 +17,7 @@ export async function POST(request: NextRequest) {
   try {
     console.log('Received POST request');
     const { email, name, message } = await request.json();
-    console.log('Request body:', body);
+    
 
     // Verify transporter connection
     await transporter.verify();
