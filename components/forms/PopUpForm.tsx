@@ -79,7 +79,7 @@ export default function ContactForm() {
       }
       
       // Send email
-      const response = await fetch('/api/sendEmail', {
+      const response = await fetch('https://barber-template-1.vercel.app/api/sendEmail', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify(emailData)
