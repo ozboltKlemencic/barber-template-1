@@ -80,6 +80,7 @@ export default function ContactForm() {
       })
       
       // Close dialog
+      setNavbarVisibility(true)
       setIsOpen(false)
 
     } catch (error) {
