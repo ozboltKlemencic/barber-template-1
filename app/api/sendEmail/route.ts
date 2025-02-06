@@ -13,7 +13,7 @@ const transporter = nodemailer.createTransport({
   },
 });
 
-export async function GET(request: NextRequest) {
+export async function POST(request: NextRequest) {
   try {
     console.log('Received POST request');
     const { email, name, message } = await request.json();
