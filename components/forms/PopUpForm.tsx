@@ -121,6 +121,8 @@ export default function ContactForm() {
           acc[key] = curr.message
           return acc
         }, {})
+
+        console.log(error);
         
         setErrors(newErrors)
 
