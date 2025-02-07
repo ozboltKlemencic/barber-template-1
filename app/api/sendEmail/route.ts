@@ -13,6 +13,8 @@ const transporter = nodemailer.createTransport({
 
 export async function POST(request:Request) {
   try {
+    console.error('rote');
+
     const { email, name, message } = await request.json();
 
     await transporter.verify();
