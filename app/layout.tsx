@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { Montserrat, Teko } from "next/font/google";
 import "./globals.css";
+import { Analytics } from "@vercel/analytics/react"
 
 // Montserrat
 const montserrat = Montserrat({
@@ -34,7 +35,7 @@ export default function RootLayout({children,}: Readonly<{children: React.ReactN
       <body
         className={`${teko.variable} ${montserrat.variable} antialiased overflow-x-hidden`}
       >
-    
+        <Analytics/>
         {children}
       </body>
     </html>
