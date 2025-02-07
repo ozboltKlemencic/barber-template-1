@@ -78,14 +78,16 @@ export default function ContactForm() {
         message: formData.message
       }
       
+      console.log("prisli do klica api");
       // Send email
-      const response = await fetch('https://barber-template-1.vercel.app/api/sendEmail', {
+      const response = await fetch('/api/sendEmail', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify(emailData)
       })
       
       const result = await response.json()
+      console.log("Dobili rezultat");
       
       // If email sent successfully
       if (response.ok) {
