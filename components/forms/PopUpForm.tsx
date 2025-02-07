@@ -85,7 +85,7 @@ export default function ContactForm() {
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify(emailData)
       })
-      
+     
       const result = await response.json()
       console.log("Dobili rezultat");
       
@@ -116,6 +116,8 @@ export default function ContactForm() {
         });
       }
     } catch (error) {
+
+      console.log('Errorcek');
       if (error instanceof z.ZodError) {
         // Handle validation errors
         const newErrors = error.errors.reduce<FormErrors>((acc, curr) => {
