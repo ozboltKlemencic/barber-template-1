@@ -1,6 +1,15 @@
 import nodemailer from 'nodemailer';
 import { NextRequest, NextResponse } from "next/server";
 
+// Create middleware to handle CORS
+export async function middleware(request: NextRequest) {
+  const response = NextResponse.next();
+  response.headers.set('Access-Control-Allow-Origin', '*');
+  response.headers.set('Access-Control-Allow-Methods', 'GET, POST, OPTIONS');
+  response.headers.set('Access-Control-Allow-Headers', 'Content-Type');
+  return response;
+}
+
 const transporter = nodemailer.createTransport({
   host: process.env.SMTP_HOST,
   port: Number(process.env.SMTP_PORT) || 587,
@@ -11,15 +20,27 @@ const transporter = nodemailer.createTransport({
   },
 });
 
-export async function POST(request: NextRequest) {
-  try {
-    // Add CORS headers
-    const headers = {
+// Handle OPTIONS preflight request
+export async function OPTIONS() {
+  return new NextResponse(null, {
+    status: 200,
+    headers: {
       'Access-Control-Allow-Origin': '*',
-      'Access-Control-Allow-Methods': 'POST, OPTIONS',
+      'Access-Control-Allow-Methods': 'GET, POST, OPTIONS',
       'Access-Control-Allow-Headers': 'Content-Type',
-    };
+    },
+  });
+}
 
+export async function POST(request: NextRequest) {
+  if (request.method !== 'POST') {
+    return NextResponse.json(
+      { message: 'Method not allowed' },
+      { status: 405 }
+    );
+  }
+
+  try {
     const { email, name, message } = await request.json();
     console.log({ email, name, message });
 
@@ -40,7 +61,14 @@ export async function POST(request: NextRequest) {
 
     return NextResponse.json(
       { message: 'Email sent successfully', messageId: info.messageId },
-      { status: 200, headers }
+      { 
+        status: 200,
+        headers: {
+          'Access-Control-Allow-Origin': '*',
+          'Access-Control-Allow-Methods': 'GET, POST, OPTIONS',
+          'Access-Control-Allow-Headers': 'Content-Type',
+        }
+      }
     );
   } catch (error) {
     console.error('Email sending error:', error);
