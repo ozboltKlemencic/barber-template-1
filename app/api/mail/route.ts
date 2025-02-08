@@ -11,14 +11,6 @@ const transporter = nodemailer.createTransport({
   },
 });
 
-// Define allowed methods
-export const allowedMethods = ['POST'];
-
-// Add OPTIONS method handler for CORS
-export async function OPTIONS() {
-  return NextResponse.json({}, { status: 200 });
-}
-
 export async function POST(request: NextRequest) {
   try {
     // Add CORS headers
