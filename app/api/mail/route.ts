@@ -1,14 +1,12 @@
 import nodemailer from 'nodemailer';
 import { NextRequest, NextResponse } from "next/server";
 
-// Create middleware to handle CORS
-export async function middleware(request: NextRequest) {
-  const response = NextResponse.next();
-  response.headers.set('Access-Control-Allow-Origin', '*');
-  response.headers.set('Access-Control-Allow-Methods', 'GET, POST, OPTIONS');
-  response.headers.set('Access-Control-Allow-Headers', 'Content-Type');
-  return response;
-}
+// Configure CORS headers
+const corsHeaders = {
+  'Access-Control-Allow-Origin': '*',
+  'Access-Control-Allow-Methods': 'GET, POST, OPTIONS',
+  'Access-Control-Allow-Headers': 'Content-Type',
+};
 
 const transporter = nodemailer.createTransport({
   host: process.env.SMTP_HOST,
@@ -24,11 +22,7 @@ const transporter = nodemailer.createTransport({
 export async function OPTIONS() {
   return new NextResponse(null, {
     status: 200,
-    headers: {
-      'Access-Control-Allow-Origin': '*',
-      'Access-Control-Allow-Methods': 'GET, POST, OPTIONS',
-      'Access-Control-Allow-Headers': 'Content-Type',
-    },
+    headers: corsHeaders,
   });
 }
 
@@ -63,11 +57,7 @@ export async function POST(request: NextRequest) {
       { message: 'Email sent successfully', messageId: info.messageId },
       { 
         status: 200,
-        headers: {
-          'Access-Control-Allow-Origin': '*',
-          'Access-Control-Allow-Methods': 'GET, POST, OPTIONS',
-          'Access-Control-Allow-Headers': 'Content-Type',
-        }
+        headers: corsHeaders
       }
     );
   } catch (error) {
@@ -77,7 +67,10 @@ export async function POST(request: NextRequest) {
         message: 'Failed to send email', 
         error: error instanceof Error ? error.message : 'Unknown error' 
       },
-      { status: 500 }
+      { 
+        status: 500,
+        headers: corsHeaders
+      }
     );
   }
 }
