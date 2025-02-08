@@ -1,5 +1,5 @@
 import nodemailer from 'nodemailer';
-import { NextResponse } from 'next/server';
+import { NextRequest, NextResponse } from "next/server";
 
 const transporter = nodemailer.createTransport({
   host: process.env.SMTP_HOST,
@@ -13,7 +13,7 @@ const transporter = nodemailer.createTransport({
 
 console.log(transporter)
 
-export async function POST(request:Request) {
+export async function POST(request:NextRequest) {
   try {
     console.error('rote');
 
