@@ -80,11 +80,13 @@ export default function ContactForm() {
       
       console.log("prisli do klica api");
       // Send email
-      const response = await fetch('/api/sendEmail', {
+      const response = await fetch('/api/mail', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify(emailData)
       })
+
+      
      
       const result = await response.json()
       console.log("Dobili rezultat");

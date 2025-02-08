@@ -11,6 +11,8 @@ const transporter = nodemailer.createTransport({
   },
 });
 
+console.log(transporter)
+
 export async function POST(request:Request) {
   try {
     console.error('rote');
