@@ -8,7 +8,8 @@ import { MaskAnimation } from './text/MaskAnimation';
 import AnimateInViewWrapper from "@/components/animation/fade";
 
 import BgFrombottomToTop from './text/bgFrombottomToTop';
-import Component from './forms/PopUpForm';
+
+import ContactForm from './forms/PopUpForm';
 
 export default function Contact() {
     const container = useRef<HTMLDivElement>(null);;
@@ -44,7 +45,7 @@ export default function Contact() {
                             </p>
                         </AnimateInViewWrapper> 
                         <MaskAnimation >
-                            <Component/>
+                            <ContactForm/>
                         </MaskAnimation>
                     </div>
                   

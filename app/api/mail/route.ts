@@ -29,7 +29,7 @@ export async function OPTIONS() {
 export async function POST(request: NextRequest) {
   if (request.method !== 'POST') {
     return NextResponse.json(
-      { message: 'Method not allowed' },
+      { message: 'Method not allowed dsdsd' },
       { status: 405 }
     );
   }
