@@ -117,7 +117,6 @@ export default function ContactForm() {
       }
     } catch (error) {
 
-      console.log('Errorcek');
       if (error instanceof z.ZodError) {
         // Handle validation errors
         const newErrors = error.errors.reduce<FormErrors>((acc, curr) => {
