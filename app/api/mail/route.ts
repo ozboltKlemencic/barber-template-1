@@ -11,15 +11,26 @@ const transporter = nodemailer.createTransport({
   },
 });
 
-console.log(transporter)
+// Define allowed methods
+export const allowedMethods = ['POST'];
 
+// Add OPTIONS method handler for CORS
+export async function OPTIONS() {
+  return NextResponse.json({}, { status: 200 });
+}
 
-export async function POST(request:NextRequest) {
+export async function POST(request: NextRequest) {
   try {
-    console.error('rote');
-    
+    // Add CORS headers
+    const headers = {
+      'Access-Control-Allow-Origin': '*',
+      'Access-Control-Allow-Methods': 'POST, OPTIONS',
+      'Access-Control-Allow-Headers': 'Content-Type',
+    };
+
     const { email, name, message } = await request.json();
-    console.log({ email, name, message })
+    console.log({ email, name, message });
+
     await transporter.verify();
     const info = await transporter.sendMail({
       from: process.env.NEXT_PUBLIC_EMAIL_FROM,
@@ -35,9 +46,18 @@ export async function POST(request:NextRequest) {
       `,
     });
 
-    return NextResponse.json({ message: 'Email sent successfully', messageId: info.messageId }, { status: 200 });
+    return NextResponse.json(
+      { message: 'Email sent successfully', messageId: info.messageId },
+      { status: 200, headers }
+    );
   } catch (error) {
     console.error('Email sending error:', error);
-    return NextResponse.json({ message: 'Failed to send email', error: error instanceof Error ? error.message : 'Unknown error' }, { status: 500 });
+    return NextResponse.json(
+      { 
+        message: 'Failed to send email', 
+        error: error instanceof Error ? error.message : 'Unknown error' 
+      },
+      { status: 500 }
+    );
   }
 }
