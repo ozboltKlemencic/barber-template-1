@@ -21,7 +21,7 @@ import ROUTES from "@/constants/routes";
 import { employees } from "@/constants/data";
 import { Toaster } from "@/components/ui/toaster"
 import { useNavStore } from '@/store/navStore'
-import Loading from "./loading";
+
 
 
 
@@ -65,7 +65,6 @@ export default function Home() {
   const { isNavbarVisible } = useNavStore()
   return (
     <>
-      <Loading/>    
       {isNavbarVisible && <Navbar />}
       <CaroselContainer />
       {/* STORITVE */}
