@@ -25,6 +25,7 @@ import { useNavStore } from '@/store/navStore'
 
 
 
+
 const haircutData = [
   {
     id: 1,
@@ -65,6 +66,7 @@ export default function Home() {
   const { isNavbarVisible } = useNavStore()
   return (
     <>
+
       {isNavbarVisible && <Navbar />}
       <CaroselContainer />
       {/* STORITVE */}
