@@ -23,7 +23,7 @@ const GoldenBlock = () => {
 
 export default function Loading() {
   return (
-    <div className="flex items-center flex-col justify-center min-h-screen bg-black">
+    <div className="flex items-center w-screen flex-col justify-center h-[100dvh] md:h-screen bg-black">
         <Image src="/img/barber_pole_head.svg" width={100} alt="" height={50} className="w-[60px] -mb-[10px] z-10" />
         <div className="relative w-[50px] h-[130px] p-1 border border-white overflow-hidden bg-black z-20 shadow-md ">
           <Marquee className="h-full w-full [--gap:0rem] [--duration:10s] " vertical>
