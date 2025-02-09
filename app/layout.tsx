@@ -2,7 +2,6 @@ import type { Metadata } from "next";
 import { Montserrat, Teko } from "next/font/google";
 import "./globals.css";
 
-
 // Montserrat
 const montserrat = Montserrat({
   variable: "--font-montserrat",
@@ -53,8 +52,6 @@ export const metadata: Metadata = {
     "google-site-verification": "VSTAVI-TVOJO-KODO",
   },
 };
-
-
 
 export default function RootLayout({children,}: Readonly<{children: React.ReactNode;}>)
  {
