@@ -8,14 +8,29 @@ module.exports = {
   theme: {
     extend: {
       keyframes: {
-			shine: {
-				'0%': { 'background-position': '100%' },
-				'100%': { 'background-position': '-100%' },
+  			shine: {
+  				'0%': {
+  					'background-position': '100%'
+  				},
+  				'100%': {
+  					'background-position': '-100%'
+  				}
+  			},
+  			marquee: {
+				"0%": { transform: "translateX(0%)" },
+				"100%": { transform: "translateX(-100%)" },
 			},
-		},
-		animation: {
-			shine: 'shine 5s linear infinite',
-		},
+			"marquee-vertical": {
+			"0%": { transform: "translateY(0%)" },
+			"100%": { transform: "translateY(-100%)" },
+			},
+  		},
+		  
+  		animation: {
+  			shine: 'shine 7s linear infinite',
+  			marquee: "marquee var(--duration) linear infinite",
+        "marquee-vertical": "marquee-vertical var(--duration) linear infinite",
+  		},
       fontFamily: {
         montserrat: ["var(--font-montserrat)", "sans-serif"],
         teko: ["var(--font-teko)", "sans-serif"],
