@@ -2,6 +2,7 @@ import { cn } from "@/lib/utils"
 import { Marquee } from "@/components/magicui/marquee"
 import Image from "next/image"
 
+
 const blocks = Array(10).fill(0) // Adjust the number of blocks as needed
 
 const GoldenBlock = () => {
@@ -24,6 +25,7 @@ const GoldenBlock = () => {
 export default function Loading() {
   return (
     <div className="flex items-center w-screen flex-col justify-center h-[100dvh] md:h-screen bg-black">
+      <div className="flex items-center justify-center flex-col">
         <Image src="/img/barber_pole_head.svg" width={100} alt="" height={50} className="w-[60px] -mb-[10px] z-10" />
         <div className="relative w-[50px] h-[130px] p-1 border border-white overflow-hidden bg-black z-20 shadow-md ">
           <Marquee className="h-full w-full [--gap:0rem] [--duration:10s] " vertical>
@@ -35,6 +37,8 @@ export default function Loading() {
           <div className="pointer-events-none absolute inset-x-0 bottom-0 h-3 bg-gradient-to-t from-black to-transparent"></div>
         </div>
         <Image src="/img/barber_pole_head.svg" width={100} alt="" height={50} className="w-[60px] -mt-[10px] rotate-180 z-10" />
+      </div>
+     
     </div>
   )
 }
