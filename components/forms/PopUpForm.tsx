@@ -137,7 +137,7 @@ export default function ContactForm() {
               <Input
                 id="email"
                 disabled={isSubmitting}
-                placeholder="janez.novak@example.com"
+                placeholder="janez.novak@gmail.com"
                 type="email"
                 className={`rounded-none text-neutral-200 ${errors.email ? 'border-red-500' : ''}`}
                 {...register('email')}

@@ -100,6 +100,7 @@ export default function ContactPage() {
                     </div>
                 </div>
             </div>
+
             <div className='fixed top-[-10vh] left-0 h-[120vh] w-full'>
                 <motion.div style={{y}} className='relative w-full h-full'>
                     <Image src={Background} fill alt="image" style={{objectFit: "cover"}}/>
@@ -111,7 +112,7 @@ export default function ContactPage() {
         <div className="grid lg:grid-cols-2 min-h-screen">
           {/* Form Section */}
           <div className="flex items-center flex-col justify-center bg-black p-6 lg:p-12">
-            <div>
+            <div className=''>
               <h2 className='text-neutral-100 font-teko text-3xl mb-6'>Pošljite sporočilo </h2>
               <ContactMainForm/>
             </div>

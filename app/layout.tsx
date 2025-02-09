@@ -19,7 +19,7 @@ const teko = Teko({
 export const metadata: Metadata = {
   title: "Blackout Brivnica | Striženje, Britje in Nega Brade",
   description: "Blackout Brivnica – vrhunska moška nega, britje, striženje in oblikovanje brade v prijetnem ambientu. Obiščite nas in doživite kakovost!",
-  keywords: ["brivnica", "moško striženje", "britje", "urejanje brade", "barber shop", "Ljubljana", "Blackout Brivnica"],
+  keywords: ["brivnica", "moško striženje", "britje", "urejanje brade", "barber shop", "Škofja loka", "Blackout Brivnica"],
   authors: [{ name: "Ožbolt Klemenčič", url: process.env.NEXT_PUBLIC_BASE_URL }],
   robots: "index, follow",
   alternates: {
