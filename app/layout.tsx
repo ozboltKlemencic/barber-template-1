@@ -18,8 +18,40 @@ const teko = Teko({
 });
 
 export const metadata: Metadata = {
-  title: "Blackout",
-  description: "Brivnica Blackout",
+  title: "Blackout Brivnica | Striženje, Britje in Nega Brade",
+  description: "Blackout Brivnica – vrhunska moška nega, britje, striženje in oblikovanje brade v prijetnem ambientu. Obiščite nas in doživite kakovost!",
+  keywords: ["brivnica", "moško striženje", "britje", "urejanje brade", "barber shop", "Ljubljana", "Blackout Brivnica"],
+  authors: [{ name: "Ožbolt Klemenčič", url: process.env.NEXT_PUBLIC_BASE_URL }],
+  robots: "index, follow",
+  alternates: {
+    canonical: process.env.NEXT_PUBLIC_BASE_URL,
+  },
+  openGraph: {
+    title: "Blackout Brivnica | Striženje, Britje in Nega Brade",
+    description: "Obiščite našo brivnico za najboljšo izkušnjo striženja in britja. Strokovno osebje, vrhunska nega!",
+    url: process.env.NEXT_PUBLIC_BASE_URL,
+    siteName: "Blackout Brivnica",
+    images: [
+      {
+        url: `${process.env.NEXT_PUBLIC_BASE_URL}/opengraph-image.jpg`,
+        width: 1200,
+        height: 630,
+        alt: "Blackout Brivnica Barber Shop",
+      },
+    ],
+    locale: "sl_SI",
+    type: "website",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Blackout Brivnica | Striženje, Britje in Nega Brade",
+    description: "Profesionalno moško striženje in britje v Blackout Brivnici. Pridite po svoj svež videz!",
+    site: "@BlackoutBrivnica",
+  },
+  other: {
+    "theme-color": "#000000",
+    "google-site-verification": "VSTAVI-TVOJO-KODO",
+  },
 };
 
 

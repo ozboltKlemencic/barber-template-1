@@ -22,8 +22,6 @@ import { useEffect } from "react";
 import Lenis from 'lenis';
 
 
-
-
 const haircutData = [
   {
     id: 1,
