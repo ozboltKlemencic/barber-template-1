@@ -13,7 +13,7 @@ const NotFound = () => {
                 <Image src="/img/logo/big-logo.png" width={300} height={300} alt='logo'/>
                 <BarberPole/>
             </div>
-            <p className='font-montserrat text-neutral-100 max-w-2xl text-sm md:text-base pt-16 text-center px-4'>Upss..... Nekaj je šlo narobe. Vrnite se nazaj na <Link className='text-yellow-200/[0.8] hover:text-yellow-200 transition-all duration-300 underline' href={ROUTES.DOMOV}>domačo stran</Link></p>
+            <p className='font-montserrat text-neutral-100 max-w-2xl text-sm md:text-base pt-16 text-center px-4'>Upss..... Nekaj je šlo narobe. Vrnite se nazaj na <Link className='text-yellow-200/[0.8] hover:text-yellow-200 transition-all duration-300 underline underline-offset-2 hover:no-underline' href={ROUTES.DOMOV}>domačo stran</Link></p>
         </div>
     </div>
   )
