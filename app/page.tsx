@@ -1,9 +1,6 @@
 'use client'
 
 import Footer from "@/components/navigation/footer";
-// import Footer from "@/components/Footer2";
-import { useEffect } from "react";
-import Lenis from 'lenis';
 import Navbar from "@/components/navigation/navbar";
 
 import Contact from "@/components/section";
@@ -21,7 +18,8 @@ import ROUTES from "@/constants/routes";
 import { employees } from "@/constants/data";
 import { Toaster } from "@/components/ui/toaster"
 import { useNavStore } from '@/store/navStore'
-
+import { useEffect } from "react";
+import Lenis from 'lenis';
 
 
 

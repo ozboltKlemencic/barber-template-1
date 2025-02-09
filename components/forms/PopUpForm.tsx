@@ -1,5 +1,5 @@
 import React, { useState } from "react"
-import { ReloadIcon } from "@radix-ui/react-icons";
+import { RiLoader4Line } from "react-icons/ri";
 import { Button } from "@/components/ui/button"
 import {
   Dialog,
@@ -265,7 +265,7 @@ export default function ContactForm() {
                {isLoading ? (
                 <>
                   <span>Pošiljanje</span>
-                  <ReloadIcon className="mr-2 size-4 animate-spin" />
+                  <RiLoader4Line className="mr-2 size-4 animate-spin" />
                 </>
                 ) : (
                   <p>Pošlji</p>
