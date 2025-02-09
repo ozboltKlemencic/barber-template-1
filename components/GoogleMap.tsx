@@ -222,6 +222,7 @@ const GoogleMap: React.FC<GoogleMapProps> = ({
               stylers: [{ color: '#1a1a1a' }],
             },
           ],
+          disableDefaultUI: true, 
         };
 
         
