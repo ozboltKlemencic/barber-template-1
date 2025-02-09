@@ -18,7 +18,7 @@ export default function TeamCard({imgUrl,name ,cta,postion,link}:Props) {
       <div className="relative z-30 w-full">
         <div className="relative w-full h-[260px] mb-4 overflow-hidden">
           <div className="absolute inset-0 border-2 border-[#FFD700]/20 bg-white/[0.1]" />
-          <Image src={imgUrl} alt="" width={256} height={256} className="object-cover w-full" priority />
+          <Image src={imgUrl} alt="" width={600} height={600} className="object-cover w-full" priority />
         </div>
         <div className="mx-2 flex flex-col justify-center items-start">
          <h2 className="text-2xl font-teko font-medium -mb-1">{name}</h2>
