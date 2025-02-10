@@ -6,9 +6,11 @@ import { useInView } from 'react-intersection-observer';
 
 interface Props {
   children?: ReactNode;
+  viewRef?: (node?: Element | null) => void;
+  hasBeenViewed?: boolean;
 }
 
-export function MaskAnimation({children,}:Props) {
+export function MaskAnimation({children,viewRef, hasBeenViewed = false}:Props) {
   const { ref, inView } = useInView({
     threshold: 0.75,
     triggerOnce: true
@@ -40,9 +42,14 @@ export function MaskAnimation({children,}:Props) {
     }
   };
 
+  if (hasBeenViewed) {
+    return <div >{children}</div>;
+  }
+
   return(
     <div ref={ref}>
       <motion.div 
+        ref={viewRef}
         className="overflow-hidden"
         variants={containerVariants}
         initial="initial"

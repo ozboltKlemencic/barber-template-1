@@ -10,6 +10,8 @@ interface AnimatedWrapperProps {
   duration?: number;
   scaleFrom?: number;
   direction?: 'up' | 'down' | 'left' | 'right';
+  viewRef?: (node?: Element | null) => void;
+  hasBeenViewed?: boolean;
 }
 
 const AnimateInViewWrapper: React.FC<AnimatedWrapperProps> = ({
@@ -19,7 +21,9 @@ const AnimateInViewWrapper: React.FC<AnimatedWrapperProps> = ({
   duration = 0.5,
   distance = 20,
   scaleFrom = 0.9,
-  direction = 'up'
+  direction = 'up',
+  viewRef,
+  hasBeenViewed = false
 }) => {
   const directionMap = {
     up: { x: 0, y: distance },
@@ -47,13 +51,19 @@ const AnimateInViewWrapper: React.FC<AnimatedWrapperProps> = ({
     }
   };
 
+  // If hasBeenViewed is true, return children without animation
+  if (hasBeenViewed) {
+    return <div className={className}>{children}</div>;
+  }
+
   return (
     <motion.div
+      ref={viewRef}
       initial="hidden"
       whileInView="visible"
       variants={variants}
       viewport={{ once: true, amount: 0.2 }}
-      className={className }
+      className={className}
     >
       {children}
     </motion.div>
