@@ -58,18 +58,24 @@ export default function ContactForm() {
       if (response.ok) {
         toast({
           title: "Sporočilo je bilo uspešno poslano",
-          className: "toaster"
-        })
-        
-        reset()
-        setNavbarVisibility(true)
-        setIsOpen(false)
+          className: "toaster",
+        });
+  
+        reset();
+        setNavbarVisibility(true);
+        setIsOpen(false);
+      } else if (response.status === 429) {
+        toast({
+          title: "Preveč zahtev",
+          description: "Počakajte nekaj minut in poskusite znova.",
+          variant: "destructive",
+        });
       } else {
         toast({
           title: "Napaka pri pošiljanju sporočila",
           description: result.message || "Prosimo, poskusite znova.",
-          variant: "destructive"
-        })
+          variant: "destructive",
+        });
       }
     } catch (error) {
       console.log(error)

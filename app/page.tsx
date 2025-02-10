@@ -18,7 +18,7 @@ import ROUTES from "@/constants/routes";
 import { employees } from "@/constants/data";
 import { Toaster } from "@/components/ui/toaster"
 import { useNavStore } from '@/store/navStore'
-import { useEffect } from "react";
+import { useEffect ,useState} from "react";
 import Lenis from 'lenis';
 
 
@@ -48,6 +48,9 @@ const haircutData = [
 
 
 export default function Home() {
+  const [reviews, setReviews] = useState<Review[]>([]);
+  const [error, setError] = useState<string | null>(null);
+  const [loading, setLoading] = useState(true);
 
   useEffect( () => {
     const lenis = new Lenis()
@@ -59,6 +62,27 @@ export default function Home() {
 
     requestAnimationFrame(raf)
   }, [])
+
+  useEffect(() => {
+    const fetchReviews = async () => {
+      try {
+        const response = await fetch('/api/reviews');
+        if (!response.ok) {
+          throw new Error('Failed to fetch reviews');
+        }
+        const data = await response.json();
+        console.log("reviewi")
+        console.log(data)
+        setReviews(data);
+      } catch (err) {
+        setError(err instanceof Error ? err.message : 'An error occurred');
+      } finally {
+        setLoading(false);
+      }
+    };
+
+    fetchReviews();
+  }, []);
   const { isNavbarVisible } = useNavStore()
   return (
     <>
