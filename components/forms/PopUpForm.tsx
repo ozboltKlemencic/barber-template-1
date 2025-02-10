@@ -88,7 +88,7 @@ export default function ContactForm() {
   }
 
   useEffect(() => {
-    document.body.style.overflow = isOpen ? 'hidden' : 'auto'
+    document.body.style.overflowY = isOpen ? 'hidden' : 'auto'
   }, [isOpen])
 
   return (

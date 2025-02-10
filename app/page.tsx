@@ -65,7 +65,6 @@ export default function Home() {
   const { isNavbarVisible } = useNavStore()
   return (
     <>
-
       {isNavbarVisible && <Navbar />}
       <CaroselContainer />
       {/* STORITVE */}
@@ -152,6 +151,7 @@ export default function Home() {
         </div>
       </div>
 
+          
       <Contact/>
 
       <HorizontalScrollCarousel/>

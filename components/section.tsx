@@ -25,10 +25,8 @@ export default function Contact() {
             className='relative flex items-center justify-center  h-[1100px] md:h-[80vh] md:min-h-[800px] overflow-hidden'
             style={{clipPath: "polygon(0% 0, 100% 0%, 100% 100%, 0 100%)"}}
         >   
-            <div className='absolute top-0 left-0 right-0 z-50  h-full flex justify-center items-center py-20'>
+            <div className='absolute inset-0 z-50  h-full  flex justify-center items-center py-20'>
                 <div className='max-w-7xl flex justify-center flex-col md:flex-row items-center gap-x-12 px-4 md:px-16 gap-y-16'>
-
-                    
                     <div className=' w-auto max-w-full md:max-w-[45%] h-auto mx-4 flex items-center  md:items-start justify-center flex-col gap-y-2 gap-x-2 '>
                         <MaskAnimation>
                             <h3 className='font-montserrat text-md text-neutral-200'>Kontakt</h3>
@@ -44,7 +42,7 @@ export default function Contact() {
                             Imate vprašanje, želite več informacij ali se želite dogovoriti za termin? Z veseljem vam bomo pomagali! Naša ekipa je tukaj, da vam ponudi podporo in odgovore na vsa vaša vprašanja. Pišite nam, pokličite nas ali nas obiščite osebno.
                             </p>
                         </AnimateInViewWrapper> 
-                        <MaskAnimation >
+                        <MaskAnimation>
                             <ContactForm/>
                         </MaskAnimation>
                     </div>

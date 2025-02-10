@@ -64,7 +64,6 @@ export default function RootLayout({children,}: Readonly<{children: React.ReactN
       <body
         className={`${teko.variable} ${montserrat.variable} antialiased overflow-x-hidden`}
       >
-    
         {children}
       </body>
     </html>
