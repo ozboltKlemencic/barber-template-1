@@ -41,7 +41,7 @@ export default function ContactInfo() {
       </div>
 
       {/* Subtle gradient overlay */}
-      <div className="absolute inset-0 bg-gradient-to-br from-yellow-300/5 to-transparent pointer-events-none" />
+      <div className="absolute inset-0 bg-gradient-to-br from-yellow-300/[0.09] to-transparent pointer-events-none" />
     </div>
   )
 }

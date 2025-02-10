@@ -25,6 +25,9 @@ import { RxScissors } from "react-icons/rx";
 import { LuMapPin } from "react-icons/lu";
 import { FaPhoneFlip } from "react-icons/fa6";
 import { Toaster } from '@/components/ui/toaster';
+
+
+
 export default function ContactPage() {
   useEffect( () => {
     const lenis = new Lenis()
@@ -36,6 +39,8 @@ export default function ContactPage() {
 
     requestAnimationFrame(raf)
   }, [])
+
+  
 
     const container = useRef<HTMLDivElement>(null);;
     const { scrollYProgress } = useScroll({
