@@ -64,7 +64,7 @@ export default function Home() {
  
   const { isNavbarVisible } = useNavStore()
   return (
-    <div className="overflow-x-hidden">
+    <>
 
       {isNavbarVisible && <Navbar />}
       <CaroselContainer />
@@ -157,6 +157,6 @@ export default function Home() {
       <HorizontalScrollCarousel/>
       <Toaster />
       <Footer />
-    </div>
+    </>
   );
 }
