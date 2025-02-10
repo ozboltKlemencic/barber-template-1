@@ -1,7 +1,12 @@
 // app/api/reviews/route.ts
 import { NextResponse } from 'next/server';
 
-
+type Review = {
+  author_name: string;
+  profile_photo_url?: string;
+  text?: string;
+  rating: number;
+};
 
 export async function GET() {
   const API_KEY = process.env.GOOGLE_PLACES_API_KEY;
@@ -40,7 +45,7 @@ export async function GET() {
     
     const reviews = data.result?.reviews || [];
     
-    const formattedReviews = reviews.map((review, index) => ({
+    const formattedReviews = reviews.map((review:Review, index:number) => ({
         id: index,
         author: review.author_name,
         avatar: review.profile_photo_url || '', 
