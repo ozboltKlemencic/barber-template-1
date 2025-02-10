@@ -16,80 +16,80 @@ interface Review {
   const REVIEWS: Review[] = [
     {
       id: '1',
-      profileImageUrl: '/img/review-avatar.png',
-      name: 'Ana Novak',
-      rating: 4,
-      comment: 'Lepo urejen salon in prijazno osebje. Vse je bilo super, le malo daljši čas čakanja.'
+      profileImageUrl: '/img/reviews/matej_miklavcic.png',
+      name: 'Matej Miklavcic',
+      rating: 5,
+      comment: 'Daleč najboljši frizer naokoli. Delavci zelo prijazni in korektni. Prav tako storitve kvalitetne in ustrezne.'
     },
     {
       id: '2',
-      profileImageUrl: '/img/review-avatar.png',
-      name: 'Miha Kranjc',
+      profileImageUrl: '/img/reviews/zan_novak.png',
+      name: 'zan novak',
       rating: 5,
-      comment: 'Top storitev! Vedno se počutim odlično, ko obiščem ta salon. Priporočam vsem!'
+      comment: 'Najboljša brivnica osebje zelo prijazno, muzika je top pejte se strižt/brit v blackouta'
     },
     {
       id: '3',
-      profileImageUrl: '/img/review-avatar.png',
-      name: 'Jure Pavlič',
-      rating: 3,
-      comment: 'Storitev je bila povprečna, pričakoval sem več glede na ocene. Lokal pa je lepo urejen.'
+      profileImageUrl: '/img/reviews/matic_mravlja.png',
+      name: 'Matic Mravlja',
+      rating: 5,
+      comment: 'Odlična izkušnja, možnost spletnega naročanja.Toplo priporočam'
     },
     {
       id: '4',
-      profileImageUrl: '/img/review-avatar.png',
-      name: 'Maja Korošec',
+      profileImageUrl: '/img/reviews/jelka_turk.png',
+      name: 'jelka Turk',
       rating: 5,
-      comment: 'Najboljša izkušnja do sedaj! Vse je bilo odlično, od storitve do vzdušja. Hvala vam!'
+      comment: 'Zelo prijazno osebje znata prisluhniti strankam . Lokal imata zelo lep in urejen .Obiščite jih ne bo vam žal.'
     },
     {
       id: '5',
-      profileImageUrl: '/img/review-avatar.png',
-      name: 'Gregor Urbančič',
-      rating: 4,
-      comment: 'Super storitev, vendar bi si želel malo bolj dostopnih cen.'
+      profileImageUrl: '/img/reviews/eldin_imamovic.png',
+      name: 'Eldin Imamovic',
+      rating: 5,
+      comment: 'Odlična storitev, kdor obišče enkrat, jih ne menja.Vse pohvale in priporočila!'
     },
     {
       id: '6',
-      profileImageUrl: '/img/review-avatar.png',
-      name: 'Tina Zajc',
+      profileImageUrl: '/img/reviews/nik_dijak.png',
+      name: 'Nik Dijak',
       rating: 5,
-      comment: 'Prijazno osebje, vedno prisluhnejo željam stranke. Vedno zadovoljna, ko pridem!'
+      comment: 'Brivec/frizer res odličen, striže z užitkom in s srcem, obvlada. Glede na moje vrtince je res vrhunski, probal sem se strižt pri marsikomu, ampak edino on zna ustrižt tako kot se zagre. Tako, da res priporočam. Termine ma pa kar zasedene, tako da obvezno se prednaročite.'
     },
     {
       id: '7',
-      profileImageUrl: '/img/review-avatar.png',
-      name: 'Matej Hribar',
-      rating: 2,
-      comment: 'Nisem bil najbolj zadovoljen z izkušnjo. Mislim, da so storitve precenjene za ponujeno kakovost.'
+      profileImageUrl: '/img/reviews/jaka_novinc.png',
+      name: 'jaka novinc',
+      rating: 5,
+      comment: 'Odličen frizer, posveti se detajlom, vidi se da uživa v svojem delu.'
     },
     {
       id: '8',
-      profileImageUrl: '/img/review-avatar.png',
-      name: 'Sara Obran',
-      rating: 4,
-      comment: 'Dobra storitev, vendar je trajalo dlje, kot sem pričakovala. Rezultat pa je bil odličen!'
+      profileImageUrl: '/img/reviews/luka_kajzar.png',
+      name: 'Luka Kajzar',
+      rating: 5,
+      comment: 'ne komplicira, poslusa stranko in si vzame cas da premisle ne pa sam neki na hitr ustrize….would recommend 🏆'
     },
     {
       id: '9',
-      profileImageUrl: '/img/review-avatar.png',
-      name: 'Aljaž Potočnik',
+      profileImageUrl: '/img/reviews/nenad_milasinovic.png',
+      name: 'Nenad Milasinovic',
       rating: 5,
-      comment: 'Vrhunska ekipa in vedno prijetno vzdušje! Definitivno priporočam.'
+      comment: 'Večkrat sem bil na obisku, ko smo bili na Škofijski Loki. Domen in Matic sta odlična brivca. Brivnica je moderna, čista in dobro razporejena. Več kot zadovoljna s svojimi izkušnjami.'
     },
     {
       id: '10',
-      profileImageUrl: '/img/review-avatar.png',
-      name: 'Eva Breznik',
+      profileImageUrl: '/img/reviews/jakob_zarnik.png',
+      name: 'Jakob Zarnik',
       rating: 5,
-      comment: 'Zelo zadovoljna z vsem! Hitra storitev in zelo prijazno osebje. Vedno se rada vračam.'
+      comment: 'Odličen kraj za frizuro.'
     },
     {
       id: '11',
-      profileImageUrl: '/img/review-avatar.png',
-      name: 'Andrej Novak',
-      rating: 4,
-      comment: 'Odlično! Morda bi lahko še malo izboljšali komunikacijo, vendar drugače super.'
+      profileImageUrl: '/img/reviews/jas_jamnik.png',
+      name: 'Jas Jamnik',
+      rating: 5,
+      comment: 'Zelo dobro, priporočam'
     }
   ];
   
@@ -132,8 +132,8 @@ const ReviewSection = ({
                         </p>
                     </AnimateInViewWrapper> 
                     
-                    <div className='absolute  top-0 right-0 md:right-[-100%] mobile:hidden  w-full h-32 md:h-1/3 z-50 bg-gradient-to-b from-black to-transparent'></div>
-                    <div className='absolute bottom-0 right-0 md:right-[-100%] mobile:hidden  w-full h-32 md:h-1/3 z-50 bg-gradient-to-t from-black to-transparent'></div>
+                    <div className='absolute pointer-events-none top-0 right-0 md:right-[-100%] mobile:hidden  w-full h-32 md:h-1/3 z-50 bg-gradient-to-b from-black to-transparent'></div>
+                    <div className='absolute pointer-events-none bottom-0 right-0 md:right-[-100%] mobile:hidden  w-full h-32 md:h-1/3 z-50 bg-gradient-to-t from-black to-transparent'></div>
                     
                 </div>
             </div>

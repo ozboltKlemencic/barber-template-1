@@ -4,12 +4,19 @@ import Link from "next/link"
 
 export default function ContactInfo() {
   return (
-    <div className="bg-black p-8 border-2 border-[#FFD700]/30 max-w-md relative">
+    <div className="bg-black p-8 border-2 group gold-shadow transition-all duration-300 border-[#FFD700]/30 max-w-md relative">
       {/* Premium corner accents */}
-      <div className="absolute top-0 left-0 w-8 h-8 border-l-2 border-t-2 border-yellow-300 -translate-x-[1px] -translate-y-[1px]" />
-      <div className="absolute top-0 right-0 w-8 h-8 border-r-2 border-t-2 border-yellow-300 translate-x-[1px] -translate-y-[1px]" />
-      <div className="absolute bottom-0 left-0 w-8 h-8 border-l-2 border-b-2 border-yellow-300 -translate-x-[1px] translate-y-[1px]" />
-      <div className="absolute bottom-0 right-0 w-8 h-8 border-r-2 border-b-2 border-yellow-300 translate-x-[1px] translate-y-[1px]" />
+      <div className="absolute top-0 left-0 bg-yellow-200 group-hover:w-full w-0 transition-all duration-300 h-[2px]  -translate-x-[2px] -translate-y-[2px]" />
+      <div className="absolute top-0 left-0 w-8 h-8 border-l-2 border-t-2 border-yellow-200 -translate-x-[2px] -translate-y-[2px]" />
+
+      <div className="absolute top-0 right-0 bg-yellow-200 group-hover:h-full w-[2px] transition-all duration-300 h-0 translate-x-[2px] -translate-y-[2px]" />
+      <div className="absolute top-0 right-0 w-8 h-8 border-r-2 border-t-2 border-yellow-200 translate-x-[2px] -translate-y-[2px]" />
+
+      <div className="absolute bottom-0 right-0 bg-yellow-200 group-hover:w-full h-[2px] transition-all duration-300 w-0 translate-x-[2px] translate-y-[2px]" />
+      <div className="absolute bottom-0 left-0 w-8 h-8 border-l-2 border-b-2 border-yellow-200 -translate-x-[2px] translate-y-[2px]" />
+
+      <div className="absolute bottom-0 left-0 bg-yellow-200 group-hover:h-full w-[2px] transition-all duration-300 h-0 -translate-x-[2px] -translate-y-[2px]" />
+      <div className="absolute bottom-0 right-0 w-8 h-8 border-r-2 border-b-2 border-yellow-200 translate-x-[2px] translate-y-[2px]" />
 
       <h2 className="text-4xl font-teko text-white mb-10 tracking-wide">Kontakt</h2>
 
