@@ -407,15 +407,15 @@ export default function TabService() {
                   <h6 className="font-montserrat text-normal text-neutral-50 mt-8 pb-1 border-b shadow-zinc-300 border-yellow-200 w-full">
                     Cenik
                   </h6>
-                  <div className="w-full text-sm py-2 px-1 bg-neutral-700/[0.5] flex flex-row items-center justify-center mt-2">
+                  <div className="w-full text-sm p-2 bg-neutral-700/[0.5] flex flex-row items-center justify-center mt-2">
                     <span className="flex items-start w-1/3 flex-row justify-start">
                       <p className="font-montserrat text-neutral-200">{tab.title}</p>
                     </span>
-                    <span className="flex items-center w-1/3 flex-row justify-start gap-x-2">
+                    <span className="flex items-center w-1/3  flex-row justify-center gap-x-2">
                       <LuClock4 className="text-neutral-200"/>
                       <p className="font-montserrat text-neutral-200">{tab.time}</p>
                     </span>
-                    <span className="flex items-start w-1/3 flex-row justify-start">
+                    <span className="flex items-start w-1/3  flex-row justify-end">
                       <p className="font-montserrat text-neutral-200">{tab.price}</p>
                     </span>
                   </div>
