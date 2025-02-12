@@ -106,7 +106,7 @@ const ReviewSection = ({
   return ( 
     <>
     <div className="relative w-screen flex flex-col md:flex-row"> 
-        <div className="w-creen flex flex-col md:flex-row-reverse ">
+        <div className="w-creen flex flex-col-reverse md:flex-row-reverse ">
             {/* Text Container */}
             
             
