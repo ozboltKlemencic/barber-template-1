@@ -25,7 +25,7 @@ import { RxScissors } from "react-icons/rx";
 import { LuMapPin } from "react-icons/lu";
 import { FaPhoneFlip } from "react-icons/fa6";
 import { Toaster } from '@/components/ui/toaster';
-import { useHasBeenViewed } from '@/hooks/useHasBeenViewed';
+
 
 
 
@@ -41,7 +41,7 @@ export default function ContactPage() {
     requestAnimationFrame(raf)
   }, [])
 
-  const [hasBeenViewed, viewRef] = useHasBeenViewed();
+ 
 
     const container = useRef<HTMLDivElement>(null);;
     const { scrollYProgress } = useScroll({
@@ -56,19 +56,19 @@ export default function ContactPage() {
         <div className="w-screen bg-black h-auto  ">
         <div className="h-auto flex flex-col mx-auto max-w-7xl px-4 md:px-16  pt-32  gap-y-1">
           <div>
-            <AnimateInViewWrapper hasBeenViewed={hasBeenViewed}viewRef={viewRef} className="w-fit">
+            <AnimateInViewWrapper className="w-fit">
               <div className="mb-6 w-fit">
                   <ShinyText link={ROUTES.STORITVE} text="Kontakt"  speed={3}/>
               </div>
             </AnimateInViewWrapper>
           </div>
           <div className="mb-4">
-            <MaskAnimation hasBeenViewed={hasBeenViewed} viewRef={viewRef}>
+            <MaskAnimation>
               <h2 className="text-neutral-50 font-teko font-semibold text-4xl   md:text-5xl">
                 Stopite v stik z&nbsp;<BgFrombottomToTop text="nami"/>
               </h2>
             </MaskAnimation>
-            <AnimateInViewWrapper  hasBeenViewed={hasBeenViewed}viewRef={viewRef}  scaleFrom={1} delay={0.3}>
+            <AnimateInViewWrapper   scaleFrom={1} delay={0.3}>
               <p className='font-montserrat text-base text-neutral-200 max-w-5xl  mobile:w-full'>
               Frizerska umetnost je več kot le striženje – je ustvarjanje videza, ki vam pristaja. Raziščite našo galerijo in odkrijte svoj idealni barber stil!
               </p>
@@ -88,19 +88,19 @@ export default function ContactPage() {
 
                 <div className='max-w-screen-xl flex-wrap flex justify-center flex-col md:flex-row items-center gap-x-10 px-4 md:px-6 gap-y-16'>
                     <div className=' w-auto max-w-full md:max-w-[45%] h-auto mx-4 flex items-center  md:items-start justify-center flex-col gap-y-2 gap-x-2 '>
-                        <AnimateInViewWrapper hasBeenViewed={hasBeenViewed}viewRef={viewRef} >
+                        <AnimateInViewWrapper  >
                         <ContactCard title='Lokacija' link={info.lokacijaLink} paragraphs={[`${info.lokacija}`]} cta='Navodila za pot' icon={<LuMapPin className='size-5 lg:size-6 group-hover:rotate-12 trnsition-all text-yellow-300/[0.7] pb-1 transition-transform duration-300'/>}/>
                         </AnimateInViewWrapper>
                     </div>
 
                     <div className=' w-auto max-w-full md:max-w-[45%] h-auto mx-4 flex items-center  md:items-start justify-center flex-col gap-y-2 gap-x-2 '>
-                        <AnimateInViewWrapper hasBeenViewed={hasBeenViewed}viewRef={viewRef} >
+                        <AnimateInViewWrapper  >
                           <ContactCard title='Kontaktirajte nas' link={ROUTES.NAROCANJE} paragraphs={[`Tel. št.:${info.telefon}`,`E-pošta:${info.eposta}`]} cta='Naroči se' icon={<RxScissors className='size-5 lg:size-6 group-hover:rotate-12 trnsition-all text-yellow-300/[0.7] pb-1 transition-transform duration-300'/>}/>
                         </AnimateInViewWrapper>
                     </div>
                   
                     <div className='w-auto h-auto mx-4 '>
-                        <AnimateInViewWrapper hasBeenViewed={hasBeenViewed}viewRef={viewRef} >
+                        <AnimateInViewWrapper  >
                         <ContactCard title='Delovne ure' link={info.telefonLink} paragraphs={["Pon. - Pet.: 8:00 - 17:00","Vikend: zaprto"]} cta='Pokliči' icon={<FaPhoneFlip className='size-5 lg:size-6 group-hover:rotate-12 trnsition-all text-yellow-300/[0.7] pb-1 transition-transform duration-300'/>}/>
                         </AnimateInViewWrapper>
                     </div>
