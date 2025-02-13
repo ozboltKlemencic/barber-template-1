@@ -79,12 +79,12 @@ export default function Home() {
           </div>
           <div className="mb-4">
             <MaskAnimation>
-              <h2 className="text-neutral-50 font-teko font-semibold text-4xl   md:text-5xl">
+              <h2 className="text-header font-teko font-semibold text-4xl  md:text-5xl">
                 Poglejte naše frizerske&nbsp;<BgFrombottomToTop text="storitve"/>
               </h2>
             </MaskAnimation>
           </div>
-          <div className="w-full h-auto flex flex-col md:flex-row items-center flex-wrap  justify-start gap-x-6 gap-y-6 ">
+          <div className="w-full h-auto flex flex-col md:flex-row items-center flex-wrap  justify-start gap-x-8 gap-y-6 ">
           {haircutData.map((haircut) => (
               <AnimateInViewWrapper 
                 key={haircut.id} 
@@ -119,12 +119,12 @@ export default function Home() {
           
           <div className="mb-8">
             <MaskAnimation>
-              <h2 className="text-neutral-50 font-teko font-semibold text-4xl  md:text-5xl mb-2">
+              <h2 className="text-header font-teko font-semibold text-4xl  md:text-5xl mb-2">
                 Kdo te&nbsp;<BgFrombottomToTop text="striže?"/>
               </h2>
             </MaskAnimation>
             <AnimateInViewWrapper scaleFrom={1} delay={0.2}>
-                <p className='font-montserrat text-base text-neutral-200 max-w-6xl  mobile:w-full'>
+                <p className='font-montserrat text-base text-paragraph max-w-6xl  mobile:w-full'>
                     Preberite mnenja naših strank. Naše stranke so bistvo vsega, kar počnemo.
                     Njihovo zadovoljstvo je naš največji uspeh in motivacija za nenehno izboljševanje
                     naših storitev. Prepričajte se sami, zakaj nam zaupajo številni zadovoljni uporabniki.

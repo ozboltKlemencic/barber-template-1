@@ -74,21 +74,21 @@ const ContactMainForm = () => {
       <form onSubmit={handleSubmit(onSubmit)} className="space-y-5">
         <div className="space-y-4">
           <div className="space-y-2">
-            <Label htmlFor="name" className="text-neutral-50">
+            <Label htmlFor="name" className="text-header">
               Ime in priimek
             </Label>
             <Input
               id="name"
               disabled={isSubmitting}
               placeholder="Janez Novak"
-              className={`rounded-none text-neutral-200 ${errors.name ? "border-red-500" : ""}`}
+              className={`rounded-none text-subheader ${errors.name ? "border-red-500" : ""}`}
               {...register("name")}
             />
             {errors.name && <p className="text-red-500 text-xs mt-1">{errors.name.message}</p>}
           </div>
 
           <div className="space-y-2">
-            <Label htmlFor="email" className="text-neutral-100">
+            <Label htmlFor="email" className="text-header">
               Email
             </Label>
             <Input
@@ -96,7 +96,7 @@ const ContactMainForm = () => {
               disabled={isSubmitting}
               placeholder="janez.novak@gmail.com"
               type="email"
-              className={`rounded-none text-neutral-200 ${errors.email ? "border-red-500" : ""}`}
+              className={`rounded-none text-subheader ${errors.email ? "border-red-500" : ""}`}
               {...register("email")}
             />
             {errors.email && <p className="text-red-500 text-xs mt-1">{errors.email.message}</p>}
@@ -110,7 +110,7 @@ const ContactMainForm = () => {
               id="message"
               disabled={isSubmitting}
               placeholder="Vnesite vaše sporočilo"
-              className={`min-h-[100px] max-h-[200px] rounded-none text-neutral-200 ${errors.message ? "border-red-500" : ""}`}
+              className={`min-h-[100px] max-h-[200px] rounded-none text-subheader ${errors.message ? "border-red-500" : ""}`}
               {...register("message")}
             />
             {errors.message && <p className="text-red-500 text-xs mt-1">{errors.message.message}</p>}
@@ -120,7 +120,7 @@ const ContactMainForm = () => {
         <Button
           type="submit"
           disabled={isSubmitting}
-          className="w-full rounded-none !bg-gradient-to-br !from-yellow-200/[0.5] !to-yellow-400/[0.5] hover:!from-yellow-200/[0.3] hover:!to-yellow-400/[0.3] text-white transition-all duration-300"
+          className="w-full rounded-none !bg-gradient-to-br !from-primary-transparent !to-primary-dark hover:!from-yellow-200/[0.3] hover:!to-yellow-400/[0.3] text-header transition-all duration-300"
         >
           {isSubmitting ? (
             <>
@@ -133,7 +133,7 @@ const ContactMainForm = () => {
         </Button>
       </form>
 
-      <p className="text-left md:text-center text-xs text-neutral-500 dark:text-neutral-400 pt-2">
+      <p className="text-left md:text-center text-xs text-paragraph  pt-2">
         S pošiljanjem sporočila se strinjate z našimi {" "}
         <a className="underline hover:no-underline" href="#">
           Pogoji uporabe

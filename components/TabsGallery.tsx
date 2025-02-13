@@ -323,7 +323,7 @@ export default function GalleryTabs() {
               <TabsTrigger
                 key={tab.id}
                 value={tab.id}
-                className="relative w-fit  bg-neutral-950 overflow-hidden rounded-none border border-white/[0.5] py-2 px-4 after:pointer-events-none after:absolute after:inset-x-0 after:bottom-0  after:h-0.5 data-[state=active]:bg-black data-[state=active]:shadow-slate-200 data-[state=active]:after:bg-yellow-200 hover:bg-neutral-900 transition-colors"
+                className="relative w-fit  bg-dark-bg overflow-hidden rounded-none border border-white/[0.5] py-2 px-4 after:pointer-events-none after:absolute after:inset-x-0 after:bottom-0  after:h-0.5 data-[state=active]:bg-black data-[state=active]:shadow-slate-200 data-[state=active]:after:bg-primary hover:bg-neutral-900 transition-colors"
               >
                 {tab.label}
               </TabsTrigger>

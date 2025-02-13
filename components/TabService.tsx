@@ -377,7 +377,7 @@ export default function TabService() {
             <AnimateInViewWrapper className="w-full" scaleFrom={1} distance={0} delay={index/10} key={tab.id}>
               <TabsTrigger
                 value={tab.id}
-                className="relative w-full hidden lg:block bg-neutral-950 overflow-hidden rounded-none border border-white/[0.5] py-3 px-4 after:pointer-events-none after:absolute after:inset-x-0 after:bottom-0 after:h-0.5 data-[state=active]:bg-black data-[state=active]:shadow-slate-200 data-[state=active]:after:bg-yellow-200 hover:bg-neutral-900 transition-colors"
+                className="relative w-full hidden lg:block bg-dark-bg overflow-hidden rounded-none border border-white/[0.6] py-3 px-4 after:pointer-events-none after:absolute after:inset-x-0 after:bottom-0 after:h-0.5 data-[state=active]:bg-black data-[state=active]:shadow-slate-200 data-[state=active]:after:bg-primary hover:bg-neutral-900 transition-colors"
               >
                 {tab.title}
               </TabsTrigger>
@@ -397,30 +397,30 @@ export default function TabService() {
             <div className="flex flex-row w-full flex-wrap gap-6 items-start justify-start">
               <AnimateInViewWrapper scaleFrom={1} distance={0} delay={0.4}>
                 <div className="relative w-full flex flex-col justify-start items-start">
-                  <h1 className="text-neutral-50 font-teko text-4xl font-normal">{tab.title}</h1>
-                  <p className="text-neutral-200 font-montserrat text-base mb-4">{tab.description}</p>
-                  <ul className="list-square-yellow text-neutral-100 pl-4 mb-8">
+                  <h1 className="text-header font-teko text-4xl font-normal">{tab.title}</h1>
+                  <p className="text-paragraph font-montserrat text-base mb-4">{tab.description}</p>
+                  <ul className="list-square-yellow text-header pl-4 mb-8">
                     {tab.services.map((service, index) => (
                       <li className="pl-2 font-montserrat" key={index}>{service}</li>
                     ))}
                   </ul>
-                  <h6 className="font-montserrat text-normal text-neutral-50 mt-8 pb-1 border-b shadow-zinc-300 border-yellow-200 w-full">
+                  <h6 className="font-montserrat text-normal text-header mt-8 pb-1 border-b shadow-zinc-300 border-primary w-full">
                     Cenik
                   </h6>
                   <div className="w-full text-sm p-2 bg-neutral-700/[0.5] flex flex-row items-center justify-center mt-2">
                     <span className="flex items-start w-1/3 flex-row justify-start">
-                      <p className="font-montserrat text-neutral-200">{tab.title}</p>
+                      <p className="font-montserrat text-subheader">{tab.title}</p>
                     </span>
                     <span className="flex items-center w-1/3  flex-row justify-center gap-x-2">
-                      <LuClock4 className="text-neutral-200"/>
-                      <p className="font-montserrat text-neutral-200">{tab.time}</p>
+                      <LuClock4 className="text-subheader"/>
+                      <p className="font-montserrat text-subheader">{tab.time}</p>
                     </span>
                     <span className="flex items-start w-1/3  flex-row justify-end">
-                      <p className="font-montserrat text-neutral-200">{tab.price}</p>
+                      <p className="font-montserrat text-subheader">{tab.price}</p>
                     </span>
                   </div>
                   <div className="flex flex-col mt-16 gap-y-2 w-full">
-                    <span className="font-montserrat text-neutral-200 text-sm">
+                    <span className="font-montserrat text-subheader text-sm">
                       Pohiti in si rezerviraj termin
                     </span>
                     <div className="w-full sm:hidden">

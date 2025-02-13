@@ -24,12 +24,12 @@ const Primary: React.FC<Props> = ({ text,link,w="300px",h="64px",Icon }) => {
         <span className="absolute inset-[-1000%] animate-[spin_3s_linear_infinite] bg-[conic-gradient(from_90deg_at_50%_50%,#ffec8a_0%,#ffd500_50%,#968738_100%)]"></span>
         
         
-        <span className="inline-flex relative h-full w-full text-xl tablet:text-base font-medium text-white  cursor-pointer items-center justify-center bg-neutral-950 z-10 transition-all duration-[600ms] hover:bg-black group/gumb backdrop-blur-3xl gap-2 font-montserrat gap-x-3">
+        <span className="inline-flex relative h-full w-full text-xl tablet:text-base font-medium text-header  cursor-pointer items-center justify-center bg-neutral-950 z-10 transition-all duration-[600ms] hover:bg-dark-bg group/gumb backdrop-blur-3xl gap-2 font-montserrat gap-x-3">
           {text}
-          <span className={`${Icon ? "size-4" :"size-0"}flex items-center justify-center text-white font-light]`} >
+          <span className={`${Icon ? "size-4" :"size-0"}flex items-center justify-center text-header font-light]`} >
             {Icon}
           </span>
-          <div className="absolute inset-0 w-[50%] h-full bg-gradient-to-r from-transparent via-white/20 to-transparent translate-x-[-200%] transition-all duration-[500ms] ease-linear z-0 group-hover/gumb:translate-x-[200%]"></div>
+          <div className="absolute inset-0 -top-[40%] w-[20%] h-[200%] rotate-12 bg-gradient-to-r from-transparent via-white/[0.6] to-transparent translate-x-[-400%] transition-all duration-[300ms] ease-linear z-0 group-hover/gumb:translate-x-[600%]"></div>
         </span>
       </button>
     </Link>

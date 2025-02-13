@@ -97,7 +97,7 @@ export default function ContactForm() {
       setNavbarVisibility(!open)
     }}>
       <DialogTrigger asChild>
-        <button className="rounded-none active:scale-95 transition-all duration-75 hover:bg-neutral-900 border-yellow-300 border bg-black px-4 py-2">
+        <button className="rounded-none font-montserrat active:scale-95 transition-all duration-75 hover:bg-neutral-900 border-primary border bg-black px-4 py-2">
           Pošlji sporočilo
         </button>
       </DialogTrigger>
@@ -111,7 +111,7 @@ export default function ContactForm() {
             <Image src="/img/favicon.svg" alt="logo" width={40} height={40}/>
           </div>
           <DialogHeader>
-            <DialogTitle className="text-neutral-50 text-left">Pošlji sporočilo</DialogTitle>
+            <DialogTitle className="text-header text-left">Pošlji sporočilo</DialogTitle>
             <DialogDescription className="text-left text-xs sm:text-sm">
               Izpolnite spodnja polja za pošiljanje sporočila.
             </DialogDescription>
@@ -121,14 +121,14 @@ export default function ContactForm() {
         <form onSubmit={handleSubmit(onSubmit)} className="space-y-5">
           <div className="space-y-4">
             <div className="space-y-2">
-              <Label htmlFor="name" className="text-neutral-50">
+              <Label htmlFor="name" className="text-header">
                 Ime in priimek
               </Label>
               <Input
                 id="name"
                 disabled={isSubmitting}
                 placeholder="Janez Novak"
-                className={`rounded-none text-neutral-200 ${errors.name ? 'border-red-500' : ''}`}
+                className={`rounded-none text-paragraph ${errors.name ? 'border-red-500' : ''}`}
                 {...register('name')}
               />
               {errors.name && (
@@ -137,7 +137,7 @@ export default function ContactForm() {
             </div>
             
             <div className="space-y-2">
-              <Label htmlFor="email" className="text-neutral-100">
+              <Label htmlFor="email" className="text-header">
                 Email
               </Label>
               <Input
@@ -145,7 +145,7 @@ export default function ContactForm() {
                 disabled={isSubmitting}
                 placeholder="janez.novak@gmail.com"
                 type="email"
-                className={`rounded-none text-neutral-200 ${errors.email ? 'border-red-500' : ''}`}
+                className={`rounded-none text-paragraph ${errors.email ? 'border-red-500' : ''}`}
                 {...register('email')}
               />
               {errors.email && (
@@ -154,14 +154,14 @@ export default function ContactForm() {
             </div>
 
             <div className="space-y-2">
-              <Label htmlFor="message" className="text-neutral-50">
+              <Label htmlFor="message" className="text-header">
                 Sporočilo
               </Label>
               <Textarea
                 id="message"
                 disabled={isSubmitting}
                 placeholder="Vnesite vaše sporočilo"
-                className={`min-h-[100px] max-h-[200px] rounded-none text-neutral-200 ${errors.message ? 'border-red-500' : ''}`}
+                className={`min-h-[100px] max-h-[200px] rounded-none text-paragraph ${errors.message ? 'border-red-500' : ''}`}
                 {...register('message')}
               />
               {errors.message && (
@@ -186,7 +186,7 @@ export default function ContactForm() {
           </Button>
         </form>
 
-        <p className="text-left md:text-center text-xs text-neutral-500 dark:text-neutral-400">
+        <p className="text-left md:text-center text-xs text-header ">
           S pošiljanjem sporočila se strinjate z našimi{" "}
           <a className="underline hover:no-underline" href="#">
             Pogoji uporabe

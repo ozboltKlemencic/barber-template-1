@@ -16,7 +16,7 @@ const page = () => {
   return (
     <div>
         <Navbar/>
-        <div className="w-screen bg-black h-auto  ">
+        <div className="w-screen bg-dark-bg h-auto  ">
           <div className="h-auto flex flex-col mx-auto max-w-7xl px-4 md:px-16  pt-32  gap-y-1">
             <div>
               <AnimateInViewWrapper  className="w-fit">
@@ -27,12 +27,12 @@ const page = () => {
             </div>
             <div className="mb-4">
               <MaskAnimation>
-                <h2 className="text-neutral-50 font-teko font-semibold text-4xl   md:text-5xl">
+                <h2 className="text-header font-teko font-semibold text-4xl   md:text-5xl">
                   Naši profesijonalni &nbsp;<BgFrombottomToTop text="brivci"/>
                 </h2>
               </MaskAnimation>
               <AnimateInViewWrapper scaleFrom={1} delay={0.3}>
-                <p className='font-montserrat text-base text-neutral-200 max-w-5xl  mobile:w-full'>
+                <p className='font-montserrat text-base text-paragraph max-w-5xl  mobile:w-full'>
                 Ekipa Blackout je skupina visoko priznanih in usposobljenih brivcev in frizerjev. Vsak je strokovnjak na svojem področju z dolgoletnimi izkušnjami, dobro opremljen za zagotavljanje najboljših rezultatov.
                 </p>
               </AnimateInViewWrapper> 

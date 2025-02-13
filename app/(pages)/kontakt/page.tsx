@@ -64,12 +64,12 @@ export default function ContactPage() {
           </div>
           <div className="mb-4">
             <MaskAnimation>
-              <h2 className="text-neutral-50 font-teko font-semibold text-4xl   md:text-5xl">
+              <h2 className="text-header font-teko font-semibold text-4xl   md:text-5xl">
                 Stopite v stik z&nbsp;<BgFrombottomToTop text="nami"/>
               </h2>
             </MaskAnimation>
             <AnimateInViewWrapper   scaleFrom={1} delay={0.3}>
-              <p className='font-montserrat text-base text-neutral-200 max-w-5xl  mobile:w-full'>
+              <p className='font-montserrat text-base text-subheader max-w-5xl  mobile:w-full'>
               Frizerska umetnost je več kot le striženje – je ustvarjanje videza, ki vam pristaja. Raziščite našo galerijo in odkrijte svoj idealni barber stil!
               </p>
             </AnimateInViewWrapper> 
@@ -83,25 +83,25 @@ export default function ContactPage() {
             style={{clipPath: "polygon(0% 0, 100% 0%, 100% 100%, 0 100%)"}}
         >   
             <div className='absolute top-0 left-0 right-0 z-50  h-full flex justify-center items-center py-20'>
-                <div className='h-1/6 w-full absolute top-0 left-0 bg-gradient-to-b from-black to-transparent'></div>
-                <div className='h-1/6 w-full absolute bottom-0 left-0 bg-gradient-to-t from-black to-transparent'></div>
+                <div className='h-1/6 w-full absolute top-0 left-0 bg-gradient-to-b from-dark-bg to-transparent'></div>
+                <div className='h-1/6 w-full absolute bottom-0 left-0 bg-gradient-to-t from-dark-bg to-transparent'></div>
 
                 <div className='max-w-screen-xl flex-wrap flex justify-center flex-col md:flex-row items-center gap-x-10 px-4 md:px-6 gap-y-16'>
                     <div className=' w-auto max-w-full md:max-w-[45%] h-auto mx-4 flex items-center  md:items-start justify-center flex-col gap-y-2 gap-x-2 '>
                         <AnimateInViewWrapper  >
-                        <ContactCard title='Lokacija' link={info.lokacijaLink} paragraphs={[`${info.lokacija}`]} cta='Navodila za pot' icon={<LuMapPin className='size-5 lg:size-6 group-hover:rotate-12 trnsition-all text-yellow-300/[0.7] pb-1 transition-transform duration-300'/>}/>
+                        <ContactCard title='Lokacija' link={info.lokacijaLink} paragraphs={[`${info.lokacija}`]} cta='Navodila za pot' icon={<LuMapPin className='size-5 lg:size-6 group-hover:rotate-12 trnsition-all text-primary pb-1 transition-transform duration-300'/>}/>
                         </AnimateInViewWrapper>
                     </div>
 
                     <div className=' w-auto max-w-full md:max-w-[45%] h-auto mx-4 flex items-center  md:items-start justify-center flex-col gap-y-2 gap-x-2 '>
                         <AnimateInViewWrapper  >
-                          <ContactCard title='Kontaktirajte nas' link={ROUTES.NAROCANJE} paragraphs={[`Tel. št.:${info.telefon}`,`E-pošta:${info.eposta}`]} cta='Naroči se' icon={<RxScissors className='size-5 lg:size-6 group-hover:rotate-12 trnsition-all text-yellow-300/[0.7] pb-1 transition-transform duration-300'/>}/>
+                          <ContactCard title='Kontaktirajte nas' link={ROUTES.NAROCANJE} paragraphs={[`Tel. št.:${info.telefon}`,`E-pošta:${info.eposta}`]} cta='Naroči se' icon={<RxScissors className='size-5 lg:size-6 group-hover:rotate-12 trnsition-all text-primary pb-1 transition-transform duration-300'/>}/>
                         </AnimateInViewWrapper>
                     </div>
                   
                     <div className='w-auto h-auto mx-4 '>
                         <AnimateInViewWrapper  >
-                        <ContactCard title='Delovne ure' link={info.telefonLink} paragraphs={["Pon. - Pet.: 8:00 - 17:00","Vikend: zaprto"]} cta='Pokliči' icon={<FaPhoneFlip className='size-5 lg:size-6 group-hover:rotate-12 trnsition-all text-yellow-300/[0.7] pb-1 transition-transform duration-300'/>}/>
+                        <ContactCard title='Delovne ure' link={info.telefonLink} paragraphs={["Pon. - Pet.: 8:00 - 17:00","Vikend: zaprto"]} cta='Pokliči' icon={<FaPhoneFlip className='size-5 lg:size-6 group-hover:rotate-12 trnsition-all  text-primary pb-1 transition-transform duration-300'/>}/>
                         </AnimateInViewWrapper>
                     </div>
                 </div>
@@ -117,9 +117,9 @@ export default function ContactPage() {
 
         <div className="grid lg:grid-cols-2 min-h-screen">
           {/* Form Section */}
-          <div className="flex items-center flex-col justify-center bg-black p-6 lg:p-12">
+          <div className="flex items-center flex-col justify-center bg-dark-bg p-6 lg:p-12">
             <div className=''>
-              <h2 className='text-neutral-100 font-teko text-3xl mb-6'>Pošljite sporočilo </h2>
+              <h2 className='text-header font-teko text-3xl mb-6'>Pošljite sporočilo </h2>
               <ContactMainForm/>
             </div>
           </div>

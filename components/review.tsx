@@ -134,20 +134,20 @@ const ReviewSection = ({
             <div className="w-full md:w-1/2 md:h-screen px-4 md:px-16 py-12 md:sticky md:top-0 flex items-center justify-center bg-yellow-circle mobile:bg-mob-yellow-circle">
                 <div className="w-full max-w-xl flex flex-col gap-y-4  text-center md:text-left">
                     <MaskAnimation>
-                        <h3 className="font-montserrat text-md text-neutral-200 ">Mnenja strank</h3>
+                        <h3 className="font-montserrat text-md text-subheader ">Mnenja strank</h3>
                     </MaskAnimation>
                     
                     <MaskAnimation>
-                        <h2 className="font-teko text-2xl md:text-3xl  font-bold text-neutral-50">
+                        <h2 className="font-teko text-2xl md:text-3xl  font-bold text-header">
                             Več kot 50+ oseb nam&nbsp; 
-                            <span className="bg-gradient-to-r from-[#FFD700] to-[#daa52077] bg-clip-text text-transparent">
+                            <span className="bg-gradient-to-r from-primary-light to-primary-dark bg-clip-text text-transparent">
                                 zaupa
                             </span>.
                         </h2>
                     </MaskAnimation>
                     
                     <AnimateInViewWrapper scaleFrom={1} delay={0.2}>
-                        <p className="font-montserrat text-base text-neutral-200">
+                        <p className="font-montserrat text-base text-paragraph">
                             Preberite mnenja naših strank. Naše stranke so bistvo vsega, kar počnemo.
                             Njihovo zadovoljstvo je naš največji uspeh in motivacija za nenehno izboljševanje
                             naših storitev. Prepričajte se sami, zakaj nam zaupajo številni zadovoljni uporabniki.

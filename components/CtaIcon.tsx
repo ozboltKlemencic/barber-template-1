@@ -33,12 +33,12 @@ const CtaIcon = () => {
           style={{ zIndex: index + 10 }}
         >
           <div 
-            className={`relative  cursor-pointer group/${index} overflow-hidden hover:-translate-y-2 transition-all duration-300 r backdrop-blur-md border-yellow-200/[0.5] border ${className}`}
+            className={`relative  cursor-pointer group/${index} overflow-hidden hover:-translate-y-2 transition-all duration-300 r backdrop-blur-md border-primary-dark-transparent border ${className} hover:border-primary`}
           >
             <Link href={link} target="_blank">
-              <div className="absolute inset-0  bg-yellow-200/20 blur-xl" />
+              <div className="absolute inset-0  bg-yellow-200/30 blur-xl" />
               <div className="relative bg-black p-4 ">
-                <Icon className="w-6 h-6 text-white" />
+                <Icon className="w-6 h-6 text-header" />
               </div>
             </Link>
             {/* Hover effect */}

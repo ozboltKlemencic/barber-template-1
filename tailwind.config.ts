@@ -35,11 +35,29 @@ const config: Config = {
   		},
 		  
   		animation: {
-  			shine: 'shine 7s linear infinite',
+  			shine: 'shine 4s linear infinite',
   			marquee: "marquee var(--duration) linear infinite",
         "marquee-vertical": "marquee-vertical var(--duration) linear infinite",
   		},
-  		colors: {},
+
+  		colors: {
+			primary: 'var(--primary)',
+			'primary-light': 'var(--primary-light)',
+			'primary-dark': 'var(--primary-dark)',
+	
+			'primary-transparent': 'var(--primary-transparent)',
+			'primary-light-transparent': 'var(--primary-light-transparent)',
+			'primary-dark-transparent': 'var(--primary-dark-transparent)',
+	
+			header: 'var(--header)',
+			subheader: 'var(--subheader)',
+			paragraph: 'var(--paragrap)',
+			'dark-text':'var(--dark-text)',
+
+			'light-bg': 'var(--light-bg)',
+			'dark-bg': 'var(--dark-bg)',
+		},
+
   		fontFamily: {
   			montserrat: [
   				'var(--font-montserrat)',

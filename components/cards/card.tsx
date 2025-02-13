@@ -25,11 +25,11 @@ export function ThreeDCardDemo({link,title,url}:Props) {
               alt="thumbnail"
             />
           </CardItem>
-          <div className="absolute bottom-2 left-2 right-2 flex justify-between items-center pointer-events-none">
+          <div className="absolute bottom-4 left-4 right-4 flex justify-between items-center pointer-events-none">
             <CardItem
-              translateZ={20}
+              translateZ={50}
               as="button"
-              className="px-2 py-6 m-1 w-full backdrop-blur-lg bg-black/[0.3] border border-white/[0.05] text-white text-xs font-bold"
+              className="px-4 py-6 m-1 w-full backdrop-blur-lg bg-black/[0.5] border border-white/[0.05] text-white text-xs font-bold"
             >
               <span className="relative text-neutral-50 text-lg font-normal">{title}</span>
             </CardItem>

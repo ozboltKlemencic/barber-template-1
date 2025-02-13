@@ -116,9 +116,9 @@ const Carousel: React.FC = () => {
                 className="transition-transform duration-[1500] ease-out transform "
               />
               <div className="absolute inset-0  flex items-center  justify-center">
-                <div className="text-center text-white  max-w-7xl w-[92vw] md:w-[1200px] bg-black/[0.4] md:bg-transparent md:backdrop-blur-none backdrop-blur-md md:px-20 lg:px-6 px-4  py-4 flex flex-col md:justify-start justify-center md:items-start items-center gap-y-3 md:gap-y-4 lg:gap-y-6">
+                <div className="text-center text-header  max-w-7xl w-[92vw] md:w-[1200px] bg-black/[0.4] md:bg-transparent md:backdrop-blur-none backdrop-blur-md md:px-20 lg:px-6 px-4  py-4 flex flex-col md:justify-start justify-center md:items-start items-center gap-y-3 md:gap-y-4 lg:gap-y-6">
                     <div className="overflow-hidden">
-                      <p className="text-sm md:text-base lg:text-xl font-montserrat translate-y-8 opacity-0  transition-all duration-700 delay-100 [.swiper-slide-active_&]:translate-y-0 [.swiper-slide-active_&]:opacity-100">
+                      <p className="text-sm md:text-base lg:text-xl font-montserrat translate-y-8 opacity-0  text-subheadertransition-all duration-700 delay-100 [.swiper-slide-active_&]:translate-y-0 [.swiper-slide-active_&]:opacity-100">
                         {slide.description}
                       </p>
                     </div>
@@ -149,8 +149,8 @@ const Carousel: React.FC = () => {
             onClick={() => goToSlide(index)}
             className={`w-4 h-2 border transition-colors ${
               index === activeIndex
-                ? "bg-[rgba(222,211,140,1)] border-transparent"
-                : "bg-black border-[rgba(222,211,140,1)]"
+                ? "bg-primary border-transparent"
+                : "bg-dark-bg border-primary"
             }`}
             aria-label={`Go to slide ${index + 1}`}
           />
@@ -161,17 +161,17 @@ const Carousel: React.FC = () => {
       <div className="absolute top-1/2 left-0 right-0 z-10 flex justify-between px-4 -translate-y-1/2">
         <button
           onClick={() => swiperRef.current?.slidePrev()}
-          className="transition-all duration-300 bg-gradient-to-r hover:to-neutral-900 hover:from-neutral-950 to-neutral-700/90 from-neutral-900 flex items-center justify-center border border-yellow-200 p-1.5 font-semibold opacity-0 group-hover:opacity-100 group-hover:translate-x-0 translate-x-3"
+          className="transition-all duration-300  hover:bg-dark-bg bg-neutral-800 flex items-center justify-center border border-primary p-1.5 font-semibold opacity-0 group-hover:opacity-100 group-hover:translate-x-0 translate-x-3"
           aria-label="Previous slide"
         >
-          <IoIosArrowBack className="text-white text-2xl pr-0.5" />
+          <IoIosArrowBack className="text-header text-2xl pr-0.5" />
         </button>
         <button
           onClick={() => swiperRef.current?.slideNext()}
-          className="transition-all duration-300 bg-gradient-to-r hover:from-neutral-900 hover:to-neutral-950 from-neutral-700/90 to-neutral-900 flex items-center justify-center border border-yellow-200 p-1.5 font-semibold opacity-0 group-hover:opacity-100 group-hover:translate-x-0 -translate-x-3"
+          className="transition-all duration-300 hover:bg-dark-bg bg-neutral-800 flex items-center justify-center border border-primary p-1.5 font-semibold opacity-0 group-hover:opacity-100 group-hover:translate-x-0 -translate-x-3"
           aria-label="Next slide"
         >
-          <IoIosArrowForward className="text-white text-2xl pl-0.5" />
+          <IoIosArrowForward className="text-header text-2xl pl-0.5" />
         </button>
       </div>
     </div>

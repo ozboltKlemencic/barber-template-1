@@ -100,8 +100,8 @@ export default function Navbar() {
     <>
       <header
         className={cn(
-          "fixed top-0 left-0 bg-black w-screen right-0 z-[999] transition-transform duration-300 ease-in-out nav-shadow border-b nav-shadov border-yellow-200 ",
-          isScrolled ? "bg-black/95 backdrop-blur-sm" : "bg-black ",
+          "fixed top-0 left-0 bg-dark-bg w-screen right-0 z-[999999] transition-transform duration-300 ease-in-out nav-shadow border-b nav-shadov border-primary ",
+          isScrolled ? "bg-dark-bg opacity-95 backdrop-blur-sm" : "bg-dark-bg ",
           isVisible || lastScrollY <= 0 ? "translate-y-0" : "translate-y-[calc(-100%_-_12px)] "
         )}
       >
@@ -116,7 +116,7 @@ export default function Navbar() {
                 className="object-cover"
                 priority
               />
-              <span className="text-2xl font-semibold mt-1 text-white font-teko">BLACKOUT</span>
+              <span className="text-2xl font-semibold mt-1 text-header font-teko">BLACKOUT</span>
             </Link>
 
             <div className="hidden md:flex items-center space-x-8">
@@ -128,8 +128,8 @@ export default function Navbar() {
                   className={cn(
                     "transition-colors flex text-sm font-montserrat items-center justify-center",
                     pathname === item.href
-                      ? "text-neutral-50"
-                      : "text-neutral-400 hover:text-white"
+                      ? "text-header"
+                      : "text-dark-text hover:text-header"
                   )}
                 >
                   {item.label}
@@ -149,9 +149,9 @@ export default function Navbar() {
                 aria-label="Toggle menu"
               >
                 {isMobileMenuOpen ? (
-                  <IoMdClose className="h-6 w-6 text-white" />
+                  <IoMdClose className="h-6 w-6 text-header" />
                 ) : (
-                  <IoMenuSharp className="h-6 w-6 text-white" />
+                  <IoMenuSharp className="h-6 w-6 text-header" />
                 )}
               </button>
             </div>
@@ -161,7 +161,7 @@ export default function Navbar() {
 
       <div 
         className={cn(
-          "fixed inset-0 bg-black transition-transform duration-300 ease-in-out z-[998] pt-16",
+          "fixed inset-0 bg-dark-bg transition-transform duration-300 ease-in-out z-[998] pt-16",
           isMobileMenuOpen ? "translate-x-0" : "translate-x-full"
         )}
         aria-hidden={!isMobileMenuOpen}
@@ -174,10 +174,7 @@ export default function Navbar() {
                 href={item.href}
                 target={item.href === ROUTES.NAROCANJE ? "_blank" : undefined}
                 className={cn(
-                  "block text-xl font-semibold font-montserrat py-1",
-                  pathname === item.href
-                    ? "text-neutral-50"
-                    : "text-neutral-50 hover:text-white"
+                  "block text-xl font-semibold font-montserrat py-1 text-header"
                 )}
                 onClick={handleMobileMenuClick}
               >
