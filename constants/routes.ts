@@ -3,7 +3,7 @@ const ROUTES = {
     GALERIJA: "/galerija",
     KONTAKT: "/kontakt",
     STORITVE: "/storitve",
-    NAROCANJE: "https://blackout-barber.si/brivnica-blackout",
+    NAROCANJE: "https://template-2-bay.vercel.app/booking",
     EKIPA:"/ekipa"
   };
   
